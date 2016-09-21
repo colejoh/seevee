@@ -7,6 +7,22 @@ var AccomplishmentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    startDate: {
+        type: Date,
+        required: true
+    },
+    endDate: {
+        type: Date,
+        required: true
+    },
+    // startDate: {
+    //     type: Date,
+    //     required: false
+    // },
+    // endDate: {
+    //     type: Date,
+    //     required: false
+    // },
     description: {
         type: String,
         required: true
