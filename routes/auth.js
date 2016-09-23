@@ -3,7 +3,6 @@ var jwt = require('jwt-simple');
 var auth = {
 
   login: function(req, res) {
-
     var username = req.body.username || '';
     var password = req.body.password || '';
 
@@ -11,7 +10,7 @@ var auth = {
       res.status(401);
       res.json({
         "status": 401,
-        "message": "Invalid credentials"
+        "message": "Field(s) left empty"
       });
       return;
     }
@@ -40,7 +39,7 @@ var auth = {
 
   validate: function(username, password) {
     // spoofing the DB response for simplicity
-    
+
     var dbUserObj = { // spoofing a userobject from the DB.
       name: 'arvind',
       role: 'admin',
