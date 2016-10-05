@@ -32,14 +32,59 @@ var products = {
 };
 
 var data = [{
-  name: 'product 1',
-  id: '1'
-}, {
-  name: 'product 2',
-  id: '2'
-}, {
-  name: 'product 3',
-  id: '3'
-}];
+  title: 'CEO & Cofounder',
+  importance: 100,
+  place: 'seevee',
+  dateStart: '2016',
+  dateEnd: null,
+  type: 'work',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+},
+{
+  title: 'CTO',
+  importance: 23,
+  place: 'seevee',
+  dateStart: '2016',
+  dateEnd: null,
+  type: 'work',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+},
+{
+  title: 'Engineer',
+  importance: 83,
+  place: 'seevee',
+  dateStart: '2016',
+  dateEnd: null,
+  type: 'work',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+},
+{
+  title: 'B.S. Computer Science',
+  importance: 23,
+  place: 'Purdue Univeristy',
+  dateStart: '2015',
+  dateEnd: '2019',
+  type: 'ed',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+},
+{
+  title: 'Best Guy',
+  importance: 66,
+  place: 'seevee',
+  dateStart: '2012',
+  dateEnd: null,
+  type: 'honor',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+},
+{
+  title: 'Yep',
+  importance: 52,
+  place: 'boilermake',
+  dateStart: '2015',
+  dateEnd: null,
+  type: 'project',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+},
+];
 
 module.exports = products;
