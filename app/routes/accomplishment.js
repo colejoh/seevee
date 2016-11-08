@@ -4,46 +4,46 @@ var router = require('express').Router();
 //     res.status(200).send({message: 'App is running with no errors.'});
 // });
 
-var Accomplishment = require('../models/user');
+var Accomplishment = require('../models/accomplishment');
 
 // Creates New Accomplishment
 router.post('/', function(req, res){
-    var user = new Accomplishment();
-    user.name = req.body.name;
+    var accomplishment = new Accomplishment();
+    accomplishment.title = req.body.title;
+    accomplishment.description = req.body.description;
 
-    console.log(req.body.name);
 
-    user.save(function(err) {
+    accomplishment.save(function(err) {
         if(err) {
             res.send(err);
         }
-        res.json({ message: 'user created' });
+        res.json({ message: 'Accomplishment Created' });
     });
 });
 
 // Gets All Accomplishments
 router.get('/', function(req, res) {
-     Accomplishment.find(function(err, users) {
+     Accomplishment.find(function(err, accomplishments) {
          if(err) {
              res.send(err);
          }
-         res.json(users);
+         res.json(accomplishments);
      });
 });
 
 // Gets Specific Accomplishment
-router.get('/:user_id', function(req, res) {
-     Accomplishment.findById(req.params.user_id, function(err, user) {
+router.get('/:accomplishment_id', function(req, res) {
+     Accomplishment.findById(req.params.accomplishment_id, function(err, accomplishment) {
          if(err) {
              res.send(err);
          }
-         res.json(user);
+         res.json(accomplishment);
      });
 });
 
 // Updates Specific Accomplishment
-router.put('/:user_id', function(req, res) {
-     Accomplishment.findById(req.params.user_id, function(err, user) {
+router.put('/:accomplishment_id', function(req, res) {
+     Accomplishment.findById(req.params.accomplishment_id, function(err, accomplishment) {
          if(err) {
              res.send(err);
          }
@@ -60,10 +60,10 @@ router.put('/:user_id', function(req, res) {
 });
 
 // Deletes Specific Accomplishment
-router.delete('/:user_id', function(req, res) {
+router.delete('/:accomplishment_id', function(req, res) {
     Accomplishment.remove({
-           _id: req.params.user_id
-       }, function(err, bear) {
+           _id: req.params.accomplishment_id
+       }, function(err, accomplishment) {
            if (err)
                res.send(err);
 

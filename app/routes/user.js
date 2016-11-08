@@ -9,9 +9,10 @@ var User = require('../models/user');
 // Creates New User
 router.post('/', function(req, res){
     var user = new User();
-    user.name = req.body.name;
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
+    user.email = req.body.email;
 
-    console.log(req.body.name);
 
     user.save(function(err) {
         if(err) {
