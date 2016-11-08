@@ -9,16 +9,16 @@ var User = require('../models/user');
 // Creates New User
 router.post('/', function(req, res){
     var user = new User();
+
     user.firstName = req.body.firstName;
     user.lastName = req.body.lastName;
     user.email = req.body.email;
-
 
     user.save(function(err) {
         if(err) {
             res.send(err);
         }
-        res.json({ message: 'user created' });
+        res.json({ message: 'User Created' });
     });
 });
 
@@ -49,7 +49,9 @@ router.put('/:user_id', function(req, res) {
              res.send(err);
          }
 
-         user.name = req.body.name;
+         user.firstName = req.body.firstName;
+         user.lastName = req.body.lastName;
+         user.email = req.body.email;
 
          user.save(function(err) {
             if(err) {
