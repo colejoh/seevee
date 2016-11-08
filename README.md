@@ -11,4 +11,4 @@
 
 ## Running
   1. `mongod`
-  2. `nodemon server.js`
+  2. `npm start`
