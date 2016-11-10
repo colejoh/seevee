@@ -9,7 +9,7 @@ var Accomplishment = require('../models/accomplishment');
 // Creates New Accomplishment
 router.post('/', function(req, res){
     var accomplishment = new Accomplishment();
-    
+
     accomplishment.title = req.body.title;
     accomplishment.description = req.body.description;
     accomplishment.dateStart = req.body.dateStart;
@@ -53,12 +53,12 @@ router.put('/:accomplishment_id', function(req, res) {
              res.send(err);
          }
 
-         accomplishment.title = req.body.title;
-         accomplishment.description = req.body.description;
-         accomplishment.dateStart = req.body.dateStart;
-         accomplishment.dateEnd = req.body.dateEnd;
-         accomplishment.origin = req.body.origin;
-         accomplishment.userId = req.body.userId;
+         accomplishment.title = req.body.title || accomplishment.title;
+         accomplishment.description = req.body.description || accomplishment.description;
+         accomplishment.dateStart = req.body.dateStart || accomplishment.dateStart;
+         accomplishment.dateEnd = req.body.dateEnd || accomplishment.dateEnd;
+         accomplishment.origin = req.body.origin || accomplishment.origin;
+         accomplishment.userId = req.body.userId || accomplishment.userId;
 
          accomplishment.save(function(err) {
             if(err) {

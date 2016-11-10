@@ -49,9 +49,9 @@ router.put('/:user_id', function(req, res) {
              res.send(err);
          }
 
-         user.firstName = req.body.firstName;
-         user.lastName = req.body.lastName;
-         user.email = req.body.email;
+         user.firstName = req.body.firstName || user.firstName;
+         user.lastName = req.body.lastName || user.lastName;
+         user.email = req.body.email || user.email;
 
          user.save(function(err) {
             if(err) {
