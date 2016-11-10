@@ -1,13 +1,9 @@
-myApp.controller("AccomplishmentsCtrl", ['$scope', '$location', 'UserAuthFactory', 'accomplishmentFactory',
-  function($scope, $location, UserAuthFactory, accomplishmentFactory) {
-    // Gets All Accomplishments
-    $scope.accomplishments = [];
-
-    accomplishmentFactory.getAccomplishments().then(function(data) {
-      $scope.accomplishments = data.data;
+seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
+  function($scope, $location, $http) {
+    $scope.accomplishments = {};
+    $http.get("api/accomplishment").then(function(response){
+      console.log(response.data);
+      $scope.accomplishments = response.data;
     });
-
-    // Adds Accomplishment
-    $scope.newAccomplishment = {};
   }
 ]);

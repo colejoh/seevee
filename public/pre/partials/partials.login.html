@@ -1,0 +1,21 @@
+<div ng-include="'partials/partials.logout-header.html'"></div>
+
+<div class="login-box-wrapper">
+    <div class="login-box">
+        <h3>Login</h3>
+        <div class="form-group">
+          <label for="username">Email</label>
+          <input type="text" class="form-control" id="username" placeholder="Username" ng-model="user.username">
+        </div>
+        <!-- <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" ng-model="user.password">
+        </div> -->
+
+    </div>
+    <div class="login-button-wrapper">
+        <button type="button" ng-click="login()" class="btn btn-primary login-button">Submit</button>
+    </div>
+</div>
+
+<div ng-include="'partials/partials.logout-footer.html'"></div>
