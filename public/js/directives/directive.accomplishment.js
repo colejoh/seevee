@@ -6,7 +6,6 @@ seevee.directive('accomplishmentCard', function() {
     },
     templateUrl: '../../templates/templates.accomplishment-card.html',
     link: function(scope, element, attrs) {
-      console.log("hi");
     }
   };
 
