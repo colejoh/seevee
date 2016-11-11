@@ -258,7 +258,8 @@ input[type=range]:focus::-ms-fill-upper {
     float: right;
 }
 .side-nav {
-  background: #232E36;
+  background: #373737;
+  /*background: #232E36;*/
   width: 100%;
   height: 100%;
   color: #F5F5F1;
@@ -267,7 +268,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .nav-text {
   height: 60px;
-  line-height: 80px;
+  line-height: 60px;
 }
 .nav-button {
   height: 60px;
@@ -277,6 +278,12 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: 25px;
 }
 .nav-button:hover {
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.nav-unselected {
+  box-shadow: none;
+}
+.nav-selected {
   box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 /*

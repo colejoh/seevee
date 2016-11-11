@@ -1,15 +1,16 @@
 <div class="side-nav" ng-controller="headerCtrl">
     <div class="nav-text">
-        <span style="color: #FDFD6F">seevee</span>
+        seevee
+        <!-- <span style="color: #4A90E2">see</span<span style="#FFE728">vee</span> -->
         <!-- <img src="../img/logo.png" width="60px" height="auto" style="margin-top: 10px;"/> -->
     </div>
-    <div class="nav-button" ng-click="go('/')">
+    <div class="nav-button" ng-class="accomplishmentClass" ng-click="go('/')">
         <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
     </div>
-    <div class="nav-button" ng-click="go('/resumes')">
+    <div class="nav-button" ng-class="resumeClass" ng-click="go('/resumes')">
         <i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
     </div>
-    <div class="nav-button" ng-click="go('/account')">
+    <div class="nav-button" ng-class="accountClass" ng-click="go('/account')">
         <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
     </div>
 </div>

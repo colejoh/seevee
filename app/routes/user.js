@@ -13,6 +13,16 @@ router.post('/', function(req, res){
     user.firstName = req.body.firstName;
     user.lastName = req.body.lastName;
     user.email = req.body.email;
+    user.facebookId = req.body.facebookId;
+    user.googleId = req.body.googleId;
+    user.addressLine1 = req.body.addressLine1;
+    user.addressLine2 = req.body.addressLine2;
+    user.city = req.body.city;
+    user.state = req.body.state;
+    user.phoneNumber = req.body.phoneNumber;
+    user.website = req.body.website;
+    user.github = req.body.github;
+    user.linkedIn = req.body.linkedIn;
 
     user.save(function(err) {
         if(err) {
@@ -49,9 +59,17 @@ router.put('/:user_id', function(req, res) {
              res.send(err);
          }
 
-         user.firstName = req.body.firstName;
-         user.lastName = req.body.lastName;
-         user.email = req.body.email;
+         user.firstName = req.body.firstName || user.firstName;
+         user.lastName = req.body.lastName || user.lastName;
+         user.email = req.body.email || user.email;
+         user.addressLine1 = req.body.addressLine1 || user.addressLine1;
+         user.addressLine2 = req.body.addressLine2 || user.addressLine2;
+         user.city = req.body.city || user.city;
+         user.state = req.body.state || user.state;
+         user.phoneNumber = req.body.phoneNumber || user.phoneNumber;
+         user.website = req.body.website || user.website;
+         user.github = req.body.github || user.github;
+         user.linkedIn = req.body.linkedIn || user.linkedIn;
 
          user.save(function(err) {
             if(err) {
