@@ -7,9 +7,10 @@ var AccomplishmentSchema = new Schema({
     dateStart: String,       // Date Started
     dateEnd: String,         // Date Ended
     origin: String,        // Could be workplace or university etc.
-    userID: String,
     type: String,
-    importance: Number
+    importance: Number,
+    facebookId: String,
+    googleId: String
 }, {collection: 'accomplishment'});
 
 module.exports = mongoose.model('Accomplishment', AccomplishmentSchema);

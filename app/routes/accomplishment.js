@@ -15,9 +15,10 @@ router.post('/', function(req, res){
     accomplishment.dateStart = req.body.dateStart;
     accomplishment.dateEnd = req.body.dateEnd;
     accomplishment.origin = req.body.origin;
-    accomplishment.userId = req.body.userId;
     accomplishment.type = req.body.type;
     accomplishment.importance = req.body.importance;
+    accomplishment.facebookId = req.body.github || accomplishment.facebookId;
+    accomplishment.googleId = req.body.linkedIn || accomplishment.googleId;
 
 
     accomplishment.save(function(err) {
