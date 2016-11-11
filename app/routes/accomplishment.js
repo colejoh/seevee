@@ -17,6 +17,7 @@ router.post('/', function(req, res){
     accomplishment.origin = req.body.origin;
     accomplishment.userId = req.body.userId;
     accomplishment.type = req.body.type;
+    accomplishment.importance = req.body.importance;
 
 
     accomplishment.save(function(err) {
@@ -60,7 +61,7 @@ router.put('/:accomplishment_id', function(req, res) {
          accomplishment.dateEnd = req.body.dateEnd || accomplishment.dateEnd;
          accomplishment.origin = req.body.origin || accomplishment.origin;
          accomplishment.type = req.body.type || accomplishment.type;
-
+         accomplishment.importance = req.body.importance;
 
          accomplishment.save(function(err) {
             if(err) {

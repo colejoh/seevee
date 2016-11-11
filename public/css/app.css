@@ -240,6 +240,47 @@ input[type=range]:focus::-ms-fill-upper {
 
 /*
 -----------------------------------------------
+                  NAV
+-----------------------------------------------
+*/
+.left {
+    width: 80px;
+    height: 100vh;
+    display: block;
+    float: left;
+    position: fixed;
+    margin: 0;
+    padding: 0
+}
+.right {
+    width: calc(100% - 80px);
+    display: block;
+    float: right;
+}
+.side-nav {
+  background: #232E36;
+  width: 100%;
+  height: 100%;
+  color: #F5F5F1;
+  text-align: center;
+  box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.4);;
+}
+.nav-text {
+  height: 60px;
+  line-height: 80px;
+}
+.nav-button {
+  height: 60px;
+  line-height: 60px;
+}
+.nav-button i {
+  margin-top: 25px;
+}
+.nav-button:hover {
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+/*
+-----------------------------------------------
                   HEADER
 -----------------------------------------------
 */
@@ -455,51 +496,51 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .accomplishment {
-	width: 100%;
-	background: #fff;
-	margin-bottom: 20px;
-	padding: 18px 20px;
-	position: relative;
-	overflow: auto;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: auto;
   border-radius: 4px;
   box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
 }
 
 .accomplishment h1 {
-	font-weight: 500;
-	font-size: 30px;
-	color: #373737;
-	text-align: left;
-	width: 100%;
-	margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 30px;
+  color: #373737;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
 .accomplishment .time {
-	padding: 4px 12px 3px 12px;
-	font-weight: 400;
-	font-size: 15px;
-	color: #8A95A6;
-	border: 1px solid #8A95A6;
-	border-radius: 3px;
+  padding: 4px 12px 3px 12px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #8A95A6;
+  border: 1px solid #8A95A6;
+  border-radius: 3px;
   margin: 10px 0px;
-  width: 124px;
   text-align: center;
+  display: inline-block;
 }
 
 .accomplishment .location {
-	font-size: 20px;
-	font-weight: 400;
-	color: #8A95A6;
+  font-size: 20px;
+  font-weight: 400;
+  color: #8A95A6;
 }
 
 .accomplishment.project h2,
 .accomplishment.honor h2 {
-	display: none;
+  display: none;
 }
 
 .accomplishment.project time,
 .accomplishment.honor time {
-	float: left;
+  float: left;
 }
 
 

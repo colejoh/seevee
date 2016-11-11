@@ -13,6 +13,8 @@
 
          <!-- CONTROLLERS -->
          <script type="text/javascript" src="js/controllers/controllers.accomplishment.js"></script>
+         <script type="text/javascript" src="js/controllers/controllers.account.js"></script>
+         <script type="text/javascript" src="js/controllers/controllers.header.js"></script>
          <script type="text/javascript" src="js/controllers/controllers.login.js"></script>
          <script type="text/javascript" src="js/controllers/controllers.resume.js"></script>
 
@@ -20,6 +22,11 @@
          <script type="text/javascript" src="js/directives/directive.accomplishment.js"></script>
     </head>
     <body>
-        <div ng-view></div>
+        <nav class="left">
+            <div ng-include="'partials/partials.nav.html'"></div>
+        </nav>
+        <div class="right">
+            <div ng-view></div>
+        </div>
     </body>
 </html>

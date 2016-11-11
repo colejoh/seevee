@@ -14,4 +14,8 @@ seevee.config(function($routeProvider) {
         templateUrl: '../partials/partials.login.html',
         controller: 'loginController'
     })
+    .when("/account", {
+        templateUrl: '../partials/partials.account.html',
+        controller: 'accountController'
+    })
 });
