@@ -1,0 +1,31 @@
+<div id="modal-bg" class="project-modal"></div>
+<div class="accomplishment modal edit project-modal">
+    <center>
+        Add Work Accomplishment
+    </center>
+    <div class="field">
+        <label>Title</label>
+        <input class="large" placeholder="Software Engineer" type="text" ng-model="formData.title">
+    </div>
+    <div class="field">
+        <label>Date</label>
+        <input class="medium" placeholder="June 2016 - Dec 3005" type="text" ng-model="formData.date">
+    </div>
+    <div class="field">
+        <label>Description</label>
+        <textarea ng-model="formData.description" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officia, magnam ipsam temporibus. Saepe obcaecati voluptas magni ab qui dolorem, eos nobis maiores ducimus ipsum, animi voluptatum repudiandae vitae impedit cumque, laborum eum, nam recusandae aliquam rerum eaque accusantium tempore ex? Maiores debitis explicabo non assumenda beatae illum quia est." type="text"></textarea>
+    </div>
+    <div class="field">
+        <label>Tags</label>
+        <div class="tags">
+            <input>
+        </div>
+    </div>
+    <div class="field last">
+        <label>Priority</label>
+        <input class="priority" type="range" value="0" ng-model="formData.priority">
+    </div>
+    <div class="options">
+        <button class="neutral" ng-click="hideModal('project')">Cancel</button><button class="good" ng-click="add('project')">Save</button>
+    </div>
+</div>

@@ -17,8 +17,8 @@ router.post('/', function(req, res){
     accomplishment.origin = req.body.origin;
     accomplishment.type = req.body.type;
     accomplishment.importance = req.body.importance;
-    accomplishment.facebookId = req.body.github || accomplishment.facebookId;
-    accomplishment.googleId = req.body.linkedIn || accomplishment.googleId;
+    accomplishment.facebookId = req.body.facebookId || accomplishment.facebookId;
+    accomplishment.googleId = req.body.googleId || accomplishment.googleId;
 
 
     accomplishment.save(function(err) {

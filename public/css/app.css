@@ -569,7 +569,7 @@ input[type=range]:focus::-ms-fill-upper {
 */
 
 #modal-bg {
-	z-index: 9998;
+	z-index: 99;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -580,13 +580,24 @@ input[type=range]:focus::-ms-fill-upper {
 
 .modal {
 	position: fixed;
-	/*z-index: 9999;*/
-  top: 10px;
-  left: 50px;
-	/*top: 50%;
-	left: 50%;*/
-	/*transform: translate(-50%, -50%);*/
+	z-index: 9999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	box-shadow: 0 0 40px rgba(0,0,0,0.2);
+}
+
+.work-modal {
+  display: none;
+}
+.ed-modal {
+  display: none;
+}
+.project-modal {
+  display: none;
+}
+.honor-modal {
+  display: none;
 }
 
 .accomplishment.edit {
