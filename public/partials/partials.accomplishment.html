@@ -1,6 +1,7 @@
-<!-- <div ng-repeat="accomplishment in accomplishments">
-    <accomplishment-card accomplishment="accomplishment"></accomplishment-card>
-</div> -->
+<div ng-include="'../templates/templates.work.html'"></div>
+<div ng-include="'../templates/templates.education.html'"></div>
+<div ng-include="'../templates/templates.project.html'"></div>
+<div ng-include="'../templates/templates.honor.html'"></div>
 <div id="accomplishments">
     <div class="col">
         <div class="col-header">
@@ -23,7 +24,7 @@
     <div class="col">
         <div class="col-header">
             <h1>Education</h1>
-            <div class="add" ng-click="addNew('education')"><i class="fa fa-plus-square-o"></i></div>
+            <div class="add" ng-click="addNew('ed')"><i class="fa fa-plus-square-o"></i></div>
         </div>
         <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
 			<accomplishment-card accomplishment="accomplishment"></accomplishment-card>
