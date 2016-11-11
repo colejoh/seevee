@@ -8,12 +8,10 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
     // Initial get for all the accomplishments
     $http.get("api/accomplishment").then(function(response){
       $scope.accomplishments = response.data;
-      console.log($scope.accomplishments);
     });
 
     // Function that is called when we want the modal to show
     $scope.addNew = function(type) {
-        console.log(type);
       if(type === 'work') {
         $(".work-modal").fadeIn();
       } else if (type === 'ed') {
