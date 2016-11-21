@@ -1,26 +1,20 @@
 var router = require('express').Router();
 var ResumeTemplate = require('../models/resumeTemplate');
+var templates = require('../templates/templates.json');
+var fs = require('fs');
 
 // Gets All Accomplishments
 router.get('/', function(req, res) {
-    res.json([
-        {
-            'title': 'Work Focused',
-            'description': 'Only shows work Accomplishments',
-            'html': "<div style='padding: 20px'><div style='text-align: center; font-size: 30px'>{{firstName}} {{lastName}}</div><br><br><div ng-repeat='item in items'>{{item.title}}<br>{{item.description}}<br><br></div></div>"
-        },
-        {
-            'title': 'First Name',
-            'description': 'This template will only show your first name',
-            'html': '<div>{{firstName}}</div>'
-        },
-        {
-            'title': 'Last Name',
-            'description': 'This template will only show your last name',
-            'html': '<div>{{lastName}}</div>'
-        }
-    ]);
-
+    var resTemplates = [];
+    var pathBase = "app/templates/";
+    for(var i = 0; i < templates.length; i++) {
+        var tmpObj = {};
+        tmpObj.title = templates[i].title;
+        tmpObj.description = templates[i].description;
+        tmpObj.html = fs.readFileSync(pathBase + templates[i].htmlPath, "utf8");
+        resTemplates.push(tmpObj);
+    }
+    res.json(resTemplates);
 });
 
 // Allows addition of new templates

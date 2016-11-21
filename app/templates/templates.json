@@ -1,7 +1,8 @@
 [
     {
-        "title": "default",
-        "description": "Default template to get started",
-        "path": "default.html"
+        "title": "Standard",
+        "description": "A standard template usable for many industries",
+        "htmlPath": "html/default.html",
+        "jadePath": "jade/default.jade"
     }
 ]
