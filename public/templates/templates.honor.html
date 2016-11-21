@@ -1,31 +1,29 @@
 <div id="modal-bg" class="honor-modal"></div>
 <div class="accomplishment new-modal edit honor-modal">
     <center>
-        Add Education Accomplishment
+        Add Honor Accomplishment
     </center>
     <div class="field">
         <label>Title</label>
         <input class="large" placeholder="Software Engineer" type="text" ng-model="formData.title">
     </div>
     <div class="field">
-        <label>Date</label>
-        <input class="medium" placeholder="June 2016 - Dec 3005" type="text" ng-model="formData.date">
+        <label>Award Date</label>
+        <input class="medium" placeholder="June 2016" type="text" ng-model="formData.date">
+    </div>
+    <div class="field">
+        <label>Awarded By</label>
+        <input class="medium" placeholder="Nobel" type="text" ng-model="formData.origin">
     </div>
     <div class="field">
         <label>Description</label>
         <textarea ng-model="formData.description" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officia, magnam ipsam temporibus. Saepe obcaecati voluptas magni ab qui dolorem, eos nobis maiores ducimus ipsum, animi voluptatum repudiandae vitae impedit cumque, laborum eum, nam recusandae aliquam rerum eaque accusantium tempore ex? Maiores debitis explicabo non assumenda beatae illum quia est." type="text"></textarea>
     </div>
-    <div class="field">
-        <label>Tags</label>
-        <div class="tags">
-            <input>
-        </div>
-    </div>
     <div class="field last">
         <label>Priority</label>
-        <input class="priority" type="range" value="0" ng-model="formData.priority">
+        <input class="priority" type="range" value="0" ng-model="formData.importance">
     </div>
     <div class="options">
-        <button class="neutral" ng-click="hideModal('honor')">Cancel</button><button class="good" ng-click="add('honor')">Save</button>
+        <button class="neutral" ng-click="hideModal('honor')">Cancel</button><button class="good" ng-click="save('honor')">Save</button>
     </div>
 </div>

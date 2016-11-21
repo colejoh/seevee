@@ -4,28 +4,26 @@
         Add Education Accomplishment
     </center>
     <div class="field">
-        <label>Title</label>
-        <input class="large" placeholder="Software Engineer" type="text" ng-model="formData.title">
+        <label>Degree Recieved</label>
+        <input class="large" placeholder="B.S. in Computer Science" type="text" ng-model="formData.title">
     </div>
     <div class="field">
-        <label>Date</label>
-        <input class="medium" placeholder="June 2016 - Dec 3005" type="text" ng-model="formData.date">
+        <label>Date Recieved</label>
+        <input class="medium" placeholder="May 2019" type="text" ng-model="formData.date">
     </div>
     <div class="field">
-        <label>Description</label>
-        <textarea ng-model="formData.description" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officia, magnam ipsam temporibus. Saepe obcaecati voluptas magni ab qui dolorem, eos nobis maiores ducimus ipsum, animi voluptatum repudiandae vitae impedit cumque, laborum eum, nam recusandae aliquam rerum eaque accusantium tempore ex? Maiores debitis explicabo non assumenda beatae illum quia est." type="text"></textarea>
+        <label>Institution</label>
+        <input class="medium" placeholder="Purdue University" type="text" ng-model="formData.origin">
     </div>
     <div class="field">
-        <label>Tags</label>
-        <div class="tags">
-            <input>
-        </div>
+        <label>Honors, Clubs, Awards</label>
+        <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text"></textarea>
     </div>
     <div class="field last">
         <label>Priority</label>
-        <input class="priority" type="range" value="0" ng-model="formData.priority">
+        <input class="priority" type="range" value="0" ng-model="formData.importance">
     </div>
     <div class="options">
-        <button class="neutral" ng-click="hideModal('ed')">Cancel</button><button class="good" ng-click="add('ed')">Save</button>
+        <button class="neutral" ng-click="hideModal('ed')">Cancel</button><button class="good" ng-click="save('ed')">Save</button>
     </div>
 </div>
