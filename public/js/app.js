@@ -1,4 +1,4 @@
-var seevee = angular.module('seevee', ['ngRoute']);
+var seevee = angular.module('seevee', ['ngRoute', 'ngSanitize']);
 
 seevee.config(function($routeProvider) {
     $routeProvider
@@ -17,5 +17,5 @@ seevee.config(function($routeProvider) {
     .when("/account", {
         templateUrl: '../partials/partials.account.html',
         controller: 'accountController'
-    })
+    });
 });
