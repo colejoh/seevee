@@ -238,6 +238,32 @@ input[type=range]:focus::-ms-fill-upper {
     background: #ccc;
 }
 
+
+
+
+/*
+-----------------------------------------------
+                  LAYOUT
+-----------------------------------------------
+*/
+.navbar-fixed-left {
+  width: 80px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 80px;
+}
+body > .container {
+  padding: 0px;
+}
+.row {
+  margin: 0;
+}
+
 /*
 -----------------------------------------------
                   NAV
@@ -561,7 +587,14 @@ input[type=range]:focus::-ms-fill-upper {
 .accomplishment .description {
   line-height: 1.6em;
 }
-
+.accomplishment-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    text-align: center;
+    padding-top: 5px;
+}
 /*
 -----------------------------------------------
                   NEW MODAL
@@ -578,13 +611,14 @@ input[type=range]:focus::-ms-fill-upper {
 	background: rgba(0,0,0,0.2);
 }
 
-.modal {
+.new-modal {
 	position: fixed;
 	z-index: 9999;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  display: ;
 }
 
 .work-modal {

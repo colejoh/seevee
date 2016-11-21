@@ -1,3 +1,4 @@
+var moment = require('moment');
 var router = require('express').Router();
 
 // router.get('/', function(req, res, next){
@@ -12,8 +13,8 @@ router.post('/', function(req, res){
 
     accomplishment.title = req.body.title;
     accomplishment.description = req.body.description;
-    accomplishment.dateStart = req.body.dateStart;
-    accomplishment.dateEnd = req.body.dateEnd;
+    accomplishment.dateStart = getFromDate(req.body.date);
+    accomplishment.dateEnd = getToDate(req.body.date);
     accomplishment.origin = req.body.origin;
     accomplishment.type = req.body.type;
     accomplishment.importance = req.body.importance;
@@ -28,6 +29,7 @@ router.post('/', function(req, res){
         res.json({ message: 'Accomplishment Created' });
     });
 });
+
 
 // Gets All Accomplishments
 router.get('/', function(req, res) {
@@ -84,5 +86,24 @@ router.delete('/:accomplishment_id', function(req, res) {
            res.json({ message: 'Successfully deleted' });
        });
 });
+
+function getFromDate(date) {
+    var str = date.substring(0, date.indexOf('-'));
+    str = str.trim();
+    str = str.toLowerCase();
+    return str.replace(/(^| )(\w)/g, function(x) {
+        return x.toUpperCase();
+    });
+}
+
+function getToDate(date) {
+    var str = date.substring(date.indexOf('-')+1, date.length);
+    str = str.trim();
+    str = str.toLowerCase();
+    return str.replace(/(^| )(\w)/g, function(x) {
+        return x.toUpperCase();
+    });
+}
+
 
 module.exports = router;
