@@ -11,8 +11,6 @@ var Accomplishment = require('../models/accomplishment');
 router.post('/', function(req, res){
     var accomplishment = new Accomplishment();
 
-
-
     accomplishment.title = req.body.title;
     accomplishment.description = req.body.description;
     accomplishment.dateStart = getFromDate(req.body.date);

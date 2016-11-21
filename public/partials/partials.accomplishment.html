@@ -2,42 +2,6 @@
 <div ng-include="'../templates/templates.education.html'"></div>
 <div ng-include="'../templates/templates.project.html'"></div>
 <div ng-include="'../templates/templates.honor.html'"></div>
-<!-- <div id="accomplishments">
-    <div class="col">
-        <div class="col-header">
-            <h1>Work</h1>
-            <div class="add" ng-click="addNew('work')"><i class="fa fa-plus-square-o"></i></div>
-        </div>
-        <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='work'">
-			<accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card>
-		</div>
-    </div>
-    <div class="col">
-        <div class="col-header">
-            <h1>Projects</h1>
-            <div class="add" ng-click="addNew('project')"><i class="fa fa-plus-square-o"></i></div>
-        </div>
-        <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='project'">
-			<accomplishment-card accomplishment="accomplishment"></accomplishment-card>
-		</div>
-    </div>
-    <div class="col">
-        <div class="col-header">
-            <h1>Education</h1>
-            <div class="add" ng-click="addNew('ed')"><i class="fa fa-plus-square-o"></i></div>
-        </div>
-        <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
-			<accomplishment-card accomplishment="accomplishment"></accomplishment-card>
-		</div>
-    </div>
-    <div class="col">
-        <div class="col-header">
-            <h1>Honors</h1>
-            <div class="add" ng-click="addNew('honor')"><i class="fa fa-plus-square-o"></i></div>
-        </div>
-
-    </div>
-</div> -->
 <div class="row" style="padding: 10px">
   <div class="col-sm-3">
     <div class="row">
@@ -50,7 +14,8 @@
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='work'">
-        <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card>
+        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+        <!-- <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card> -->
       </div>
     </div>
   </div>
@@ -65,7 +30,8 @@
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='project'">
-        <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card>
+        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+        <!-- <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card> -->
       </div>
     </div>
   </div>
@@ -80,7 +46,8 @@
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
-        <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card>
+        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+        <!-- <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card> -->
       </div>
     </div>
   </div>
@@ -95,7 +62,8 @@
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='honor'">
-        <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card>
+        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+        <!-- <accomplishment-card accomplishment="accomplishment" update="updateAccomplishments()"></accomplishment-card> -->
       </div>
     </div>
   </div>
