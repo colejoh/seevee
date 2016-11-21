@@ -3,12 +3,24 @@ var ResumeTemplate = require('../models/resumeTemplate');
 
 // Gets All Accomplishments
 router.get('/', function(req, res) {
-     ResumeTemplate.find(function(err, templates) {
-         if(err) {
-             res.send(err);
-         }
-         res.json(templates);
-     });
+    res.json([
+        {
+            'title': 'Work Focused',
+            'description': 'Only shows work Accomplishments',
+            'html': "<div style='padding: 20px'><div style='text-align: center; font-size: 30px'>{{firstName}} {{lastName}}</div><br><br><div ng-repeat='item in items'>{{item.title}}<br>{{item.description}}<br><br></div></div>"
+        },
+        {
+            'title': 'First Name',
+            'description': 'This template will only show your first name',
+            'html': '<div>{{firstName}}</div>'
+        },
+        {
+            'title': 'Last Name',
+            'description': 'This template will only show your last name',
+            'html': '<div>{{lastName}}</div>'
+        }
+    ]);
+
 });
 
 // Allows addition of new templates

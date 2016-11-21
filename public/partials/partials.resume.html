@@ -1,105 +1,18 @@
 <div id="templates">
-	<div class="template active">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
-	</div>
-	<div class="template">
-		<div class="preview"></div>
-		<div class="info">
-			<h1>Academic</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas, dolorum! Accusantium laborum iste cum temporibus placeat ipsam, veniam voluptas. Ad voluptas quae earum, consequatur aliquid veniam sequi, sunt et quas quasi voluptate</p>
-			<button>Set Theme...</button>
-			<a class="advanced">Customize theme...</a>
-		</div>
+	<div ng-repeat="template in templates" class="template active">
+			<div class="preview"></div>
+			<div class="info">
+				<h1>{{template.title}}</h1>
+				<p>{{template.description}}</p>
+				<button ng-click="setTemplate(template)">Set Theme...</button>
+			</div>
 	</div>
 </div>
+
 <div id="resume-container">
 	<div id="preview-wrapper">
 	<div class="preview">
-		{{items[0]}}
-		<br/>
-		<br/>
-		{{items[1]}}
-		<br/>
-		<br/>
-		{{items[2]}}
+		<div compile="template.html"></div>
 	</br/>
 	</div>
 		<div class="options">
