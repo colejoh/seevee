@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var Accomplishment = require('../models/accomplishment');
 
-// Gets All Accomplishments
+// Gets All Resume Data
 router.get('/', function(req, res) {
      Accomplishment.find(function(err, accomplishments) {
          if(err) {

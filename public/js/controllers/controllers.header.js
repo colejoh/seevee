@@ -3,10 +3,6 @@ seevee.controller("headerCtrl", ['$scope', '$location', '$window',
     $scope.path = $location.$$path;
     assignClasses();
 
-    // $scope.accomplishmentClass = 'nav-unselected';
-    // $scope.resumeClass = 'nav-unselected';
-    // $scope.accountClass = 'nav-unselected';
-
     $scope.go = function(location) {
       $scope.path = location;
       assignClasses();
