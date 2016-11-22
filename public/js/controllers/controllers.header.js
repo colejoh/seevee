@@ -12,14 +12,22 @@ seevee.controller("headerCtrl", ['$scope', '$location', '$window',
     function assignClasses() {
       if($scope.path == '/') {
         $scope.accomplishmentClass = 'nav-selected';
+        $scope.infoClass = 'nav-unselected';
+        $scope.resumeClass = 'nav-unselected';
+        $scope.accountClass = 'nav-unselected';
+    } else if ($scope.path == '/info') {
+        $scope.accomplishmentClass = 'nav-unselected';
+        $scope.infoClass = 'nav-selected';
         $scope.resumeClass = 'nav-unselected';
         $scope.accountClass = 'nav-unselected';
       } else if ($scope.path == '/resumes') {
         $scope.accomplishmentClass = 'nav-unselected';
+        $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-selected';
         $scope.accountClass = 'nav-unselected';
       } else if ($scope.path == '/account') {
         $scope.accomplishmentClass = 'nav-unselected';
+        $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-unselected';
         $scope.accountClass = 'nav-selected';
       }
