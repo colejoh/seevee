@@ -1,5 +1,5 @@
-seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '$interpolate',
-  function($scope, $location, $http, $sce, $interpolate) {
+seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '$q', '$interpolate',
+  function($scope, $location, $http, $sce, $interpolate, $q) {
     $scope.items = {};
     $scope.templates = {};
 
@@ -11,7 +11,6 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
     $scope.getItems = function() {
       $http.get("api/resumeItem").then(function(response){
         $scope.items = response.data;
-        console.log($scope.items);
       });
     };
 
@@ -26,6 +25,22 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
     // Sets the template from the choices
     $scope.setTemplate = function(template) {
       $scope.template = template;
+    };
+
+    $scope.render = function() {
+      $("#export-button").html("<img src='img/loader.svg' height='18px'> Exporting");
+      var fileName = 'Resume.pdf';
+      var a = document.createElement("a");
+      var options = {id: $scope.template.id};
+      document.body.appendChild(a);
+      $http.post('api/renderResume', options , { responseType: 'arraybuffer' }).then(function(response){
+        var file = new Blob([response.data], {type: 'application/pdf'});
+        var fileURL = window.URL.createObjectURL(file);
+        a.href = fileURL;
+        a.download = fileName;
+        a.click();
+        $("#export-button").html("Export");
+      });
     };
 
     $scope.getTemplates();
