@@ -1,5 +1,4 @@
 var router = require('express').Router();
-var ResumeTemplate = require('../models/resumeTemplate');
 var templates = require('../templates/templates.json');
 var fs = require('fs');
 
@@ -15,22 +14,6 @@ router.get('/', function(req, res) {
         resTemplates.push(tmpObj);
     }
     res.json(resTemplates);
-});
-
-// Allows addition of new templates
-router.post('/', function(req, res){
-    var template = new ResumeTemplate();
-
-    template.title = req.body.title;
-    template.description = req.body.description;
-    template.html = req.body.html;
-
-    template.save(function(err) {
-        if(err) {
-            res.send(err);
-        }
-        res.json({ message: 'Template Created' });
-    });
 });
 
 module.exports = router;

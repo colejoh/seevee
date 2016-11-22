@@ -2,10 +2,12 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
   function($scope, $location, $http, $sce, $interpolate) {
     $scope.items = {};
     $scope.templates = {};
+
+    // Temporary data for testing resumes
     $scope.firstName = "Cole";
     $scope.lastName = "Johnson";
 
-
+    // Gets all the resume data
     $scope.getItems = function() {
       $http.get("api/resumeItem").then(function(response){
         $scope.items = response.data;
@@ -13,6 +15,7 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
       });
     };
 
+    // Gets all the templates
     $scope.getTemplates = function() {
       $http.get("api/resumeTemplate").then(function(response){
         $scope.templates = response.data;
@@ -20,6 +23,7 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
       });
     };
 
+    // Sets the template from the choices
     $scope.setTemplate = function(template) {
       $scope.template = template;
     };

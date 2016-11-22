@@ -38,7 +38,7 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
       }
     };
 
-    // Function that is called when we're going to add an accomplishment
+    // Function that is called when we're going to add or update an accomplishment
     $scope.save = function(type) {
       if($scope.modalState == 'new') {
         $scope.formData.type = type;
@@ -56,6 +56,7 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
       }
     };
 
+    // Takes in the accomplishment and deletes it
     $scope.delete = function(accomplishment) {
       var accId = accomplishment._id;
       $http.delete("api/accomplishment/" + accId).then(function(res) {
@@ -63,13 +64,14 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
       });
     };
 
+    // Helps set up client for editing
     $scope.edit = function(accomplishment) {
       $scope.formData = accomplishment;
       $scope.formData.date = accomplishment.dateStart + ' - ' + accomplishment.dateEnd;
       $scope.showModal(accomplishment.type, 'edit');
     };
 
-      // Updates the list of accomplishments, usually after a CRUD is done
+    // Updates the list of accomplishments, usually after a CRUD is done
     $scope.updateAccomplishments = function() {
       $http.get("api/accomplishment").then(function(response){
         $scope.accomplishments = response.data;
