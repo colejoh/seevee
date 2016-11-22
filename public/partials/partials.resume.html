@@ -1,3 +1,6 @@
+<div class="downloading">
+	<span class="downloading-text">Downloading...</span>
+</div>
 <div id="templates">
 	<div ng-repeat="template in templates" class="template active">
 			<div class="preview"></div>
@@ -16,7 +19,7 @@
 	</br/>
 	</div>
 		<div class="options">
-			<button class="good" ng-click="render()" style="width: 100%">Export</button>
+			<button id="export-button" class="good" ng-click="render()" style="width: 100%">Export</button>
 		</div>
 	</div>
 </div>

@@ -28,6 +28,7 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
     };
 
     $scope.render = function() {
+      $("#export-button").html("<img src='img/loader.svg' height='20px'> Exporting");
       var fileName = 'Resume.pdf';
       var a = document.createElement("a");
       var options = {id: $scope.template.id};
@@ -38,6 +39,7 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
         a.href = fileURL;
         a.download = fileName;
         a.click();
+        $("#export-button").html("Export");
       });
     };
 
