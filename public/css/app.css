@@ -5,7 +5,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   box-shadow: none !important;
   border: none !important;
   outline: none;
@@ -38,6 +38,7 @@ body > .container {
 code {
   font-size: 80%;
 }
+
 /*
 -----------------------------------------------
                      BUTTONS
@@ -278,7 +279,7 @@ body > .container {
   float: right;
 }
 .side-nav {
-  background: #508DF1;
+  background: #3C4E74;
   width: 100%;
   height: 100%;
   color: #F5F5F1;
@@ -297,14 +298,14 @@ body > .container {
   margin-top: 25px;
 }
 .nav-button:hover {
-  box-shadow: inset 0px 0px 5px 0px rgba(40,70,120,0.75);
+  box-shadow: inset 0px 0px 5px 0px RGBA(44, 59, 92, 1.00);
   cursor: pointer;
 }
 .nav-unselected {
   box-shadow: none;
 }
 .nav-selected {
-  box-shadow: inset 0px 0px 5px 0px rgba(40,70,120,0.75);
+  box-shadow: inset 0px 0px 5px 0px RGBA(44, 59, 92, 1.00);
 }
 .nav-label {
   position: absolute;
@@ -314,18 +315,20 @@ body > .container {
   display: block;
   color: #fff;
   padding: 5px;
-  margin-top: -45px;
+  margin-top: -40px;
   text-align: center;
   display: none;
   border-radius: 2px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+  text-transform: uppercase;
+  color: #efefef;
 }
 .nav-label:after {
   content: ' ';
 	height: 0;
 	position: absolute;
 	width: 0;
-  top: 5px;
+  top: 2px;
   left: -19px;
 
 	border: 10px solid transparent;
@@ -558,20 +561,16 @@ body > .container {
   box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
   z-index: 0;
 }
-
-.accomplishment h1 {
+.accomplishment .title {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 24px;
   color: #373737;
   text-align: left;
   width: 100%;
   margin-bottom: 8px;
 }
-
 .accomplishment .time {
   padding: 4px 12px 3px 12px;
-  font-weight: 400;
-  font-size: 15px;
   color: #8A95A6;
   border: 1px solid #8A95A6;
   border-radius: 3px;
@@ -579,24 +578,19 @@ body > .container {
   text-align: center;
   display: inline-block;
 }
-
 .accomplishment .location {
   font-size: 20px;
   font-weight: 400;
   color: #8A95A6;
 }
-
 .accomplishment.project h2,
 .accomplishment.honor h2 {
   display: none;
 }
-
 .accomplishment.project time,
 .accomplishment.honor time {
   float: left;
 }
-
-
 .accomplishment div.priority {
 	position: absolute;
 	height: 5px;
@@ -610,10 +604,18 @@ body > .container {
 .accomplishment-actions {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -2px;
     width: 40px;
     text-align: center;
     padding-top: 5px;
+    color: #949494;
+}
+.accomplishment-actions i {
+  margin-bottom: 5px;
+}
+.accomplishment-actions i:hover {
+  color: #333;
+  cursor: pointer;
 }
 /*
 -----------------------------------------------
@@ -638,7 +640,6 @@ body > .container {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	box-shadow: 0 0 40px rgba(0,0,0,0.2);
-  display: ;
 }
 
 .work-modal {
@@ -657,7 +658,7 @@ body > .container {
 .accomplishment.edit {
 	width: 440px;
 	padding: 0;
-	padding-top: 40px;
+  padding-top: 10px;
 	border-radius: 5px;
 }
 
@@ -902,7 +903,9 @@ input.priority {
 	border-radius: 5px;
 	margin-bottom: 5px;
 }
-
+.template .info button:hover {
+  background: #E3CD20;
+}
 .template .info a.advanced {
 	color: #fff;
 }
@@ -1011,4 +1014,25 @@ input.priority {
 		border: none !important;
 		padding: 10px 0;
 	}
+}
+/*
+-----------------------------------------------
+                     FONTS
+-----------------------------------------------
+*/
+.small-caps {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+}
+.small-caps-light {
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+}
+.section-label {
+  margin: 10px;
+  color: RGBA(55, 55, 55, 1.00);
 }
