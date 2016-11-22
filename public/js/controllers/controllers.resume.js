@@ -4,8 +4,8 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
     $scope.templates = {};
 
     // Temporary data for testing resumes
-    $scope.firstName = "Cole";
-    $scope.lastName = "Johnson";
+    $scope.firstName = "John";
+    $scope.lastName = "Appleseed";
 
     // Gets all the resume data
     $scope.getItems = function() {
