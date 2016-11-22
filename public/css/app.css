@@ -279,7 +279,7 @@ body > .container {
   float: right;
 }
 .side-nav {
-  background: #508DF1;
+  background: #3C4E74;
   width: 100%;
   height: 100%;
   color: #F5F5F1;
@@ -298,14 +298,14 @@ body > .container {
   margin-top: 25px;
 }
 .nav-button:hover {
-  box-shadow: inset 0px 0px 5px 0px rgba(40,70,120,0.75);
+  box-shadow: inset 0px 0px 5px 0px RGBA(44, 59, 92, 1.00);
   cursor: pointer;
 }
 .nav-unselected {
   box-shadow: none;
 }
 .nav-selected {
-  box-shadow: inset 0px 0px 5px 0px rgba(40,70,120,0.75);
+  box-shadow: inset 0px 0px 5px 0px RGBA(44, 59, 92, 1.00);
 }
 .nav-label {
   position: absolute;
