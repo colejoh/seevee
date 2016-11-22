@@ -151,96 +151,91 @@ input::-moz-placeholder { color: #8A95A6; opacity: 0.5 }
 /* TODO: Consolidate this shit; */
 
 input[type=range] {
-    /*removes default webkit styles*/
-    -webkit-appearance: none;
+  /*removes default webkit styles*/
+  -webkit-appearance: none;
 
-    /*fix for FF unable to apply focus style bug */
-    border: 1px solid white;
+  /*fix for FF unable to apply focus style bug */
+  border: 1px solid white;
 
-    /*required for proper track sizing in FF*/
-    width: 300px;
+  /*required for proper track sizing in FF*/
+  width: 300px;
 }
 input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 5px;
-    background: #c4cad2;
-    border: none;
+  width: 300px;
+  height: 5px;
+  background: #c4cad2;
+  border: none;
 }
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #508DF1;
-    margin-top: -5px;
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #508DF1;
+  margin-top: -5px;
 }
 input[type=range]:focus {
-    outline: none;
+  outline: none;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #c4cad2;
+  background: #c4cad2;
 }
 
 input[type=range]::-moz-range-track {
-    width: 300px;
-    height: 5px;
-    background: #c4cad2;
-    border: none;
+  width: 300px;
+  height: 5px;
+  background: #c4cad2;
+  border: none;
 }
 input[type=range]::-moz-range-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #508DF1;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #508DF1;
 }
 
 /*hide the outline behind the border*/
 input[type=range]:-moz-focusring{
-    outline: 1px solid white;
-    outline-offset: -1px;
+  outline: 1px solid white;
+  outline-offset: -1px;
 }
-
 input[type=range]::-ms-track {
-    width: 300px;
-    height: 5px;
+  width: 300px;
+  height: 5px;
 
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-    background: transparent;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
 
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 6px 0;
 
-    /*remove default tick marks*/
-    color: transparent;
+  /*remove default tick marks*/
+  color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-    background: #777;
-    border-radius: 10px;
+  background: #777;
+  border-radius: 10px;
 }
 input[type=range]::-ms-fill-upper {
-    background: #ddd;
-    border-radius: 10px;
+  background: #ddd;
+  border-radius: 10px;
 }
 input[type=range]::-ms-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
 }
 input[type=range]:focus::-ms-fill-lower {
-    background: #888;
+  background: #888;
 }
 input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
+  background: #ccc;
 }
-
-
-
-
 /*
 -----------------------------------------------
                   LAYOUT
@@ -252,7 +247,6 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 0;
   height: 100%;
 }
-
 .navbar-fixed-left .navbar-nav > li {
   float: none;  /* Cancel default li float: left */
   width: 80px;
@@ -263,29 +257,28 @@ body > .container {
 .row {
   margin: 0;
 }
-
 /*
 -----------------------------------------------
                   NAV
 -----------------------------------------------
 */
 .left {
-    width: 80px;
-    height: 100vh;
-    display: block;
-    float: left;
-    position: fixed;
-    margin: 0;
-    padding: 0
+  width: 80px;
+  height: 100vh;
+  display: block;
+  float: left;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  z-index: 999;
 }
 .right {
-    width: calc(100% - 80px);
-    display: block;
-    float: right;
+  width: calc(100% - 80px);
+  display: block;
+  float: right;
 }
 .side-nav {
-  background: #373737;
-  /*background: #232E36;*/
+  background: #508DF1;
   width: 100%;
   height: 100%;
   color: #F5F5F1;
@@ -304,13 +297,39 @@ body > .container {
   margin-top: 25px;
 }
 .nav-button:hover {
-  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 5px 0px rgba(40,70,120,0.75);
+  cursor: pointer;
 }
 .nav-unselected {
   box-shadow: none;
 }
 .nav-selected {
-  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 5px 0px rgba(40,70,120,0.75);
+}
+.nav-label {
+  position: absolute;
+  left: 90px;
+  background: #373737;
+  z-index: 2147483647;
+  display: block;
+  color: #fff;
+  padding: 5px;
+  margin-top: -45px;
+  text-align: center;
+  display: none;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+.nav-label:after {
+  content: ' ';
+	height: 0;
+	position: absolute;
+	width: 0;
+  top: 5px;
+  left: -19px;
+
+	border: 10px solid transparent;
+	border-right-color: #373737;
 }
 /*
 -----------------------------------------------
@@ -537,6 +556,7 @@ body > .container {
   overflow: auto;
   border-radius: 4px;
   box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
+  z-index: 0;
 }
 
 .accomplishment h1 {
