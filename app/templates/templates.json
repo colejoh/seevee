@@ -4,6 +4,6 @@
         "title": "Standard",
         "description": "A standard template usable for many industries",
         "htmlPath": "html/default.html",
-        "jadePath": "jade/default.jade"
+        "pugPath": "pug/default.pug"
     }
 ]
