@@ -8,6 +8,7 @@ router.get('/', function(req, res) {
     var pathBase = "app/templates/";
     for(var i = 0; i < templates.length; i++) {
         var tmpObj = {};
+        tmpObj.id = templates[i].id;
         tmpObj.title = templates[i].title;
         tmpObj.description = templates[i].description;
         tmpObj.html = fs.readFileSync(pathBase + templates[i].htmlPath, "utf8");
