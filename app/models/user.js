@@ -5,8 +5,20 @@ var UserSchema = new Schema({
     firstName: String,
     lastName: String,
     email: String,
-    facebookId: String,
-    googleId: String,
+
+    facebook: {
+      id        : String,
+      token     : String,
+      name      : String,
+      email     : String
+    }
+
+    google: {
+      id        : String,
+      token     : String,
+      email     : String
+    }
+
     addressLine1: String,
     addressLine2: String,
     city: String,
@@ -15,7 +27,7 @@ var UserSchema = new Schema({
     website: String,
     github: String,
     linkedIn: String,
-    
+
 }, {collection: 'user'});
 
 module.exports = mongoose.model('User', UserSchema);
