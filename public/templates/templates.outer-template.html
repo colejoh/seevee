@@ -1,0 +1,101 @@
+<div id="modal-bg" class="main-modal"></div>
+<div class="accomplishment new-modal edit main-modal">
+    <div class="tabs">
+        <button ng-click="setTab('work')" ng-class="workClass" class="small-caps">Work</button>
+        <button ng-click="setTab('project')" ng-class="projectClass" class="small-caps" style="margin-left: -3px;">Project</button>
+        <button ng-click="setTab('ed')" ng-class="edClass" class="small-caps" style="margin-left: -4px;">Education</button>
+        <button ng-click="setTab('honor')" ng-class="honorClass" class="small-caps" style="margin-left: -4px;">Honor</button>
+    </div>
+    <div ng-if="mainType=='work'">
+        <div class="field">
+            <label>Job Title</label>
+            <input class="large" placeholder="Software Engineer" type="text" ng-model="formData.title">
+        </div>
+        <div class="field">
+            <label>Workplace</label>
+            <input class="medium" placeholder="Google" type="text" ng-model="formData.origin">
+        </div>
+        <div class="field">
+            <label>Dates Employeed</label>
+            <input class="medium" placeholder="May 2016 - Aug 2016" type="text" ng-model="formData.date">
+        </div>
+        <div class="field">
+            <label>Description and Accomplishments</label>
+            <textarea ng-model="formData.description" placeholder="Created new constant time sorting algorithm. Worked with a team of six to build a Twitter competetor." type="text"></textarea>
+        </div>
+        <div class="field last">
+            <label>Priority</label>
+            <input class="priority" type="range" value="0" ng-model="formData.importance">
+        </div>
+    </div>
+
+    <div ng-if="mainType=='project'">
+        <div class="field">
+            <label>Project Name</label>
+            <input class="large" placeholder="Seevee" type="text" ng-model="formData.title">
+        </div>
+        <div class="field">
+            <label>Date</label>
+            <input class="medium" placeholder="May 2019 - Jul 2016" type="text" ng-model="formData.date">
+        </div>
+        <div class="field">
+            <label>Project Description</label>
+            <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text"></textarea>
+        </div>
+        <div class="field last">
+            <label>Priority</label>
+            <input class="priority" type="range" value="0" ng-model="formData.importance">
+        </div>
+    </div>
+
+    <div ng-if="mainType=='ed'">
+        <div class="field">
+            <label>Degree Recieved</label>
+            <input class="large" placeholder="B.S. in Computer Science" type="text" ng-model="formData.title">
+        </div>
+        <div class="field">
+            <label>Date Recieved</label>
+            <input class="medium" placeholder="May 2019" type="text" ng-model="formData.date">
+        </div>
+        <div class="field">
+            <label>Institution</label>
+            <input class="medium" placeholder="Purdue University" type="text" ng-model="formData.origin">
+        </div>
+        <div class="field">
+            <label>Honors, Clubs, Awards</label>
+            <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text"></textarea>
+        </div>
+        <div class="field last">
+            <label>Priority</label>
+            <input class="priority" type="range" value="0" ng-model="formData.importance">
+        </div>
+    </div>
+
+    <div ng-if="mainType=='honor'">
+        <div class="field">
+            <label>Title</label>
+            <input class="large" placeholder="Software Engineer" type="text" ng-model="formData.title">
+        </div>
+        <div class="field">
+            <label>Award Date</label>
+            <input class="medium" placeholder="June 2016" type="text" ng-model="formData.date">
+        </div>
+        <div class="field">
+            <label>Awarded By</label>
+            <input class="medium" placeholder="Nobel" type="text" ng-model="formData.origin">
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea ng-model="formData.description" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officia, magnam ipsam temporibus. Saepe obcaecati voluptas magni ab qui dolorem, eos nobis maiores ducimus ipsum, animi voluptatum repudiandae vitae impedit cumque, laborum eum, nam recusandae aliquam rerum eaque accusantium tempore ex? Maiores debitis explicabo non assumenda beatae illum quia est." type="text"></textarea>
+        </div>
+        <div class="field last">
+            <label>Priority</label>
+            <input class="priority" type="range" value="0" ng-model="formData.importance">
+        </div>
+    </div>
+
+
+    <div class="options">
+        <button class="neutral small-caps gray" ng-click="newHide()">Cancel</button><button class="good small-caps" ng-click="newSave()">Save</button>
+    </div>
+</div>

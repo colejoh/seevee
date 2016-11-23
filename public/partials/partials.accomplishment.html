@@ -2,15 +2,27 @@
 <div ng-include="'../templates/templates.education.html'"></div>
 <div ng-include="'../templates/templates.project.html'"></div>
 <div ng-include="'../templates/templates.honor.html'"></div>
+<div ng-include="'../templates/templates.outer-template.html'"></div>
+<div class="row" style="padding: 10px">
+    <div class="col-md-3">
+      <button ng-click="newAdd()" class="add-accomplishment"><i class="fa fa-plus"></i>Add</button>
+    </div>
+    <div class="col-md-6">
+      <input class="main-search" placeholder="Search"/>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
 <div class="row" style="padding: 10px">
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Work
+        <span class="small-caps gray">Work</span>
       </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('work', 'new')"><i class="fa fa-plus-square-o"></i></div>
-      </div>
+      <!-- <div class="pull-right">
+        <div class="add-button" ng-click="showModal('work', 'new')"><i class="fa fa-plus"></i><span class="small-caps">add</span></div>
+      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='work'">
@@ -19,13 +31,13 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Project
+        <span class="small-caps gray">Project</span>
       </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('project', 'new')"><i class="fa fa-plus-square-o"></i></div>
-      </div>
+      <!-- <div class="pull-right">
+        <div class="add-button" ng-click="showModal('project', 'new')"><i class="fa fa-plus"></i><span class="small-caps">Add</span></div>
+      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='project'">
@@ -34,13 +46,13 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Education
+        <span class="small-caps gray">Education</span>
       </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('ed', 'new')"><i class="fa fa-plus-square-o"></i></div>
-      </div>
+      <!-- <div class="pull-right">
+        <div class="add-button" ng-click="showModal('ed', 'new')"><i class="fa fa-plus"></i><span class="small-caps">Add</span></div>
+      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
@@ -49,13 +61,13 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Honor
+        <span class="small-caps gray">Honor</span>
       </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('honor', 'new')"><i class="fa fa-plus-square-o"></i></div>
-      </div>
+      <!-- <div class="pull-right">
+        <div class="add-button" ng-click="showModal('honor', 'new')"><i class="fa fa-plus"></i><span class="small-caps">Add</span></div>
+      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='honor'">
