@@ -4,14 +4,11 @@
 <div ng-include="'../templates/templates.honor.html'"></div>
 <div ng-include="'../templates/templates.outer-template.html'"></div>
 <div class="row" style="padding: 10px">
-    <div class="col-md-3">
+    <div class="col-md-12">
       <button ng-click="newAdd()" class="add-accomplishment"><i class="fa fa-plus"></i>Add</button>
-    </div>
-    <div class="col-md-6">
-      <input class="main-search" placeholder="Search"/>
-    </div>
-    <div class="col-md-3">
-
+      <div class="pull-right">
+        <input ng-model="search" class="main-search" placeholder="Search" />
+      </div>
     </div>
 </div>
 <div class="row" style="padding: 10px">
@@ -20,9 +17,6 @@
       <div class="col-sm-6">
         <span class="small-caps gray">Work</span>
       </div>
-      <!-- <div class="pull-right">
-        <div class="add-button" ng-click="showModal('work', 'new')"><i class="fa fa-plus"></i><span class="small-caps">add</span></div>
-      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='work'">
@@ -35,9 +29,6 @@
       <div class="col-sm-6">
         <span class="small-caps gray">Project</span>
       </div>
-      <!-- <div class="pull-right">
-        <div class="add-button" ng-click="showModal('project', 'new')"><i class="fa fa-plus"></i><span class="small-caps">Add</span></div>
-      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='project'">
@@ -50,9 +41,6 @@
       <div class="col-sm-6">
         <span class="small-caps gray">Education</span>
       </div>
-      <!-- <div class="pull-right">
-        <div class="add-button" ng-click="showModal('ed', 'new')"><i class="fa fa-plus"></i><span class="small-caps">Add</span></div>
-      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
@@ -65,9 +53,6 @@
       <div class="col-sm-6">
         <span class="small-caps gray">Honor</span>
       </div>
-      <!-- <div class="pull-right">
-        <div class="add-button" ng-click="showModal('honor', 'new')"><i class="fa fa-plus"></i><span class="small-caps">Add</span></div>
-      </div> -->
     </div>
     <div class="row">
       <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='honor'">
