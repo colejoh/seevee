@@ -2,14 +2,20 @@
 <div ng-include="'../templates/templates.education.html'"></div>
 <div ng-include="'../templates/templates.project.html'"></div>
 <div ng-include="'../templates/templates.honor.html'"></div>
+<div ng-include="'../templates/templates.outer-template.html'"></div>
+<div class="row" style="padding: 10px">
+    <div class="col-md-12">
+      <button ng-click="newAdd()" class="add-accomplishment"><i class="fa fa-plus"></i>Add</button>
+      <div class="pull-right">
+        <input ng-model="search" class="main-search" placeholder="Search" />
+      </div>
+    </div>
+</div>
 <div class="row" style="padding: 10px">
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Work
-      </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('work', 'new')"><i class="fa fa-plus-square-o"></i></div>
+        <span class="small-caps gray">Work</span>
       </div>
     </div>
     <div class="row">
@@ -19,12 +25,9 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Project
-      </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('project', 'new')"><i class="fa fa-plus-square-o"></i></div>
+        <span class="small-caps gray">Project</span>
       </div>
     </div>
     <div class="row">
@@ -34,12 +37,9 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Education
-      </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('ed', 'new')"><i class="fa fa-plus-square-o"></i></div>
+        <span class="small-caps gray">Education</span>
       </div>
     </div>
     <div class="row">
@@ -49,12 +49,9 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
       <div class="col-sm-6">
-        Honor
-      </div>
-      <div class="pull-right">
-        <div class="add" ng-click="showModal('honor', 'new')"><i class="fa fa-plus-square-o"></i></div>
+        <span class="small-caps gray">Honor</span>
       </div>
     </div>
     <div class="row">

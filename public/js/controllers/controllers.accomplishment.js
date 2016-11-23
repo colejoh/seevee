@@ -5,6 +5,7 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
     $scope.formData = {};
     $scope.accomplishments = {};
     $scope.modalState = '';
+    $scope.mainType = 'work';
 
     // Initial get for all the accomplishments
     $http.get("api/accomplishment").then(function(response){
@@ -36,6 +37,7 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
       } else if (type === 'honor') {
         $(".honor-modal").fadeOut();
       }
+      $scope.formData = {};
     };
 
     // Function that is called when we're going to add or update an accomplishment
@@ -78,6 +80,50 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
       });
     };
 
+    $scope.newSave = function() {
+      $scope.formData.type = $scope.mainType;
+      $http.post("api/accomplishment", $scope.formData).then(function(res) {
+        $scope.updateAccomplishments();
+        $scope.newHide();
+        $scope.formData = {};
+      });
+    };
+
+    $scope.newAdd = function() {
+      $(".main-modal").fadeIn();
+    };
+
+    $scope.newHide = function() {
+      $(".main-modal").fadeOut();
+    };
+
+    $scope.setTab = function(type) {
+      $scope.mainType = type;
+      if(type=='work') {
+        $scope.workClass = 'selected';
+        $scope.projectClass = 'unselected';
+        $scope.edClass = 'unselected';
+        $scope.honorClass = 'unselected';
+      } else if (type == 'project') {
+        $scope.workClass = 'unselected';
+        $scope.projectClass = 'selected';
+        $scope.edClass = 'unselected';
+        $scope.honorClass = 'unselected';
+      } else if (type == 'ed') {
+        $scope.workClass = 'unselected';
+        $scope.projectClass = 'unselected';
+        $scope.edClass = 'selected';
+        $scope.honorClass = 'unselected';
+      } else if (type == 'honor') {
+        $scope.workClass = 'unselected';
+        $scope.projectClass = 'unselected';
+        $scope.edClass = 'unselected';
+        $scope.honorClass = 'selected';
+      }
+    };
+
+    //Classes for tabs
+    $scope.setTab('work');
 
   }
 ]);
