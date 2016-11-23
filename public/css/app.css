@@ -279,7 +279,7 @@ body > .container {
   float: right;
 }
 .side-nav {
-  background: #2A2D43;
+  background: #2A3143;
   width: 100%;
   height: 100%;
   color: #F5F5F1;
@@ -296,7 +296,7 @@ body > .container {
 }
 .nav-button i {
   margin-top: 25px;
-  color: #807490;
+  color: #747B90;
 }
 .nav-button:hover {
   cursor: pointer;
@@ -310,10 +310,10 @@ body > .container {
 .nav-label {
   position: absolute;
   left: 75px;
-  background: #FDFF58;
+  background: #2A3143;
   z-index: 2147483647;
   display: block;
-  color: #373737;
+  color: #fff;
   padding: 5px;
   margin-top: -40px;
   text-align: center;
@@ -331,13 +331,18 @@ body > .container {
   left: -19px;
 
 	border: 10px solid transparent;
-	border-right-color: #FDFF58;
+	border-right-color: #2A3143;
 }
 /*
 -----------------------------------------------
                   HEADER
 -----------------------------------------------
 */
+.breadcrumb {
+  border-radius: 0px;
+  height: 50px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
 
 #header {
 	width: 100%;
@@ -567,9 +572,10 @@ body > .container {
 .main-search {
   background: #fff;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 15px;
   margin: 10px 0px;
-  padding: 10px;
+  padding: 0px 20px;
+  width: 100%;
 }
 .add-button {
   background: #92C55A;
@@ -594,7 +600,7 @@ body > .container {
   margin-bottom: 20px;
   padding: 18px 20px;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   border-radius: 4px;
   box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
   z-index: 0;
@@ -934,14 +940,12 @@ input.priority {
 	top: 0;
 	right: 0;
 }
-
 .template .info h1 {
 	font-weight: 500;
 	font-size: 35px;
 	color: #fff;
 	margin-bottom: 8px;
 }
-
 .template .info p {
 	font-size: 12px;
 	color: #FFFFFF;
@@ -949,7 +953,6 @@ input.priority {
 	max-width: 200px;
 	margin-bottom: 10px;
 }
-
 .template .info button {
 	width: 200px;
 	height: 40px;
