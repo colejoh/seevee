@@ -1,10 +1,10 @@
 <div id="modal-bg" class="main-modal"></div>
 <div class="accomplishment new-modal edit main-modal">
     <div class="tabs">
-        <button ng-click="setTab('work')" ng-class="workClass" class="small-caps">Work</button>
-        <button ng-click="setTab('project')" ng-class="projectClass" class="small-caps" style="margin-left: -3px;">Project</button>
-        <button ng-click="setTab('ed')" ng-class="edClass" class="small-caps" style="margin-left: -4px;">Education</button>
-        <button ng-click="setTab('honor')" ng-class="honorClass" class="small-caps" style="margin-left: -4px;">Honor</button>
+        <button ng-click="setTab('work')" ng-class="workClass" class="small-caps-light gray">Work</button>
+        <button ng-click="setTab('project')" ng-class="projectClass" class="small-caps-light gray" style="margin-left: -4px;">Project</button>
+        <button ng-click="setTab('ed')" ng-class="edClass" class="small-caps-light gray" style="margin-left: -4px;">Education</button>
+        <button ng-click="setTab('honor')" ng-class="honorClass" class="small-caps-light gray" style="margin-left: -4px;">Honor</button>
     </div>
     <div ng-if="mainType=='work'">
         <div class="field">
@@ -40,7 +40,7 @@
         </div>
         <div class="field">
             <label>Project Description</label>
-            <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text"></textarea>
+            <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text" style="height: 141px"></textarea>
         </div>
         <div class="field last">
             <label>Priority</label>
@@ -96,6 +96,6 @@
 
 
     <div class="options">
-        <button class="neutral small-caps gray" ng-click="newHide()">Cancel</button><button class="good small-caps" ng-click="newSave()">Save</button>
+        <button class="neutral small-caps-light gray" ng-click="newHide()">Cancel</button><button class="good small-caps-light" ng-click="newSave()">Save</button>
     </div>
 </div>
