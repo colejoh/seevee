@@ -11,19 +11,22 @@ var UserSchema = new Schema({
       name      : String,
       email     : String
     },
-    google: {
-      id        : String,
-      token     : String,
-      email     : String
+    info: {
+      displayName: String,
+      phoneNumber: String,
+      industry: String
     },
-    addressLine1: String,
-    addressLine2: String,
-    city: String,
-    state: String,
-    phoneNumber: String,
-    website: String,
-    github: String,
-    linkedIn: String,
+    online: {
+      website: String,
+      github: String,
+      linkedIn: String
+    },
+    address: {
+      addressLine1: String,
+      addressLine2: String,
+      city: String,
+      state: String,
+    }
 }, {collection: 'user'});
 
 module.exports = mongoose.model('User', UserSchema);
