@@ -930,6 +930,45 @@ input.priority {
 }
 /*
 -----------------------------------------------
+              ACCOUNT PAGE
+-----------------------------------------------
+*/
+.account {
+  padding: 10px;
+}
+.panel {
+  padding: 10px;
+}
+.account-panel-header {
+  margin-bottom: 10px;
+}
+.account-input {
+  border: 2px solid #EDECEB;
+  padding: 5px;
+  font-size: 11px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.account-input:focus {
+  border: 2px solid #7F7B7E;
+}
+.account-save {
+  background: #508DF1;
+  height: 30px;
+  width: 100px;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 2px solid #3769BD;
+  color: #fff;
+}
+.account-save:hover {
+  background: #69A0FA;
+  border: 2px solid #508DF1;
+}
+/*
+-----------------------------------------------
                RESUME TEMPLATES
 -----------------------------------------------
 */
@@ -1060,6 +1099,7 @@ input.priority {
 	color: #8A95A6;
 	text-align: center;
 }
+
 
 /*
 -----------------------------------------------

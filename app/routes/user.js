@@ -53,30 +53,33 @@ router.get('/:user_id', function(req, res) {
 
 // Updates Specific User
 router.put('/:user_id', function(req, res) {
-     User.findById(req.params.user_id, function(err, user) {
-         if(err) {
-             res.send(err);
-         }
-
-         user.firstName = req.body.firstName || user.firstName;
-         user.lastName = req.body.lastName || user.lastName;
-         user.email = req.body.email || user.email;
-         user.addressLine1 = req.body.addressLine1 || user.addressLine1;
-         user.addressLine2 = req.body.addressLine2 || user.addressLine2;
-         user.city = req.body.city || user.city;
-         user.state = req.body.state || user.state;
-         user.phoneNumber = req.body.phoneNumber || user.phoneNumber;
-         user.website = req.body.website || user.website;
-         user.github = req.body.github || user.github;
-         user.linkedIn = req.body.linkedIn || user.linkedIn;
-
-         user.save(function(err) {
+    if(req.params.user_id == req.session.passport.user._id) {
+        User.findById(req.params.user_id, function(err, user) {
             if(err) {
                 res.send(err);
             }
-            res.json({message: 'Successfully Updated'});
-         });
-     });
+
+            user.firstName = req.body.user.firstName || user.firstName;
+            user.lastName = req.body.user.lastName || user.lastName;
+            user.email = req.body.user.email || user.email;
+
+            user.address.addressLine1 = req.body.address.addressLine1 || user.address.addressLine1;
+            user.address.addressLine2 = req.body.address.addressLine2 || user.address.addressLine2;
+            user.address.city = req.body.address.city || user.address.city;
+            user.address.state = req.body.address.state || user.address.state;
+            user.address.zip = req.body.address.zip || user.address.zip;
+
+            user.save(function(err) {
+               if(err) {
+                   res.send(err);
+               }
+               res.json({message: 'Successfully Updated'});
+            });
+        });
+    } else {
+        res.sendStatus(401);
+    }
+
 });
 
 // Deletes Specific User
