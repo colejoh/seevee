@@ -15,7 +15,7 @@ var UserSchema = new Schema({
       id        : String,
       token     : String,
       email     : String
-  },
+    },
     addressLine1: String,
     addressLine2: String,
     city: String,
@@ -24,11 +24,6 @@ var UserSchema = new Schema({
     website: String,
     github: String,
     linkedIn: String,
-
 }, {collection: 'user'});
-
-function findUserByFacebookId(facebookId) {
-    return UserModel.findOne({'facebook.id': facebookId});
-}
 
 module.exports = mongoose.model('User', UserSchema);

@@ -10,7 +10,8 @@ var AccomplishmentSchema = new Schema({
     type: String,
     importance: Number,
     facebookId: String,
-    googleId: String
+    googleId: String,
+    userId: String
 }, {collection: 'accomplishment'});
 
 module.exports = mongoose.model('Accomplishment', AccomplishmentSchema);
