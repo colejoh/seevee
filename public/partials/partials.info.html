@@ -1,22 +1,41 @@
-<div class="row" style="padding: 25px;">
-    <div class="small-caps-light gray section-header">
-        Name
+<div class="row info">
+    <div class="col-md-6">
+        <div class="small-caps-light gray info-card-header">Your Info</div>
+        <div class="info-card">
+            <div class="small-caps-light gray">Display Name</div>
+            <input class="info-input" ng-model="your.name"/>
+
+            <div class="small-caps-light gray">Phone Number</div>
+            <input class="info-input" ng-model="your.number"/>
+
+            <div class="small-caps-light gray">Industry</div>
+            <input class="info-input" ng-model="your.industry"/>
+            <button class="info-save" ng-click="save('your')">Save</button>
+            <span class="small-caps-light gray">{{messages.your}}</span>
+        </div>
+
+        <div class="small-caps-light gray info-card-header">Skills</div>
+        <div class="info-card">
+            <div class="small-caps-light gray">Skills (Separated by comma)</div>
+            <input class="info-input" ng-model="skills"/>
+            <button class="info-save" ng-click="save('skills')">Save</button>
+            <span class="small-caps-light gray">{{messages.skills}}</span>
+        </div>
     </div>
-    <input class="medium" />
-    <div class="small-caps-light gray section-header">
-        Webiste
+    <div class="col-md-6">
+        <div class="small-caps-light gray info-card-header">Online Profiles</div>
+        <div class="info-card">
+
+            <div class="small-caps-light gray">Webiste</div>
+            <input class="info-input" ng-model="online.website"/>
+
+            <div class="small-caps-light gray">LinkedIn</div>
+            <input class="info-input" ng-model="online.linkedin"/>
+
+            <div class="small-caps-light gray">Github</div>
+            <input class="info-input" ng-model="online.github"/>
+            <button class="info-save" ng-click="save('online')">Save</button>
+            <span class="small-caps-light gray">{{messages.online}}</span>
+        </div>
     </div>
-    <input class="medium" />
-    <div class="small-caps-light gray section-header">
-        LinkedIn
-    </div>
-    <input class="medium" />
-    <div class="small-caps-light gray section-header">
-        Github
-    </div>
-    <input class="medium" />
-    <div class="small-caps-light gray section-header">
-        Industry
-    </div>
-    <input class="medium" />
 </div>

@@ -9,7 +9,6 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
 
     // Initial get for all the accomplishments
     $http.get("api/accomplishment").then(function(response){
-      console.log(response.data);
       $scope.accomplishments = response.data;
     });
 

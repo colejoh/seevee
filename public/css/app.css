@@ -887,6 +887,49 @@ input.priority {
 }
 /*
 -----------------------------------------------
+               INFO PAGE
+-----------------------------------------------
+*/
+.info {
+    padding: 10px;
+}
+.info-card {
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+}
+.info-card-header {
+  margin-bottom: 10px;
+}
+.info-input {
+  border: 2px solid #EDECEB;
+  padding: 5px;
+  font-size: 11px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.info-input:focus {
+  border: 2px solid #7F7B7E;
+}
+.info-save {
+  background: #508DF1;
+  height: 30px;
+  width: 100px;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 2px solid #3769BD;
+  color: #fff;
+}
+.info-save:hover {
+  background: #69A0FA;
+  border: 2px solid #508DF1;
+}
+/*
+-----------------------------------------------
                RESUME TEMPLATES
 -----------------------------------------------
 */
