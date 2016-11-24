@@ -1,5 +1,5 @@
-seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
-  function($scope, $location, $http) {
+seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$location', '$http',
+  function($scope, $rootScope, $location, $http) {
 
     // Accomplishment Model, Hold all the info from the modal
     $scope.formData = {};
@@ -9,6 +9,7 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
 
     // Initial get for all the accomplishments
     $http.get("api/accomplishment").then(function(response){
+      console.log(response.data);
       $scope.accomplishments = response.data;
     });
 
@@ -44,6 +45,7 @@ seevee.controller("accomplishmentController", ['$scope', '$location', '$http',
     $scope.save = function(type) {
       if($scope.modalState == 'new') {
         $scope.formData.type = type;
+        $scope.formData.userId = $rootScope.currentUser._id;
         $http.post("api/accomplishment", $scope.formData).then(function(res) {
           $scope.updateAccomplishments();
           $scope.hideModal(type);
