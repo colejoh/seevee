@@ -1,5 +1,7 @@
 seevee.controller("loginController", ['$scope', '$location',
   function($scope, $location) {
-      $scope.title = "fuck";
+      $scope.login = function() {
+          window.location = "/api/auth/facebook";
+      };
   }
 ]);

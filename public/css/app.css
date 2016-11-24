@@ -60,58 +60,53 @@ code {
                      LOGIN
 -----------------------------------------------
 */
-.login-header {
-  height: 70px;
-  line-height: 70px;
-}
-.login-header h1 {
-  font-size: 36px;
-  padding-left: 20px;
-  color: #508DF1;
-  display: inline-block;
-  font-weight: bolder;
-}
-nav {
-  display: inline-block;
-  float: right;
-  padding-right: 20px;
-}
-nav .nav-item {
-  display: inline-block;
-  padding: 0px 10px;
-  color: #373737;
-}
-.login-box {
-  padding: 20px;
-  height: 300px;
+.login {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   background: #fff;
-  width: 300px;
-  margin: 0px auto;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-  border-top: 1px solid #373737;
-  border-left: 1px solid #373737;
-  border-right: 1px solid #373737;
-  margin-top: 100px;
+  z-index: 999999;
 }
-.login-box h3 {
-    text-align: center;
-    color: #373737;
+.login-area {
+  width: 350px;
+  height: 100%;
+  padding: 50px 10px;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
-.login-box label {
-  font-weight: 400;
+.login-img {
 }
-.login-button-wrapper {
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+.login-header {
+  font-size: 40px;
+  color: #373737;
+  font-weight: bold;
 }
 .login-button {
   width: 100%;
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
+  background: #3B5998;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
 }
-
+.login-button:hover {
+  cursor: pointer;
+  background: #4263A8;
+}
+.login-picture {
+  width: calc(100% - 350px);
+  float: right;
+  height: 100%;
+}
 /*
 -----------------------------------------------
                   MAIN CSS
