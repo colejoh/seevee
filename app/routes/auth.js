@@ -14,7 +14,8 @@ router.get('/facebook/callback/',
 var facebookConfig = {
     clientID        : 1752159591713874,
     clientSecret    : '60bc805973bfdf0d25b40fa9091234b8',
-    callbackURL     : 'http://localhost:8080/api/auth/facebook/callback'
+    callbackURL     : 'http://localhost:8080/api/auth/facebook/callback',
+    profileFields   : ['email', 'age_range', 'education', 'gender', 'location', 'name', 'verified']
 };
 
 passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
@@ -29,14 +30,21 @@ function facebookStrategy(token, refreshToken, profile, done) {
             if(user) {
                 return done(null, user);
             } else {
-                var names = profile.displayName.split(" ");
                 var newFacebookUser = {
-                    lastName:  names[1],
-                    firstName: names[0],
-                    email:     profile.emails ? profile.emails[0].value:"",
+                    lastName:  profile.name.givenName,
+                    firstName: profile.name.familyName,
+                    email:     profile.emails[0].value,
+                    gender:    profile.gender,
+                    ageRange: {
+                        min: profile._json.age_range.min,
+                        max: profile._json.age_range.max
+                    },
+                    facebookVerified: profile._json.verified,
                     facebook: {
                         id:    profile.id,
-                        token: token
+                        token: token,
+                        name: profile.name.givenName + ' ' + profile.name.familyName,
+                        email: profile.emails[0].value
                     }
                 };
                 return User.create(newFacebookUser);

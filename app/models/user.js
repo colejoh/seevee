@@ -26,7 +26,15 @@ var UserSchema = new Schema({
       addressLine2: String,
       city: String,
       state: String,
-    }
+    },
+    ageRange: {
+        min: Number,
+        max: Number
+    },
+    education: String,
+    gender: String,
+    location: String,
+    facebookVerified: String
 }, {collection: 'user'});
 
 module.exports = mongoose.model('User', UserSchema);
