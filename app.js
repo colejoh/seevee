@@ -2,6 +2,11 @@ var express    = require('express');
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var logger     = require('morgan');
+var session    = require('express-session');
+var config     = require('./config');
+var multer     = require('multer');
+var cookie     = require('cookie-parser');
+var passport   = require('passport');
 var app        = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -10,8 +15,16 @@ app.use(express.static(__dirname + '/public'));
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+multer();
 app.use(logger('dev'));
-
+app.use(session({
+    secret: config.secret,
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(cookie());
+app.use(passport.initialize());
+app.use(passport.session());
 mongoose.connect('mongodb://localhost:27017/seevee');
 
 var port = process.env.PORT || 8080;        // set our port

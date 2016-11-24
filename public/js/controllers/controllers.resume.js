@@ -1,11 +1,11 @@
-seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '$q', '$interpolate',
-  function($scope, $location, $http, $sce, $interpolate, $q) {
+seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$http', '$sce', '$q', '$interpolate',
+  function($scope, $location, $http, $sce, $interpolate, $q, $rootScope) {
     $scope.items = {};
     $scope.templates = {};
 
     // Temporary data for testing resumes
-    $scope.firstName = "John";
-    $scope.lastName = "Appleseed";
+    $scope.firstName = $rootScope.currentUser.firstName;
+    $scope.lastName = $rootScope.currentUser.lastName;
 
     // Gets all the resume data
     $scope.getItems = function() {
@@ -47,4 +47,4 @@ seevee.controller("resumeController", ['$scope', '$location', '$http', '$sce', '
     $scope.getItems();
 
   }
-]);
+);
