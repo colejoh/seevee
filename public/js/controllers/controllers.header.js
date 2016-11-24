@@ -1,5 +1,5 @@
-seevee.controller("headerCtrl", ['$scope', '$location', '$window',
-  function($scope, $location, $window) {
+seevee.controller("headerCtrl", ['$scope', '$location', '$window', '$http',
+  function($scope, $location, $window, $http) {
     $scope.path = $location.$$path;
     assignClasses();
 
@@ -7,6 +7,11 @@ seevee.controller("headerCtrl", ['$scope', '$location', '$window',
       $scope.path = location;
       assignClasses();
       $location.path(location);
+    };
+
+    $scope.logout = function() {
+      $http.post("/api/user/logout");
+      $location.url('/login');
     };
 
     function assignClasses() {
@@ -60,6 +65,13 @@ seevee.controller("headerCtrl", ['$scope', '$location', '$window',
     });
     $("#account-nav-button").mouseleave(function(){
       $("#account-nav-label").hide();
+    });
+
+    $("#log-out-nav-button").mouseenter(function(){
+      $("#log-out-nav-label").show();
+    });
+    $("#log-out-nav-button").mouseleave(function(){
+      $("#log-out-nav-label").hide();
     });
   }
 ]);

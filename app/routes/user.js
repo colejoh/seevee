@@ -1,6 +1,10 @@
 var router = require('express').Router();
 var User = require('../models/user');
 
+router.get('/loggedin',function(req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0');
+});
+
 // Creates New User
 router.post('/', function(req, res){
     var user = new User();
@@ -85,6 +89,11 @@ router.delete('/:user_id', function(req, res) {
 
            res.json({ message: 'Successfully deleted' });
        });
+});
+
+router.post('/logout', function(req, res) {
+    req.logOut();
+    res.sendStatus(200);
 });
 
 module.exports = router;
