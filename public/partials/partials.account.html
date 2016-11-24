@@ -1,3 +1,30 @@
-<div class="row" style="padding: 10px;">
-    <span class="small-caps-light gray">Account</span>
+<div class="account">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="small-caps-light gray">Account</div>
+                <hr />
+                <span class="small-caps-light gray">Email</span>
+                <input class="account-input" ng-model="user.email"/>
+                <span class="small-caps-light gray">First Name</span>
+                <input class="account-input" ng-model="user.firstName"/>
+                <span class="small-caps-light gray">Last Name</span>
+                <input class="account-input" ng-model="user.lastName"/>
+                <hr />
+                <span class="small-caps-light gray">Address Line 1</span>
+                <input class="account-input" ng-model="address.addressLine1"/>
+                <span class="small-caps-light gray">Address Line 2</span>
+                <input class="account-input" ng-model="address.addressLine2"/>
+                <span class="small-caps-light gray">City</span>
+                <input class="account-input" ng-model="address.city"/>
+                <span class="small-caps-light gray">State</span>
+                <input class="account-input" ng-model="address.state"/>
+                <span class="small-caps-light gray">Zip</span>
+                <input class="account-input" ng-model="address.zip"/>
+                <hr />
+                <button class="account-save" ng-click="save()">save</button>
+                <span class="small-caps-light gray">{{saveMessage}}</span>
+            </div>
+        </div>
+    </div>
 </div>
