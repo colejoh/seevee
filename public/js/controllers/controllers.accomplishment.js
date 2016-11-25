@@ -6,6 +6,7 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
     $scope.accomplishments = {};
     $scope.modalState = '';
     $scope.mainType = 'work';
+    $scope.errorMessage = '';
 
     // Initial get for all the accomplishments
     $http.get("api/accomplishment").then(function(response){
@@ -91,6 +92,8 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
           $scope.newHide();
           $scope.formData = {};
         });
+      } else {
+        $scope.errorMessage = 'Please fill in all forms';
       }
     };
 

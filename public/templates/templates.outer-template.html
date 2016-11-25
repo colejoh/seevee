@@ -6,6 +6,7 @@
         <button ng-click="setTab('ed')" ng-class="edClass" class="small-caps-light gray" style="margin-left: -4px;">Education</button>
         <button ng-click="setTab('honor')" ng-class="honorClass" class="small-caps-light gray" style="margin-left: -4px;">Honor</button>
     </div>
+    <div class="small-caps-light" style="color: #ED513F; margin: 10px 20px;">{{errorMessage}}</div>
     <div ng-if="mainType=='work'">
         <div class="field">
             <label>Job Title</label>
