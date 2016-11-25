@@ -42,20 +42,22 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
 
     // Function that is called when we're going to add or update an accomplishment
     $scope.save = function(type) {
-      if($scope.modalState == 'new') {
-        $scope.formData.type = type;
-        $scope.formData.userId = $rootScope.currentUser._id;
-        $http.post("api/accomplishment", $scope.formData).then(function(res) {
-          $scope.updateAccomplishments();
-          $scope.hideModal(type);
-          $scope.formData = {};
-        });
-      } else if ($scope.modalState == 'edit') {
-        $http.put("api/accomplishment/" + $scope.formData._id, $scope.formData).then(function(res) {
-          $scope.updateAccomplishments();
-          $scope.hideModal($scope.formData.type);
-          $scope.formData = {};
-        });
+      if(canSave(type)){
+          if($scope.modalState == 'new') {
+            $scope.formData.type = type;
+            $scope.formData.userId = $rootScope.currentUser._id;
+            $http.post("api/accomplishment", $scope.formData).then(function(res) {
+              $scope.updateAccomplishments();
+              $scope.hideModal(type);
+              $scope.formData = {};
+            });
+          } else if ($scope.modalState == 'edit') {
+            $http.put("api/accomplishment/" + $scope.formData._id, $scope.formData).then(function(res) {
+              $scope.updateAccomplishments();
+              $scope.hideModal($scope.formData.type);
+              $scope.formData = {};
+            });
+          }
       }
     };
 
@@ -82,12 +84,14 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
     };
 
     $scope.newSave = function() {
-      $scope.formData.type = $scope.mainType;
-      $http.post("api/accomplishment", $scope.formData).then(function(res) {
-        $scope.updateAccomplishments();
-        $scope.newHide();
-        $scope.formData = {};
-      });
+      if(canSave($scope.mainType)) {
+        $scope.formData.type = $scope.mainType;
+        $http.post("api/accomplishment", $scope.formData).then(function(res) {
+          $scope.updateAccomplishments();
+          $scope.newHide();
+          $scope.formData = {};
+        });
+      }
     };
 
     $scope.newAdd = function() {
@@ -125,6 +129,20 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
 
     //Classes for tabs
     $scope.setTab('work');
+
+    function canSave(type) {
+      var i = $scope.formData;
+      if(type === 'work') {
+        if(i.title && i.origin && i.date && i.description) return true;
+      } else if (type === 'ed') {
+        if(i.title && i.origin && i.date && i.description) return true;
+      } else if (type === 'project') {
+        if(i.title && i.date && i.description) return true;
+      } else if (type === 'honor') {
+        if(i.title && i.data && i.origin && i.description) return true;
+      }
+      return false;
+    }
 
   }
 ]);
