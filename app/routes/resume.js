@@ -4,6 +4,9 @@ var pdf = require('html-pdf');
 var pug = require('pug');
 var router = require('express').Router();
 var templates = require('../templates/templates.json');
+var path = require('path');
+var controller = require('../controllers/resumeItem');
+
 
 /*
  * GET: Sends all the templates
