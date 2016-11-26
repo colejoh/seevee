@@ -42,17 +42,30 @@ router.get('/items', function(req, res) {
  * POST: Renders the resume and sends back a PDF
  */
 router.post('/render', function(req, res) {
-    var data = {};
-
     var pathBase = "app/templates/";
     var pugCode = fs.readFileSync(pathBase + templates[req.body.id].pugPath, "utf8");
-
-    var fn = pug.compile(pugCode);
-    var html = fn(data);
-
-    pdf.create(html).toStream(function(err, stream){
-      stream.pipe(res);
+    var fn = pug.compile(pugCode, {
+        filename: path.join(__dirname, '../templates/pug/style.css'),
+        pretty:   true
     });
+
+    controller.getData(req.session.passport.user._id, fn, res, true);
+});
+
+/*
+ * GET: Web preview as you build templates
+ */
+router.get('/template/:id', function(req, res) {
+    var id = req.params.id;
+    var pathBase = "app/templates/";
+    var pugCode = fs.readFileSync(pathBase + templates[id].pugPath, "utf8");
+    var fn = pug.compile(pugCode, {
+        filename: path.join(__dirname, '../templates/pug/style.css'),
+        pretty:   true
+    });
+
+    controller.getData("5836a74f6a46c46345e4b002", fn, res, false);
+
 });
 
 module.exports = router;
