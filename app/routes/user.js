@@ -2,13 +2,20 @@ var router = require('express').Router();
 var User = require('../models/user');
 
 /*
+ * GET: Returns the logged in user
+ * This has to be the first method in the user route
+ * I have no fucking clue why
+ */
+router.get('/loggedin',function(req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0');
+});
+
+/*
  * GET: Useable for ADMIN to check signed up users
  */
 router.get('/', function(req, res) {
      User.find(function(err, users) {
-         if(err) {
-             res.send(err);
-         }
+         if(err) res.send(err);
          res.json(users);
      });
 });
@@ -18,9 +25,7 @@ router.get('/', function(req, res) {
  */
 router.get('/:user_id', function(req, res) {
      User.findById(req.params.user_id, function(err, user) {
-         if(err) {
-             res.send(err);
-         }
+         if(err) res.send(err);
          res.json(user);
      });
 });
@@ -66,13 +71,6 @@ router.delete('/:user_id', function(req, res) {
         if (err) res.send(err);
         res.json({ message: 'Successfully deleted' });
     });
-});
-
-/*
- * GET: Returns the logged in user
- */
-router.get('/loggedin',function(req, res) {
-    res.send(req.isAuthenticated() ? req.user : '0');
 });
 
 /*
