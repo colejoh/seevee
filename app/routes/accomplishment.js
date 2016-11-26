@@ -18,7 +18,6 @@ router.post('/', function(req, res){
  * GET: Sends all accomplishments for the current logged in user
  */
 router.get('/', function(req, res) {
-    console.log(req.session);
     if(req.session.passport.user === null) res.sendStatus(401);
 
     var sessionId = req.session.passport.user._id;
