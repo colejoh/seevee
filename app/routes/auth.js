@@ -30,8 +30,8 @@ function facebookStrategy(token, refreshToken, profile, done) {
                 return done(null, user);
             } else {
                 var newFacebookUser = {
-                    lastName:  profile.name.givenName,
-                    firstName: profile.name.familyName,
+                    firstName:  profile.name.givenName,
+                    lastName: profile.name.familyName,
                     email:     profile.emails[0].value,
                     gender:    profile.gender,
                     ageRange: {
