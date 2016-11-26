@@ -1,5 +1,4 @@
 var router           = require('express').Router();
-var config           = require('./config');
 var passport         = require('passport');
 var FacebookStrategy = require('passport-facebook');
 var User             = require('../models/user');
@@ -24,7 +23,7 @@ passport.deserializeUser(deserializeUser);
 
 // Facebook
 function facebookStrategy(token, refreshToken, profile, done) {
-    console.log(profile);
+    console.log("HIT AUTH");
     User.findOne({'facebook.id': profile.id}).then(
         function(user) {
             if(user) {

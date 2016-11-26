@@ -2,7 +2,9 @@ var router = require('express').Router();
 var User = require('../models/user');
 var Skill = require('../models/skill');
 
-// Gets All Resume Data
+/*
+ * PUT: Updates the user with info specic to them
+ */
 router.put('/your', function(req, res) {
     var sessionId = req.session.passport.user._id;
     User.findOne({_id: sessionId}, function(err, user) {
@@ -19,6 +21,9 @@ router.put('/your', function(req, res) {
     });
 });
 
+/*
+ * PUT: Updates the user's skills
+ */
 router.put('/skills', function(req, res) {
     var sessionId = req.session.passport.user._id;
 
@@ -44,6 +49,9 @@ router.put('/skills', function(req, res) {
     res.sendStatus(200);
 });
 
+/*
+ * PUT: Updates the user's online profiles
+ */
 router.put('/online', function(req, res) {
     var sessionId = req.session.passport.user._id;
     User.findOne({_id: sessionId}, function(err, user) {
@@ -60,6 +68,11 @@ router.put('/online', function(req, res) {
     });
 });
 
+/*
+ * makeSkillsArray: Chops string into an array
+ * params  - skills: String of skills user thinks they have
+ * returns - Array
+ */
 function makeSkillsArray(skills) {
     var arr = skills.split(',');
     for(var i = 0; i < arr.length; i++) {
@@ -67,4 +80,5 @@ function makeSkillsArray(skills) {
     }
     return arr;
 }
+
 module.exports = router;

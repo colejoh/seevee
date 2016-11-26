@@ -1,37 +1,9 @@
 var router = require('express').Router();
 var User = require('../models/user');
 
-router.get('/loggedin',function(req, res) {
-    res.send(req.isAuthenticated() ? req.user : '0');
-});
-
-// Creates New User
-router.post('/', function(req, res){
-    var user = new User();
-
-    user.firstName = req.body.firstName;
-    user.lastName = req.body.lastName;
-    user.email = req.body.email;
-    user.facebookId = req.body.facebookId;
-    user.googleId = req.body.googleId;
-    user.addressLine1 = req.body.addressLine1;
-    user.addressLine2 = req.body.addressLine2;
-    user.city = req.body.city;
-    user.state = req.body.state;
-    user.phoneNumber = req.body.phoneNumber;
-    user.website = req.body.website;
-    user.github = req.body.github;
-    user.linkedIn = req.body.linkedIn;
-
-    user.save(function(err) {
-        if(err) {
-            res.send(err);
-        }
-        res.json({ message: 'User Created' });
-    });
-});
-
-// Gets All Users
+/*
+ * GET: Useable for ADMIN to check signed up users
+ */
 router.get('/', function(req, res) {
      User.find(function(err, users) {
          if(err) {
@@ -41,7 +13,9 @@ router.get('/', function(req, res) {
      });
 });
 
-// Gets Specific User
+/*
+ * GET: Returns the specific user.
+ */
 router.get('/:user_id', function(req, res) {
      User.findById(req.params.user_id, function(err, user) {
          if(err) {
@@ -51,7 +25,9 @@ router.get('/:user_id', function(req, res) {
      });
 });
 
-// Updates Specific User
+/*
+ * PUT: Updates the user
+ */
 router.put('/:user_id', function(req, res) {
     if(req.params.user_id == req.session.passport.user._id) {
         User.findById(req.params.user_id, function(err, user) {
@@ -82,18 +58,26 @@ router.put('/:user_id', function(req, res) {
 
 });
 
-// Deletes Specific User
+/*
+ * DELETE: Deletes the specific user
+ */
 router.delete('/:user_id', function(req, res) {
-    User.remove({
-           _id: req.params.user_id
-       }, function(err, bear) {
-           if (err)
-               res.send(err);
-
-           res.json({ message: 'Successfully deleted' });
-       });
+    User.remove({_id: req.params.user_id}, function(err, bear) {
+        if (err) res.send(err);
+        res.json({ message: 'Successfully deleted' });
+    });
 });
 
+/*
+ * GET: Returns the logged in user
+ */
+router.get('/loggedin',function(req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0');
+});
+
+/*
+ * POST: Updates the user with info specic to them
+ */
 router.post('/logout', function(req, res) {
     req.logOut();
     res.sendStatus(200);
