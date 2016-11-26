@@ -9,14 +9,14 @@ seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$
 
     // Gets all the resume data
     $scope.getItems = function() {
-      $http.get("api/resumeItem").then(function(response){
+      $http.get("api/resume/items").then(function(response){
         $scope.items = response.data;
       });
     };
 
     // Gets all the templates
     $scope.getTemplates = function() {
-      $http.get("api/resumeTemplate").then(function(response){
+      $http.get("api/resume/templates").then(function(response){
         $scope.templates = response.data;
         $scope.template = $scope.templates[0];
       });
@@ -33,7 +33,7 @@ seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$
       var a = document.createElement("a");
       var options = {id: $scope.template.id};
       document.body.appendChild(a);
-      $http.post('api/renderResume', options , { responseType: 'arraybuffer' }).then(function(response){
+      $http.post('api/resume/render', options , { responseType: 'arraybuffer' }).then(function(response){
         var file = new Blob([response.data], {type: 'application/pdf'});
         var fileURL = window.URL.createObjectURL(file);
         a.href = fileURL;
