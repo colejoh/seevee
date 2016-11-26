@@ -23,7 +23,6 @@ passport.deserializeUser(deserializeUser);
 
 // Facebook
 function facebookStrategy(token, refreshToken, profile, done) {
-    console.log("HIT AUTH");
     User.findOne({'facebook.id': profile.id}).then(
         function(user) {
             if(user) {
