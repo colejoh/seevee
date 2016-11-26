@@ -8,6 +8,8 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
     $scope.mainType = 'work';
     $scope.errorMessage = '';
 
+    $scope.formData.importance = 50;
+
     // Initial get for all the accomplishments
     $http.get("api/accomplishment").then(function(response){
       $scope.accomplishments = response.data;
@@ -142,7 +144,7 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
       } else if (type === 'project') {
         if(i.title && i.date && i.description) return true;
       } else if (type === 'honor') {
-        if(i.title && i.data && i.origin && i.description) return true;
+        if(i.title && i.date && i.origin && i.description) return true;
       }
       return false;
     }

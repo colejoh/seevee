@@ -15,10 +15,11 @@ exports.set = function(acc, data, user) {
     a.description = data.description || acc.description;
     a.dateStart = setDate(data.date, data.type, 'start');
     a.dateEnd = setDate(data.date, data.type, 'end');
-    a.origin = data.origin || acc.origin;
     a.type = data.type || acc.type;
     a.importance = data.importance || acc.importance;
     a.userId = user._id;
+
+    if(a.type != 'project') a.origin = data.origin || acc.origin;
 
     return a;
 };

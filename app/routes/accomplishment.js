@@ -33,12 +33,8 @@ router.get('/', function(req, res) {
  * PUT: Updates the specified accomplishment
  */
 router.put('/:accomplishment_id', function(req, res) {
-    if(req.session.passport.user === null) res.sendStatus(401);
-
     Accomplishment.findById(req.params.accomplishment_id, function(err, acc) {
         if(err) res.send(err);
-
-        if(acc._userId != req.session.passport.user._id) res.sendStatus(401);
 
         var a = controller.set(acc, req.body, req.session.passport.user);
 
