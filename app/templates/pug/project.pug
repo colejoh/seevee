@@ -1,0 +1,17 @@
+html
+  head
+    title Default
+    <style>
+      include style.css
+    </style>
+  body
+    div.default
+      h1= firstName + " " + lastName
+
+      if project
+        p Projects
+        hr
+        each p in project
+          div.item
+            span.title #{p.title}
+            div.description #{p.description}

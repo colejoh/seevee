@@ -1,0 +1,18 @@
+html
+  head
+    title Default
+    <style>
+      include style.css
+    </style>
+  body
+    div.default
+      h1= firstName + " " + lastName
+
+      if work
+        p Work
+        hr
+        each w in work
+          div.item
+            span.title #{w.title},
+            span.origin #{w.origin}
+            div.description #{w.description}
