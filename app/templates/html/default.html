@@ -1,46 +1,88 @@
 <style>
-    .resume-wrapper {
+    .default {
         padding: .5in;
+        font-size: 12px;
+        font-family: 'Times', serif;
     }
-    .title {
-        font-size: 50px;
+    .default .head {
         text-align: center;
+        font-family: sans-serif;
+        font-size: 35px;
     }
-    hr {
-        border: 1px solid black
+    .default .sub-head {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 5px;
     }
-    .section-title {
-        margin-top: 20px;
-        border-bottom: 1px solid black;
-        width: 100%;
+    .default p {
+        margin: 0px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .default hr {
+        margin: 5px 0px;
+        background: black
+    }
+    .default .item {
+        margin-bottom: 10px;
+        line-height: 1.6em;
+    }
+    .default .item .title {
+        font-weight: bold;
     }
 </style>
-<div class="resume-wrapper">
-    <div class="title">
+<div class="default">
+    <div class="head">
         {{firstName}} {{lastName}}
     </div>
-    <div class="section-title">Work</div>
-    <div ng-repeat="item in items" ng-if="item.type=='work'">
-        <strong>{{item.title}},</strong>
-        <i>{{item.origin}}, {{item.dateStart}} - {{item.dateEnd}}</i><br>
-        {{item.description}}
+    <div class="sub-head">
+        {{data.email}} • {{data.phoneNumber}}
     </div>
-    <div class="section-title">Education</div>
-    <div ng-repeat="item in items" ng-if="item.type=='ed'">
-        <strong>{{item.title}},</strong>
-        <i>{{item.origin}}, {{item.dateEnd}}</i><br>
-        {{item.description}}
+
+    <div ng-if="data.work.length > 0">
+        <p>Work</p>
+        <hr />
+        <div ng-repeat="item in data.work" class="item">
+            <span class="title">{{item.title}}</span>,
+            {{item.origin}}
+            <div class="data">{{item.dateStart}} - {{item.dateEnd}}</div>
+            {{item.description}}
+        </div>
     </div>
-    <div class="section-title">Projects</div>
-    <div ng-repeat="item in items" ng-if="item.type=='project'">
-        <strong>{{item.title}},</strong>
-        <i>{{item.dateStart}} - {{item.dateEnd}}</i><br>
-        {{item.description}}
+
+    <div ng-if="data.ed.length > 0">
+        <p>Education</p>
+        <hr />
+        <div ng-repeat="item in data.ed" class="item">
+            <span class="title">{{item.title}}</span>,
+            {{item.origin}}, {{item.dateEnd}}
+        </div>
     </div>
-    <div class="section-title">Honors</div>
-    <div ng-repeat="item in items" ng-if="item.type=='honor'">
-        <strong>{{item.title}},</strong>
-        <i>{{item.origin}}, {{item.dateStart}} - {{item.dateEnd}}</i><br>
-        {{item.description}}
+
+    <div ng-if="data.project.length > 0">
+        <p>Projects</p>
+        <hr />
+        <div ng-repeat="item in data.project" class="item">
+            <span class="title">{{item.title}}</span>,
+            {{item.dateStart}} - {{item.dateEnd}}<br />
+            {{item.description}}
+        </div>
+    </div>
+
+    <div ng-if="data.honor.length > 0">
+        <p>Honors</p>
+        <hr/>
+        <div ng-repeat="item in data.honor" class="item">
+            <span class="title">{{item.title}}</span>,
+            {{item.origin}}, Awarded {{item.dateEnd}}
+        </div>
+    </div>
+
+    <div ng-if="data.skills.length > 0">
+        <p>Skills</p>
+        <hr />
+        <span ng-repeat="item in data.skills">
+            {{item.title}}
+        </span>
     </div>
 </div>

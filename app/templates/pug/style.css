@@ -1,8 +1,7 @@
-body {
+.default {
     padding: .5in;
     font-size: 12px;
-}
-.default {
+    font-family: serif;
 }
 .default .head {
     text-align: center;

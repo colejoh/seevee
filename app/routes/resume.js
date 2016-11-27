@@ -30,12 +30,7 @@ router.get('/templates', function(req, res) {
  */
 router.get('/items', function(req, res) {
     var sessionId = req.session.passport.user._id;
-    Accomplishment.find({userId: sessionId}, function(err, accomplishments) {
-        if(err) {
-            res.send(err);
-        }
-        res.json(accomplishments);
-    });
+    controller.sendJson(sessionId, res);
 });
 
 /*
