@@ -9,8 +9,10 @@ router.put('/your', function(req, res) {
     var sessionId = req.session.passport.user._id;
     User.findOne({_id: sessionId}, function(err, user) {
         user.info.displayName = req.body.name || user.info.displayName;
-        user.info.phoneNumber = req.body.number || user.info.phoneNumber;
         user.info.industry = req.body.industry || user.info.industry;
+
+        var phoneNumber = req.body.number || user.info.phoneNumber;
+        user.info.phoneNumber = formatPhoneNumber(phoneNumber);
 
         user.save(function(err) {
             if(err) {
@@ -79,6 +81,17 @@ function makeSkillsArray(skills) {
         arr[i] = arr[i].trim();
     }
     return arr;
+}
+
+function formatPhoneNumber(number) {
+    if(number.length == 10) {
+        var areaCode = "(" + number.substring(0,3) + ") ";
+        var prefix = number.substring(3,6) + "-";
+        var lineNumber = number.substring(6, 10);
+        return areaCode + prefix + lineNumber;
+    } else {
+        return number;
+    }
 }
 
 module.exports = router;
