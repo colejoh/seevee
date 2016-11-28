@@ -10,31 +10,38 @@ seevee.controller("headerCtrl", ['$scope', '$location', '$window', '$http',
     };
 
     $scope.logout = function() {
+      $scope.display = 'hide';
       $http.post("/api/user/logout");
       $location.url('/login');
     };
 
     function assignClasses() {
       if($scope.path == '/') {
+        $scope.display = 'show';
         $scope.accomplishmentClass = 'nav-selected';
         $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-unselected';
         $scope.accountClass = 'nav-unselected';
     } else if ($scope.path == '/info') {
+        $scope.display = 'show';
         $scope.accomplishmentClass = 'nav-unselected';
         $scope.infoClass = 'nav-selected';
         $scope.resumeClass = 'nav-unselected';
         $scope.accountClass = 'nav-unselected';
       } else if ($scope.path == '/resumes') {
+        scope.display = 'show';
         $scope.accomplishmentClass = 'nav-unselected';
         $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-selected';
         $scope.accountClass = 'nav-unselected';
       } else if ($scope.path == '/account') {
+        scope.display = 'show';
         $scope.accomplishmentClass = 'nav-unselected';
         $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-unselected';
         $scope.accountClass = 'nav-selected';
+      } else if ($scope.path === '/login') {
+        $scope.display = 'hide';
       }
     }
 
