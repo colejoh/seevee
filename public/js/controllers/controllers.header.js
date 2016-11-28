@@ -29,13 +29,13 @@ seevee.controller("headerCtrl", ['$scope', '$location', '$window', '$http',
         $scope.resumeClass = 'nav-unselected';
         $scope.accountClass = 'nav-unselected';
       } else if ($scope.path == '/resumes') {
-        scope.display = 'show';
+        $scope.display = 'show';
         $scope.accomplishmentClass = 'nav-unselected';
         $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-selected';
         $scope.accountClass = 'nav-unselected';
       } else if ($scope.path == '/account') {
-        scope.display = 'show';
+        $scope.display = 'show';
         $scope.accomplishmentClass = 'nav-unselected';
         $scope.infoClass = 'nav-unselected';
         $scope.resumeClass = 'nav-unselected';
