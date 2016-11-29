@@ -45,8 +45,9 @@ exports.getData = function(id, fn, res, pdf) {
                 data.skills = skills;
 
                 if(pdf) {
-                    PDF.create(fn(data)).toBuffer(function(err, buffer){
-                        res.send(buffer);
+                    PDF.create(fn(data)).toStream(function(err, stream){
+                        if(err) res.send(err);
+                        stream.pipe(res);
                     });
                 } else {
                     res.send(fn(data));
