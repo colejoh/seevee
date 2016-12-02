@@ -40,6 +40,18 @@ seevee.config(function($routeProvider, $httpProvider) {
     });
 });
 
+// I hate this
+seevee.run(function($rootScope, $location) {
+    $rootScope.$watch(function() {
+      return $location.path();
+    },
+    function(a){
+      if(a === '/login') {
+          $(".left").hide();
+      }
+    });
+});
+
 var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope) {
     var deferred = $q.defer();
 
@@ -47,8 +59,7 @@ var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope) {
     {
         $rootScope.errorMessage = null;
         // User is Authenticated
-        if (user !== '0')
-        {
+        if (user !== '0') {
                 $rootScope.currentUser = user;
         }
         deferred.resolve();
