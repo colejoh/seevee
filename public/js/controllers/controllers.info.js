@@ -52,7 +52,6 @@ seevee.controller("infoController", ['$scope', '$location', '$window', '$http', 
     $scope.setTab = function(tab) {
       $scope.activeTab = tab;
       if(tab === 'about') {
-        console.log("git");
         $scope.aboutClass = "active";
         $scope.profilesClass = "non-active";
         $scope.elseClass = "non-active";
