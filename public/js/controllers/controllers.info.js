@@ -3,6 +3,8 @@ seevee.controller("infoController", ['$scope', '$location', '$window', '$http', 
     $scope.your = {};
     $scope.skills = '';
     $scope.online = {};
+    $scope.activeTab = 'about';
+    $scope.aboutClass = "active";
 
     $http.get("/api/user/" + $rootScope.currentUser._id).then(function(res){
       var user = res.data;
@@ -44,6 +46,24 @@ seevee.controller("infoController", ['$scope', '$location', '$window', '$http', 
         $http.put("/api/info/online", $scope.online).then(function(res){
           $scope.messages.online = 'saved';
         });
+      }
+    };
+
+    $scope.setTab = function(tab) {
+      $scope.activeTab = tab;
+      if(tab === 'about') {
+        console.log("git");
+        $scope.aboutClass = "active";
+        $scope.profilesClass = "non-active";
+        $scope.elseClass = "non-active";
+      } else if (tab === 'profiles') {
+        $scope.aboutClass = "non-active";
+        $scope.profilesClass = "active";
+        $scope.elseClass = "non-active";
+      } else if (tab === 'else') {
+        $scope.aboutClass = "non-active";
+        $scope.profilesClass = "non-active";
+        $scope.elseClass = "active";
       }
     };
   }

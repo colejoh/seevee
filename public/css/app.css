@@ -894,6 +894,25 @@ input.priority {
                INFO PAGE
 -----------------------------------------------
 */
+.info-top-tabs {
+    width: 100%;
+    background: #fff;
+    height: 60px;
+    padding-left: 25px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+}
+.info-top-tabs .item {
+  display: inline-block;
+  height: 60px;
+  padding: 0px 10px;
+  line-height: 60px;
+}
+.info-top-tabs .item:hover {
+  cursor: pointer;
+}
+.info-top-tabs .active {
+  border-bottom: 2px solid #508DF1;
+}
 .info {
     padding: 10px;
 }
