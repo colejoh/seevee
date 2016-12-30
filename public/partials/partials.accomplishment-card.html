@@ -16,7 +16,7 @@
         {{accomplishment.dateEnd}}
     </div>
     <div class="description">
-        {{accomplishment.description}}
+        {{accomplishment.description | words:20}}
     </div>
     <div class="priority" style="width: {{accomplishment.importance}}%"></div>
 </div>
