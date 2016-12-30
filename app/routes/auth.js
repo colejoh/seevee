@@ -10,10 +10,12 @@ router.get('/facebook/callback/',
         failureRedirect: '/#/login'
     }));
 
+var envCallbackUrl = process.env.FACEBOOK_CALLBACK || 'http://localhost:8080/api/auth/facebook/callback';
+
 var facebookConfig = {
     clientID        : 1752159591713874,
     clientSecret    : '60bc805973bfdf0d25b40fa9091234b8',
-    callbackURL     : 'http://localhost:8080/api/auth/facebook/callback',
+    callbackURL     : envCallbackUrl,
     profileFields   : ['email', 'age_range', 'education', 'gender', 'location', 'name', 'verified']
 };
 
