@@ -1,6 +1,6 @@
 var seevee = angular.module('seevee', ['ngRoute', 'ngSanitize']);
 
-seevee.config(function($routeProvider, $httpProvider) {
+seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
     $routeProvider
     .when("/", {
         templateUrl: '../partials/partials.accomplishment.html',
@@ -38,6 +38,9 @@ seevee.config(function($routeProvider, $httpProvider) {
     .otherwise({
         redirectTo: '/'
     });
+
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
 });
 
 // I hate this
