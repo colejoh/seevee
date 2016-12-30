@@ -25,7 +25,7 @@ app.use(session({
 app.use(cookie());
 app.use(passport.initialize());
 app.use(passport.session());
-mongoose.connect(mongo.mongo.svc.cluster.local);
+mongoose.connect('mongodb://mongo.mongo.svc.cluster.local');
 
 var port = process.env.PORT || 8080;        // set our port
 var router = express.Router();              // get an instance of the express Router
