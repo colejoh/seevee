@@ -693,7 +693,8 @@ body > .container {
   display: none;
 }
 .accomplishment.edit {
-	width: 440px;
+  width: 90%;
+	max-width: 440px;
 	padding: 0;
 	border-radius: 5px;
 }
@@ -1047,7 +1048,7 @@ input.priority {
 	margin-bottom: 10px;
 }
 .template .info button {
-	width: 200px;
+	width: 100%;
 	height: 40px;
 	background: #ffe728;
 	border-radius: 5px;
