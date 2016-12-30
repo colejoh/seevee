@@ -16,9 +16,6 @@ seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$
 
     // Gets all the templates
     $scope.getTemplates = function() {
-      $http.get('api/resume/template/0').then(function(res){
-        $scope.html = res.data;
-      });
       $http.get("api/resume/templates").then(function(response){
         $scope.templates = response.data;
         $scope.template = $scope.templates[0];
@@ -27,11 +24,27 @@ seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$
 
     // Sets the template from the choices
     $scope.setTemplate = function(template) {
-      $http.get('api/resume/template/' + template.id).then(function(res){
-        $scope.html = res.data;
-      });
-      //$scope.template = template;
+      $scope.template = template;
     };
+
+    // // Gets all the templates
+    // $scope.getTemplates = function() {
+    //   $http.get('api/resume/template/0').then(function(res){
+    //     $scope.html = res.data;
+    //   });
+    //   $http.get("api/resume/templates").then(function(response){
+    //     $scope.templates = response.data;
+    //     $scope.template = $scope.templates[0];
+    //   });
+    // };
+    //
+    // // Sets the template from the choices
+    // $scope.setTemplate = function(template) {
+    //   $http.get('api/resume/template/' + template.id).then(function(res){
+    //     $scope.html = res.data;
+    //   });
+    //   //$scope.template = template;
+    // };
 
     $scope.render = function() {
       $("#export-button").html("<img src='img/loader.svg' height='18px'> Exporting");
