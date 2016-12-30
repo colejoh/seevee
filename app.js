@@ -36,5 +36,13 @@ var router = express.Router();              // get an instance of the express Ro
 // Prefixes API with /api. Also directs routes to the route package
 app.use('/api', require('./app/routes'));
 
+// These are for pages if the user his the refresh button
+// It will send them to the current page, not the root url
+app.get('/login', function(req, res) { res.redirect('/#/login'); });
+app.get('/info', function(req, res) { res.redirect('/#/info'); });
+app.get('/resumes', function(req, res) { res.redirect('/#/resumes'); });
+app.get('/account', function(req, res) { res.redirect('/#/account'); });
+app.get('*', function(req, res) { res.redirect('/'); });
+
 app.listen(port);
 console.log('Starting app on port: ' + port);
