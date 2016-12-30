@@ -65,30 +65,21 @@ code {
   background: #fff;
   margin-left: -60px;
 }
-.login-area {
-  width: 350px;
-  height: 100%;
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
-  float: left;
+.login-box {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-100px);
+}
+.login-logo {
+  font-family: 'Pacifico';
+  color: #488BEF;
   text-align: center;
-  background: #E9E7E6;
-}
-.logo {
-  font-family: 'helvetica neue', sans-serif;
-  font-weight: bolder;
   font-size: 50px;
-  color: #fff;
-}
-.login-header {
-  font-size: 40px;
-  color: #373737;
-  font-weight: bold;
-  background: #333;
-  height: 130px;
-  line-height: 130px;
-}
-.login-body {
-  padding: 50px;
+  margin-bottom: 20px;
+  margin-left: -15px;
 }
 .login-button {
   width: 100%;
@@ -100,15 +91,12 @@ code {
   font-weight: bold;
   font-size: 12px;
   border: 4px solid #2C467D;
+  text-align: center;
+  border-radius: 4px;
 }
 .login-button:hover {
   cursor: pointer;
   background: #4263A8;
-}
-.login-picture {
-  width: calc(100% - 350px);
-  float: right;
-  height: 100%;
 }
 /*
 -----------------------------------------------
