@@ -9,11 +9,6 @@ seevee.controller("headerCtrl", ['$scope', '$rootScope', '$location', '$window',
       $location.path(location);
     };
 
-    $scope.logout = function() {
-      $http.post("/api/user/logout");
-      $location.url('/login');
-    };
-
     function assignClasses() {
       if($scope.path == '/') {
         $scope.accomplishmentClass = 'nav-selected';

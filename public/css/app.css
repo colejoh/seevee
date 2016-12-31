@@ -272,9 +272,18 @@ body > .container {
   text-align: center;
   box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.4);;
 }
+.nav-logo {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 25px;
+    margin-left: -5px;
+}
 .nav-text {
   height: 60px;
   line-height: 60px;
+}
+.bottom-nav {
+  position: absolute;
+  bottom: 0px;
 }
 .nav-button {
   height: 60px;
