@@ -1,23 +1,23 @@
 <style>
     .default {
         padding: .5in;
-        font-size: 12px;
+        font-size: 11px;
         font-family: 'Times', serif;
     }
     .default .head {
         text-align: center;
         font-family: sans-serif;
-        font-size: 35px;
+        font-size: 24px;
     }
     .default .sub-head {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         margin-top: 5px;
     }
     .default p {
         margin: 0px;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 11px;
     }
     .default hr {
         margin: 5px 0px;
@@ -45,7 +45,9 @@
         <div ng-repeat="item in data.work" class="item">
             <span class="title">{{item.title}}</span>,
             {{item.origin}}
-            <div class="data">{{item.dateStart}} - {{item.dateEnd}}</div>
+            <div class="data">
+                {{item.dateFrom | date : 'MMMM yyyy'}} - {{item.dateTo | date : 'MMMM yyyy'}}
+            </div>
             {{item.description}}
         </div>
     </div>
@@ -55,7 +57,7 @@
         <hr />
         <div ng-repeat="item in data.ed" class="item">
             <span class="title">{{item.title}}</span>,
-            {{item.origin}}, {{item.dateEnd}}
+            {{item.origin}}, {{item.date | date : 'MMMM yyyy'}}
         </div>
     </div>
 
@@ -64,7 +66,7 @@
         <hr />
         <div ng-repeat="item in data.project" class="item">
             <span class="title">{{item.title}}</span>,
-            {{item.dateStart}} - {{item.dateEnd}}<br />
+            {{item.dateFrom | date : 'MMMM yyyy'}} - {{item.dateTo | date : 'MMMM yyyy'}}<br />
             {{item.description}}
         </div>
     </div>
@@ -74,7 +76,7 @@
         <hr/>
         <div ng-repeat="item in data.honor" class="item">
             <span class="title">{{item.title}}</span>,
-            {{item.origin}}, Awarded {{item.dateEnd}}
+            {{item.origin}}, Awarded {{item.date | date : 'MMMM yyyy'}}
         </div>
     </div>
 
@@ -82,7 +84,7 @@
         <p>Skills</p>
         <hr />
         <span ng-repeat="item in data.skills">
-            {{item.title}}
+            {{item.title}}<span ng-if="$index != data.skills.length - 1">, </span>
         </span>
     </div>
 </div>
