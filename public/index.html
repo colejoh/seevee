@@ -22,9 +22,11 @@
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/plugins/truncate.js"></script>
 
+
          <!-- CONTROLLERS -->
          <script type="text/javascript" src="js/controllers/controllers.accomplishment.js"></script>
          <script type="text/javascript" src="js/controllers/controllers.account.js"></script>
+         <script type="text/javascript" src="js/controllers/controllers.admin.js"></script>
          <script type="text/javascript" src="js/controllers/controllers.header.js"></script>
          <script type="text/javascript" src="js/controllers/controllers.info.js"></script>
          <script type="text/javascript" src="js/controllers/controllers.login.js"></script>
@@ -32,6 +34,7 @@
 
          <!-- FILTER -->
          <script type="text/javascript" src="js/filters/html.js"></script>
+
     </head>
     <body>
         <base href="/">
@@ -52,13 +55,11 @@
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
         </script>
-        <!-- <div class="container-fluid"> -->
-            <div class="left">
-                <div ng-include="'partials/partials.nav.html'"></div>
-            </div>
-            <div class="right container">
-                    <div ng-view></div>
-            </div>
-        <!-- </div> -->
+        <div class="left">
+            <div ng-include="'partials/partials.nav.html'"></div>
+        </div>
+        <div class="right container">
+                <div ng-view></div>
+        </div>
     </body>
 </html>
