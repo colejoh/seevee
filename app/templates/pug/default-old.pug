@@ -16,7 +16,7 @@ html
           div.item
             span.title #{w.title},&nbsp;
             span.origin #{w.origin}
-            div.date #{w.dateFromString} - #{w.dateToString}
+            div.date #{w.dateFrom} - #{w.dateTo}
             div.description #{w.description}
 
       if ed.length > 0
@@ -26,7 +26,7 @@ html
           div.item
             span.title #{e.title},&nbsp;
             span.origin #{e.origin},&nbsp;
-            span.date #{e.dateString}
+            span.date #{e.date}
 
       if project.length > 0
         p Projects
@@ -34,7 +34,7 @@ html
         each p in project
           div.item
             span.title #{p.title},&nbsp;
-            span.date #{p.dateFromString} - #{p.dateToString}
+            span.date #{p.dateFrom} - #{p.dateTo}
             div.description #{p.description}
 
       if honor.length > 0
@@ -43,5 +43,5 @@ html
         each h in honor
           div.item
             span.title #{h.title},&nbsp;
-            span.date #{h.dateString}
+            span.date #{h.date}
             div.description #{h.description}
