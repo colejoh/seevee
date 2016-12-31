@@ -288,6 +288,7 @@ body > .container {
 .nav-button {
   height: 60px;
   line-height: 60px;
+  transition: .2s;
 }
 .nav-button i {
   margin-top: 25px;
@@ -295,12 +296,22 @@ body > .container {
 }
 .nav-button:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: .2s;
 }
 .nav-unselected {
   box-shadow: none;
+  color: #747B90;
 }
 .nav-selected i {
   color: #fff;
+}
+.nav-sub-label {
+  font-size: 9px;
+  margin-top: -15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .nav-label {
   position: absolute;
@@ -566,9 +577,16 @@ body > .container {
   font-weight: bold;
   border: 2px solid #86B551;
   margin: 10px 0px;
+  transition: .2s;
 }
 .add-accomplishment i {
   margin-right: 5px;
+}
+.add-accomplishment:hover {
+  background: #86B551;
+  border: 2px solid #75A143;
+  transition: .2s;
+  transform: scale(1.01);
 }
 .main-search {
   background: #fff;

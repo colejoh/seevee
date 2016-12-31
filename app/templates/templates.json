@@ -1,8 +1,8 @@
 [
     {
         "id": 0,
-        "title": "Standard",
-        "description": "A standard template usable for many industries",
+        "title": "Best Template",
+        "description": "A template chosen by our smart algorithms for you.",
         "htmlPath": "html/default.html",
         "pugPath": "pug/default.pug"
     },
