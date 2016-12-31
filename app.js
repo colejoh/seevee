@@ -43,6 +43,7 @@ app.get('/info', function(req, res) { res.redirect('/#/info'); });
 app.get('/resumes', function(req, res) { res.redirect('/#/resumes'); });
 app.get('/account', function(req, res) { res.redirect('/#/account'); });
 app.get('/admin', function(req, res) { res.redirect('/#/admin'); });
+app.get('/pages', function(req, res) { res.redirect('/#/pages'); });
 app.get('*', function(req, res) { res.redirect('/'); });
 
 app.listen(port);
