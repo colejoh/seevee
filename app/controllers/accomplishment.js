@@ -11,15 +11,26 @@ var Accomplishment = require('../models/accomplishment');
 exports.set = function(acc, data, user) {
     var a = acc || new Accomplishment();
 
+
     a.title = data.title || acc.title;
     a.description = data.description || acc.description;
-    a.dateStart = setDate(data.date, data.type, 'start');
-    a.dateEnd = setDate(data.date, data.type, 'end');
     a.type = data.type || acc.type;
     a.importance = data.importance || acc.importance;
     a.userId = user._id;
 
     if(a.type != 'project') a.origin = data.origin || acc.origin;
+
+    // for setting date
+    if(a.type == 'work' || a.type == 'project') {
+
+        a.date = new Date();
+        a.dateFrom = data.dateFrom || acc.dateFrom;
+        a.dateTo = data.dateTo || acc.dateTo;
+    } else {
+        a.date = data.date || acc.date;
+        a.dateFrom = new Date();
+        a.dateTo = new Date();
+    }
 
     return a;
 };

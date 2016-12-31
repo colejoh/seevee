@@ -1,4 +1,4 @@
-var seevee = angular.module('seevee', ['ngRoute', 'ngSanitize', 'truncate']);
+var seevee = angular.module('seevee', ['ngRoute', 'ngSanitize', 'truncate', 'ngMaterial', 'ngMessages']);
 
 seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
     $routeProvider

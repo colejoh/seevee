@@ -8,12 +8,8 @@
         {{accomplishment.origin}}
     </div>
     <div class="time small-caps-light">
-        <span ng-if="accomplishment.type == 'work'">{{accomplishment.dateStart}} -</span>
-        <span ng-if="accomplishment.type == 'project'">{{accomplishment.dateStart}} -</span>
-        <span ng-if="accomplishment.dateEnd==null">
-            Present
-        </span>
-        {{accomplishment.dateEnd}}
+        <span ng-if="accomplishment.type == 'work' || accomplishment.type == 'project'">{{accomplishment.dateFrom | date : 'MMM yyyy'}} - {{accomplishment.dateTo | date : 'MMM yyyy'}}</span>
+        <span ng-if="accomplishment.type == 'ed' || accomplishment.type == 'honor'">{{accomplishment.date | date : 'MMM yyyy'}}</span>
     </div>
     <div class="description">
         {{accomplishment.description | words:20}}

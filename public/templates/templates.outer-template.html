@@ -17,8 +17,14 @@
             <input class="medium" placeholder="Google" type="text" ng-model="formData.origin">
         </div>
         <div class="field">
-            <label>Dates Employeed</label>
-            <input class="medium" placeholder="May 2016 - Aug 2016" type="text" ng-model="formData.date">
+            <label>Employeed From</label>
+            <div class="datepicker">
+                <md-datepicker ng-model="formData.dateFrom" md-placeholder="Enter date"></md-datepicker>
+            </div>
+            <label>To (Picking today assumes you still work here)</label>
+            <div class="datepicker">
+                <md-datepicker ng-model="formData.dateTo" md-placeholder="Enter date"></md-datepicker>
+            </div>
         </div>
         <div class="field">
             <label>Description and Accomplishments</label>
@@ -36,8 +42,14 @@
             <input class="large" placeholder="Seevee" type="text" ng-model="formData.title">
         </div>
         <div class="field">
-            <label>Date</label>
-            <input class="medium" placeholder="May 2019 - Jul 2016" type="text" ng-model="formData.date">
+            <label>Started on</label>
+            <div class="datepicker">
+                <md-datepicker ng-model="formData.dateFrom" md-placeholder="Enter date"></md-datepicker>
+            </div>
+            <label>And finished</label>
+            <div class="datepicker">
+                <md-datepicker ng-model="formData.dateTo" md-placeholder="Enter date"></md-datepicker>
+            </div>
         </div>
         <div class="field">
             <label>Project Description</label>
@@ -56,7 +68,9 @@
         </div>
         <div class="field">
             <label>Date Recieved</label>
-            <input class="medium" placeholder="May 2019" type="text" ng-model="formData.date">
+            <div class="datepicker">
+                <md-datepicker ng-model="formData.date" md-placeholder="Enter date"></md-datepicker>
+            </div>
         </div>
         <div class="field">
             <label>Institution</label>
@@ -64,7 +78,7 @@
         </div>
         <div class="field">
             <label>Honors, Clubs, Awards</label>
-            <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text"></textarea>
+            <textarea ng-model="formData.description" placeholder="Purdue Hackers, PAPA" type="text" style="min-height: 122px"></textarea>
         </div>
         <div class="field last">
             <label>Priority</label>
@@ -79,7 +93,9 @@
         </div>
         <div class="field">
             <label>Award Date</label>
-            <input class="medium" placeholder="June 2016" type="text" ng-model="formData.date">
+            <div class="datepicker">
+                <md-datepicker ng-model="formData.date" md-placeholder="Enter date"></md-datepicker>
+            </div>
         </div>
         <div class="field">
             <label>Awarded By</label>
@@ -87,7 +103,7 @@
         </div>
         <div class="field">
             <label>Description</label>
-            <textarea ng-model="formData.description" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officia, magnam ipsam temporibus. Saepe obcaecati voluptas magni ab qui dolorem, eos nobis maiores ducimus ipsum, animi voluptatum repudiandae vitae impedit cumque, laborum eum, nam recusandae aliquam rerum eaque accusantium tempore ex? Maiores debitis explicabo non assumenda beatae illum quia est." type="text"></textarea>
+            <textarea ng-model="formData.description" style="min-height: 122px" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officia, magnam ipsam temporibus. Saepe obcaecati voluptas magni ab qui dolorem, eos nobis maiores ducimus ipsum, animi voluptatum repudiandae vitae impedit cumque, laborum eum, nam recusandae aliquam rerum eaque accusantium tempore ex? Maiores debitis explicabo non assumenda beatae illum quia est." type="text"></textarea>
         </div>
         <div class="field last">
             <label>Priority</label>

@@ -1,15 +1,14 @@
 <div id="modal-bg" class="ed-modal"></div>
 <div class="accomplishment new-modal edit ed-modal">
-    <center>
-        <span style="text-transform: capitalize">{{modalState}} Education Accomplishment</span>
-    </center>
     <div class="field">
         <label>Degree Recieved</label>
         <input class="large" placeholder="B.S. in Computer Science" type="text" ng-model="formData.title">
     </div>
     <div class="field">
         <label>Date Recieved</label>
-        <input class="medium" placeholder="May 2019" type="text" ng-model="formData.date">
+        <div class="datepicker">
+            <md-datepicker ng-model="formData.date" md-placeholder="Enter date"></md-datepicker>
+        </div>
     </div>
     <div class="field">
         <label>Institution</label>
@@ -24,6 +23,6 @@
         <input class="priority" type="range" value="0" ng-model="formData.importance">
     </div>
     <div class="options">
-        <button class="neutral small-caps" ng-click="hideModal('ed')">Cancel</button><button class="good small-caps" ng-click="save('ed')">Save</button>
+        <button class="neutral small-caps-light gray" ng-click="hideModal('ed')">Cancel</button><button class="good small-caps-light" ng-click="save('ed')">Save</button>
     </div>
 </div>

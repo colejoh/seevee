@@ -1,8 +1,5 @@
 <div id="modal-bg" class="work-modal"></div>
 <div class="accomplishment new-modal edit work-modal">
-    <center>
-        <span style="text-transform: capitalize">{{modalState}} Education Accomplishment</span>
-    </center>
     <div class="field">
         <label>Job Title</label>
         <input class="large" placeholder="Software Engineer" type="text" ng-model="formData.title">
@@ -12,8 +9,14 @@
         <input class="medium" placeholder="Google" type="text" ng-model="formData.origin">
     </div>
     <div class="field">
-        <label>Dates Employeed</label>
-        <input class="medium" placeholder="May 2016 - Aug 2016" type="text" ng-model="formData.date">
+        <label>Employeed From</label>
+        <div class="datepicker">
+            <md-datepicker ng-model="formData.dateFrom" md-placeholder="Enter date"></md-datepicker>
+        </div>
+        <label>To</label>
+        <div class="datepicker">
+            <md-datepicker ng-model="formData.dateTo" md-placeholder="Enter date"></md-datepicker>
+        </div>
     </div>
     <div class="field">
         <label>Description and Accomplishments</label>
@@ -24,6 +27,6 @@
         <input class="priority" type="range" value="0" ng-model="formData.importance">
     </div>
     <div class="options">
-        <button class="neutral small-caps" ng-click="hideModal('work')">Cancel</button><button class="good small-caps" ng-click="save('work')">Save</button>
+        <button class="neutral small-caps-light gray" ng-click="hideModal('work')">Cancel</button><button class="good small-caps-light" ng-click="save('work')">Save</button>
     </div>
 </div>

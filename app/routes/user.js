@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var User = require('../models/user');
+var Accomplishment = require('../models/accomplishment');
 
 /*
  * GET: Returns the logged in user
@@ -79,6 +80,12 @@ router.delete('/:user_id', function(req, res) {
 router.post('/logout', function(req, res) {
     req.logOut();
     res.sendStatus(200);
+});
+
+router.get('/accomplishments/:userId', function(req, res) {
+    Accomplishment.find({userId: req.params.userId}, function(err, a) {
+        res.json(a);
+    });
 });
 
 module.exports = router;

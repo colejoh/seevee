@@ -138,11 +138,11 @@ seevee.controller("accomplishmentController", ['$scope', '$rootScope', '$locatio
     function canSave(type) {
       var i = $scope.formData;
       if(type === 'work') {
-        if(i.title && i.origin && i.date && i.description) return true;
+        if(i.title && i.origin && i.dateFrom && i.dateTo && i.description) return true;
       } else if (type === 'ed') {
         if(i.title && i.origin && i.date && i.description) return true;
       } else if (type === 'project') {
-        if(i.title && i.date && i.description) return true;
+        if(i.title && i.dateFrom && i.dateTo && i.description) return true;
       } else if (type === 'honor') {
         if(i.title && i.date && i.origin && i.description) return true;
       }
