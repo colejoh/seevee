@@ -29,6 +29,15 @@ seevee.controller("accountController", ['$scope', '$location', '$http', "$rootSc
       });
     };
 
+    $http.get('/api/admin/isAdmin').then(function(res) {
+        $scope.isAdmin = res.data.isAdmin;
+    });
+
+    $scope.goToAdmin = function() {
+        $location.path('/admin');
+    };
+
+
     getData();
   }
 ]);

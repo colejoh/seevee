@@ -35,6 +35,13 @@ seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
             loggedin: checkLoggedin
         }
     })
+    .when("/admin", {
+        templateUrl: '../partials/partials.admin.html',
+        controller: 'adminController',
+        resolve: {
+            loggedin: checkLoggedin
+        }
+    })
     .otherwise({
         redirectTo: '/'
     });

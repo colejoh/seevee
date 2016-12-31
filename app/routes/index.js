@@ -6,5 +6,6 @@ router.use('/info', require('./info'));
 router.use('/skill', require('./skill'));
 router.use('/resume', require('./resume'));
 router.use('/user', require('./user'));
+router.use('/admin', require('./admin'));
 
 module.exports = router;
