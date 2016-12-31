@@ -1,16 +1,33 @@
 <div class="row" style="margin-top: 10px">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="panel">
             <table class="table">
                 <thead>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Get Accomplishments</th>
                 </thead>
                 <tr ng-repeat="x in users">
                     <td>{{ x.firstName }}</td>
                     <td>{{ x.lastName }}</td>
                     <td>{{ x.email }}</td>
+                    <td ng-click="getAccomplishments(x._id)">Get</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel">
+            <table class="table">
+                <thead>
+                    <th>Title</th>
+                    <th>Description</th>
+                </thead>
+                <tr ng-repeat="a in accomplishments">
+                    <td>{{ a.title }}</td>
+                    <td>{{ a.description }}</td>
                 </tr>
             </table>
         </div>

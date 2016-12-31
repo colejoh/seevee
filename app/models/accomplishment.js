@@ -4,8 +4,9 @@ var Schema = mongoose.Schema;
 var AccomplishmentSchema = new Schema({
     title: String,         // Job Title
     description: String,   // About
-    dateStart: String,     // Date Started
-    dateEnd: String,       // Date Ended
+    date: Date,
+    dateFrom: Date,     // Date Started
+    dateTo: Date,       // Date Ended
     origin: String,        // Could be workplace or university etc.
     type: String,
     importance: Number,
