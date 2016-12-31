@@ -34,7 +34,8 @@ var UserSchema = new Schema({
     education: String,
     gender: String,
     location: String,
-    facebookVerified: String
+    facebookVerified: String,
+    pageName: String,
 }, {collection: 'user'});
 
 module.exports = mongoose.model('User', UserSchema);
