@@ -37,6 +37,10 @@ seevee.controller("accountController", ['$scope', '$location', '$http', "$rootSc
         $location.path('/admin');
     };
 
+    $scope.logout = function() {
+      $http.post("/api/user/logout");
+      $location.url('/login');
+    };
 
     getData();
   }
