@@ -33,41 +33,5 @@ seevee.controller("headerCtrl", ['$scope', '$rootScope', '$location', '$window',
       } else if ($scope.path === '/login') {
       }
     }
-
-
-    $("#accomplishment-nav-button").mouseenter(function(){
-      $("#accomplishment-nav-label").show();
-    });
-    $("#accomplishment-nav-button").mouseleave(function(){
-      $("#accomplishment-nav-label").hide();
-    });
-
-    $("#info-nav-button").mouseenter(function(){
-      $("#info-nav-label").show();
-    });
-    $("#info-nav-button").mouseleave(function(){
-      $("#info-nav-label").hide();
-    });
-
-    $("#resume-nav-button").mouseenter(function(){
-      $("#resume-nav-label").show();
-    });
-    $("#resume-nav-button").mouseleave(function(){
-      $("#resume-nav-label").hide();
-    });
-
-    $("#account-nav-button").mouseenter(function(){
-      $("#account-nav-label").show();
-    });
-    $("#account-nav-button").mouseleave(function(){
-      $("#account-nav-label").hide();
-    });
-
-    $("#log-out-nav-button").mouseenter(function(){
-      $("#log-out-nav-label").show();
-    });
-    $("#log-out-nav-button").mouseleave(function(){
-      $("#log-out-nav-label").hide();
-    });
   }
 ]);
