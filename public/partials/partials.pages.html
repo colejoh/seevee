@@ -1,12 +1,46 @@
 <div class="pages-header">
-    <a ng-href="{{liveLink}}"><button class="pages-open-live">View Live</button></a>
-    <a ng-href="{{liveLink}}"><span class="link">{{liveLink}}</span></a>
+    <a ng-href="{{liveLink}}" target="_blank"><button class="pages-open-live">View Live</button></a>
+    <span class="link">{{liveLink}}</span>
 </div>
 <div class="row" style="margin-top: 10px">
     <div class="col-md-6">
         <div class="small-caps-light gray">
             Settings
         </div>
+        <div class="panel" style="margin-top: 10px">
+            <div class="small-caps-light gray">
+                Theme Options
+            </div>
+            <div class="background-color-samples">
+                <div class="background-color-sample color-red" ng-click="saveTheme('red')" ng-class="redClass"></div>
+                <div class="background-color-sample color-blue" ng-click="saveTheme('blue')" ng-class="blueClass"></div>
+                <div class="background-color-sample color-green" ng-click="saveTheme('green')" ng-class="greenClass"></div>
+                <div class="background-color-sample color-black" ng-click="saveTheme('black')" ng-class="blackClass"></div>
+            </div>
+            <button class="info-save" ng-click="saveUrl()">Save</button>
+            <span class="small-caps-light gray">{{slugMessage}}</span>
+        </div>
+
+        <div class="panel" style="margin-top: 10px;">
+            <div class="small-caps-light gray">
+                View Options
+            </div>
+            <div class="checkbox">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.work" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Work</div></md-checkbox>
+            </div>
+            <div class="checkbox">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.project" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Project</div></md-checkbox>
+            </div>
+            <div class="checkbox">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.ed" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Education</div></md-checkbox>
+            </div>
+            <div class="checkbox">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.honor" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Honor</div></md-checkbox>
+            </div>
+            <button class="info-save" ng-click="saveShowOptions()">Save</button>
+            <span class="small-caps-light gray">{{showMessage}}</span>
+        </div>
+
         <div class="panel" style="margin-top: 10px;">
             <div class="small-caps-light gray">
                 Custom URL
@@ -21,7 +55,7 @@
             Live Preview
         </div>
         <div class="panel" style="margin-top: 10px;">
-            <iframe ng-src="{{iframeLink}}" height="500px" width="100%"></iframe>
+            <iframe ng-src="{{iframeLink}}" height="500px" width="100%" id="page-preview"></iframe>
         </div>
     </div>
 </div>
