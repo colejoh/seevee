@@ -43,6 +43,19 @@ router.get('/:pageName', function(req, res) {
     });
 });
 
+router.post('/url', function(req, res){
+    User.find({pageName: req.body.slug}, function(err, user) {
+        if(user.length === 0) {
+            User.findOne({_id: req.session.passport.user._id}, function(err, u) {
+                u.pageName = req.body.slug;
+                u.save(function(err) {
+                    res.json(u);
+                });
+            });
+        }
+    });
+});
+
 function sortByKey(array, key) {
     return array.sort(function(a, b) {
         var x = a[key]; var y = b[key];

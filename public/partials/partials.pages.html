@@ -1,7 +1,27 @@
+<div class="pages-header">
+    <a ng-href="{{liveLink}}"><button class="pages-open-live">View Live</button></a>
+    <a ng-href="{{liveLink}}"><span class="link">{{liveLink}}</span></a>
+</div>
 <div class="row" style="margin-top: 10px">
     <div class="col-md-6">
-        <div class="panel">
-            <button class="btn btn-primary" ng-click="openPage()">Open your Page</button>
+        <div class="small-caps-light gray">
+            Settings
+        </div>
+        <div class="panel" style="margin-top: 10px;">
+            <div class="small-caps-light gray">
+                Custom URL
+            </div>
+            <input ng-model="slug" type="text" class="info-input"/>
+            <button class="info-save" ng-click="saveUrl()">Save</button>
+            <span class="small-caps-light gray">{{slugMessage}}</span>
+        </div>
+    </div>
+    <div class="col-md-6" >
+        <div class="small-caps-light gray">
+            Live Preview
+        </div>
+        <div class="panel" style="margin-top: 10px;">
+            <iframe ng-src="{{iframeLink}}" height="500px" width="100%"></iframe>
         </div>
     </div>
 </div>
