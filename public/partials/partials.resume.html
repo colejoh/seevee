@@ -1,6 +1,6 @@
 <div id="templates">
 	<div ng-repeat="template in templates" class="template active">
-			<div class="preview"><iframe ng-src="{{'http://app.seevee.co/api/resume/template/' + $index}}" width="570px" height="798px" style="transform: scale(0.35, 0.35); transform-origin: top left; overflow: hidden; scrolling: no"></iframe></div>
+			<div class="preview"><iframe ng-src="{{previewLink($index)}}" width="570px" height="798px" style="transform: scale(0.35, 0.35); transform-origin: top left; overflow: hidden; scrolling: no"></iframe></div>
 			<div class="info">
 				<h1>{{template.title}}</h1>
 				<p>{{template.description}}</p>
