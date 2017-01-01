@@ -36,6 +36,13 @@ var UserSchema = new Schema({
     location: String,
     facebookVerified: String,
     pageName: String,
+    page: {
+        showWork: {type: Boolean, default: true},
+        showEd: {type: Boolean, default: true},
+        showProject: {type: Boolean, default: true},
+        showHonor: {type: Boolean, default: true},
+        color: {type: String, default: "black"}
+    }
 }, {collection: 'user'});
 
 module.exports = mongoose.model('User', UserSchema);
