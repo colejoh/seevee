@@ -1,7 +1,9 @@
-seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$http', '$sce', '$q', '$interpolate',
-  function($scope, $location, $http, $sce, $interpolate, $q, $rootScope) {
+seevee.controller("resumeController", ['$scope', '$rootScope', '$http', '$sce',
+  function($scope, $rootScope, $http, $sce) {
     $scope.data = {};
     $scope.templates = {};
+    var baseUrl = 'http://localhost:8080';
+    $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + '/api/resume/template/0');
 
     // Temporary data for testing resumes
     $scope.firstName = $rootScope.currentUser.firstName;
@@ -25,26 +27,8 @@ seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$
     // Sets the template from the choices
     $scope.setTemplate = function(template) {
       $scope.template = template;
+      $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + '/api/resume/template/' + template.id);
     };
-
-    // // Gets all the templates
-    // $scope.getTemplates = function() {
-    //   $http.get('api/resume/template/0').then(function(res){
-    //     $scope.html = res.data;
-    //   });
-    //   $http.get("api/resume/templates").then(function(response){
-    //     $scope.templates = response.data;
-    //     $scope.template = $scope.templates[0];
-    //   });
-    // };
-    //
-    // // Sets the template from the choices
-    // $scope.setTemplate = function(template) {
-    //   $http.get('api/resume/template/' + template.id).then(function(res){
-    //     $scope.html = res.data;
-    //   });
-    //   //$scope.template = template;
-    // };
 
     $scope.render = function() {
       $("#export-button").html("<img src='img/loader.svg' height='18px'> Exporting");
@@ -66,4 +50,4 @@ seevee.controller("resumeController", //['$scope', '$rootScope', '$location', '$
     $scope.getItems();
 
   }
-);
+]);
