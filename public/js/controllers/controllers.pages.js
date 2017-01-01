@@ -3,8 +3,8 @@ seevee.controller("pagesController", ['$scope', '$http', '$rootScope', '$sce',
         var SAVING = 'Saving...';
         var SAVED = 'Saved';
 
-        // $scope.liveLink = "http://pages.seevee.co/" + ($rootScope.currentUser.pageName || $rootScope.currentUser._id);
-        $scope.liveLink = "http://localhost:3000/" + ($rootScope.currentUser.pageName || $rootScope.currentUser._id);
+        $scope.liveLink = "http://pages.seevee.co/" + ($rootScope.currentUser.pageName || $rootScope.currentUser._id);
+        // $scope.liveLink = "http://localhost:3000/" + ($rootScope.currentUser.pageName || $rootScope.currentUser._id);
         $scope.slug = $rootScope.currentUser.pageName;
         $scope.iframeLink = $sce.trustAsResourceUrl($scope.liveLink);
 
