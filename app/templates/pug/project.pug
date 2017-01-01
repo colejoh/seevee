@@ -6,7 +6,8 @@ html
     </style>
   body
     div.default
-      h1= firstName + " " + lastName
+      div.head= firstName + " " + lastName
+      div.sub-head= phoneNumber + " • " + email
 
       if project
         p Projects

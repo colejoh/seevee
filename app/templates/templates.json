@@ -5,5 +5,20 @@
         "description": "A template chosen by our smart algorithms for you.",
         "htmlPath": "html/default.html",
         "pugPath": "pug/default.pug"
+    },
+    {
+        "id": 1,
+        "title": "Work List",
+        "description": "A very simple resume that lists your work accomplishments.",
+        "htmlPath": "html/work.html",
+        "pugPath": "pug/work.pug"
+    },
+    {
+        "id": 2,
+        "title": "Project List",
+        "description": "A very simple resume that lists your project accomplishments.",
+        "htmlPath": "html/project.html",
+        "pugPath": "pug/project.pug"
     }
+
 ]
