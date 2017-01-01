@@ -2,7 +2,7 @@ seevee.controller("resumeController", ['$scope', '$rootScope', '$http', '$sce',
   function($scope, $rootScope, $http, $sce) {
     $scope.data = {};
     $scope.templates = {};
-    var baseUrl = 'http://localhost:8080';
+    var baseUrl = 'http://app.seevee.co';
     $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + '/api/resume/template/0');
 
     // Temporary data for testing resumes
