@@ -61,5 +61,7 @@ seevee.controller("pagesController", ['$scope', '$http', '$rootScope', '$sce',
                 $scope.blackClass = $rootScope.currentUser.page.color === 'black' ? 'selected' : 'non-selected';
             }
         }
+
+        setThemeClasses();
     }
 ]);

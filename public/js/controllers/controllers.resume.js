@@ -2,8 +2,9 @@ seevee.controller("resumeController", ['$scope', '$rootScope', '$http', '$sce',
   function($scope, $rootScope, $http, $sce) {
     $scope.data = {};
     $scope.templates = {};
-    var baseUrl = 'http://app.seevee.co';
-    $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + '/api/resume/template/0');
+    var host = 'app.seevee.co';
+    var baseUrl = 'http://' + host + '/api/resume/template/';
+    $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + '0');
 
     // Temporary data for testing resumes
     $scope.firstName = $rootScope.currentUser.firstName;
@@ -27,7 +28,11 @@ seevee.controller("resumeController", ['$scope', '$rootScope', '$http', '$sce',
     // Sets the template from the choices
     $scope.setTemplate = function(template) {
       $scope.template = template;
-      $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + '/api/resume/template/' + template.id);
+      $scope.iframeLink = $sce.trustAsResourceUrl(baseUrl + template.id);
+    };
+
+    $scope.previewLink = function(index) {
+      return $sce.trustAsResourceUrl(baseUrl + index);
     };
 
     $scope.render = function() {
