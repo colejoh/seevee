@@ -51,3 +51,9 @@
   transition: .2s;
   transform: scale(1.01);
 }
+.btn-success:active {
+  background: #92C55A;
+  border: 2px solid #86B551;
+  transition: .2s;
+  transform: scale(1.01);
+}

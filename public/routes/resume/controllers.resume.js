@@ -37,18 +37,18 @@ seevee.controller("resumeController", ['$scope', '$rootScope', '$http', '$sce',
     };
 
     $scope.render = function() {
-        $("#export-button").html("<img src='img/loader.svg' height='18px'>");
+        $("#export-button-text").html("<img src='img/loader.svg' height='18px'>");
         var fileName = 'Resume.pdf';
         var a = document.createElement("a");
         var options = {id: $scope.template.id};
         document.body.appendChild(a);
-        $http.post('api/resume/render', options , { resType: 'arraybuffer' }).then(function(res) {
-            var file = new Blob([res.data], {type: 'application/pdf'});
+        $http.post('api/resume/render', options , { responseType: 'arraybuffer' }).then(function(response){
+            var file = new Blob([response.data], {type: 'application/pdf'});
             var fileURL = window.URL.createObjectURL(file);
             a.href = fileURL;
             a.download = fileName;
             a.click();
-            $("#export-button").html("Download");
+            $("#export-button-text").html("DOWNLOAD");
         });
     };
 
