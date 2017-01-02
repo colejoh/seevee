@@ -8,7 +8,7 @@ corner-user .bar {
 corner-user .bar .icon {
     width: 30px;
     height: 30px;
-    background: #7F7B7E;
+    background: #DA68D4;
     color: #fff;
     margin-top: 10px;
     border-radius: 15px;
@@ -34,7 +34,7 @@ corner-user .more-info {
     width: 160px;
     height: 50px;
     display: none;
-    line-height: 50px;
+    line-height: 48px;
 }
 corner-user .more-info.showing {
     display: block;

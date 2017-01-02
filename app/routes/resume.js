@@ -6,6 +6,7 @@ var router = require('express').Router();
 var templates = require('../templates/templates.json');
 var path = require('path');
 var controller = require('../controllers/resumeItem');
+var sampleData = require('../templates/sample.json');
 
 
 /*

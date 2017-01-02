@@ -3,12 +3,12 @@
 	<corner-user></corner-user>
 </div>
 <div id="templates">
-	<div ng-repeat="template in templates" class="template active">
-			<div class="preview"><iframe ng-src="{{previewLink($index)}}" width="570px" height="798px" style="transform: scale(0.35, 0.35); transform-origin: top left; overflow: hidden; scrolling: no"></iframe></div>
+	<div ng-repeat="preview in templates" class="template active">
+			<div class="preview" style="overflow: hidden"><div compile="preview.html" style="width: 570px; height: 798px; transform: scale(0.35, 0.35); transform-origin: top left; overflow: hidden; scrolling: no"></div></div>
 			<div class="info">
-				<h1>{{template.title}}</h1>
-				<p>{{template.description}}</p>
-				<button ng-click="setTemplate(template)" class="small-caps-light">Set Theme</button>
+				<h1>{{preview.title}}</h1>
+				<p>{{preview.description}}</p>
+				<button ng-click="setTemplate(preview)" class="small-caps-light">Set Theme</button>
 			</div>
 	</div>
 </div>
@@ -17,8 +17,7 @@
 
 	<div id="preview-wrapper">
 		<div class="preview">
-			<!-- <div compile="template.html"></div></br/> -->
-			<iframe ng-src="{{iframeLink}}" width="100%" height="100%" frameborder="0" id="resume-preview"></iframe>
+			<div compile="template.html"></div></br/>
 		</div>
 	</div>
 </div>

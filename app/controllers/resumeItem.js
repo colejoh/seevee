@@ -62,6 +62,7 @@ exports.getData = function(id, fn, res, pdf) {
                         stream.pipe(res);
                     });
                 } else {
+                    console.log(data);
                     res.send(fn(data));
                 }
             });
