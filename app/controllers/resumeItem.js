@@ -56,14 +56,15 @@ exports.getData = function(id, fn, res, pdf) {
 
                 data.skills = skills;
 
+                var html = fn(data);
+
                 if(pdf) {
-                    PDF.create(fn(data)).toStream(function(err, stream){
+                    PDF.create(html).toStream(function(err, stream){
                         if(err) res.send(err);
                         stream.pipe(res);
                     });
                 } else {
-                    console.log(data);
-                    res.send(fn(data));
+                    res.send(fn(html));
                 }
             });
         });
