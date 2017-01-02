@@ -1,0 +1,12 @@
+<div class="corner-user">
+    <div class="bar" ng-click="toggleDropdown()" ng-class="state">
+        <div class="icon">{{currentUserFirstLetter}}</div>
+        <div class="arrow">
+            <i class="fa" ng-class="arrowClass" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="more-info" ng-class="state">
+        <span ng-click="goToAccount()">Account</span> | 
+        <span ng-click="logout()">Log Out</span>
+    </div>
+</div>

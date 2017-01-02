@@ -1,0 +1,23 @@
+.link {
+    font-size: 11px;
+}
+.background-color-samples {
+  margin-top: 10px;
+}
+.background-color-sample {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+.background-color-sample.selected {
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.background-color-sample.non-selected {
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0);
+}
+.color-red { background: #F44336; }
+.color-blue { background: #2196F3; }
+.color-green { background: #4CAF50; }
+.color-black { background: #373737; }

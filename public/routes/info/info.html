@@ -5,9 +5,7 @@
     <div class="item" ng-click="setTab('profiles')" ng-class="profilesClass">
         <span class="small-caps-light gray">Profiles</span>
     </div>
-    <!-- <div class="item" ng-click="setTab('else')" ng-class="elseClass">
-        <span class="small-caps-light gray">Else</span>
-    </div> -->
+    <corner-user></corner-user>
 </div>
 <div class="row info">
     <div ng-if="activeTab == 'about'">
@@ -22,7 +20,7 @@
 
                 <div class="small-caps-light gray">Industry</div>
                 <input class="info-input" ng-model="your.industry"/>
-                <button class="info-save" ng-click="save('your')">Save</button>
+                <button class="btn-primary" ng-click="save('your')">Save</button>
                 <span class="small-caps-light gray">{{messages.your}}</span>
             </div>
 
@@ -30,7 +28,7 @@
             <div class="info-card">
                 <div class="small-caps-light gray">Skills (Separated by comma)</div>
                 <input class="info-input" ng-model="skills"/>
-                <button class="info-save" ng-click="save('skills')">Save</button>
+                <button class="btn-primary" ng-click="save('skills')">Save</button>
                 <span class="small-caps-light gray">{{messages.skills}}</span>
             </div>
         </div>
@@ -51,7 +49,7 @@
 
                 <div class="small-caps-light gray">Github</div>
                 <input class="info-input" ng-model="online.github"/>
-                <button class="info-save" ng-click="save('online')">Save</button>
+                <button class="btn-primary" ng-click="save('online')">Save</button>
                 <span class="small-caps-light gray">{{messages.online}}</span>
             </div>
         </div>

@@ -1,0 +1,221 @@
+#modal-bg {
+	z-index: 8;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+}
+
+.new-modal {
+	position: fixed;
+	z-index: 9;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 40px rgba(0,0,0,0.2);
+}
+.work-modal {
+  display: none;
+}
+.ed-modal {
+  display: none;
+}
+.project-modal {
+  display: none;
+}
+.honor-modal {
+  display: none;
+}
+.main-modal {
+  display: none;
+}
+.accomplishment.edit {
+  width: 90%;
+	max-width: 440px;
+	padding: 0;
+	border-radius: 5px;
+}
+.datepicker {
+    margin-left: -15px;
+}
+ul.dropdown,
+ul.dropdown li {
+	line-height: 30px;
+	max-height: 30px;
+}
+
+.accomplishment.edit ul.dropdown {
+	position: absolute;
+	z-index: 999999;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+ul.dropdown {
+	list-style-type: none;
+	text-align: left;
+	border-radius: 4px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+ul.dropdown.active {
+	max-height: none;
+}
+
+.accomplishment.edit ul.dropdown.active {
+	box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.accomplishment.edit ul.dropdown {
+	background: #fff;
+}
+
+ul.dropdown li:hover {
+	background: rgba(0,0,0,0.05);
+}
+
+ul.dropdown li {
+	position: relative;
+	font-weight: 500;
+	font-size: 14px;
+	color: #171717;
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+ul.dropdown.active li {
+	cursor: default;
+}
+
+ul.dropdown.active li:first-child {
+	text-decoration: underline;
+}
+
+.field {
+	padding: 10px 20px;
+	border-bottom: 1px solid rgba(29,29,29,0.2);
+}
+
+.field.last {
+	border-bottom: none !important;
+}
+
+label {
+	font-size: 12px;
+	color: #8A95A6;
+}
+
+input,
+textarea {
+	color: #373737;
+	width: 100%;
+}
+
+input.large {
+	font-weight: 500;
+	font-size: 30px;
+}
+
+input.medium {
+	font-size: 20px;
+	margin-top: 8px;
+}
+
+textarea {
+	font-size: 12px;
+	line-height: 16px;
+	height: 60px;
+	margin-top: 4px;
+}
+
+.field div.tags {
+	padding: 8px 0;
+}
+
+div.tags {
+	font-size: 12px;
+	color: #508DF1;
+}
+
+div.tags * {
+	display: inline-block;
+}
+
+div.tags input {
+	width: auto;
+}
+
+div.tags span.tag {
+	margin-right: 4px;
+	margin-bottom: 5px;
+	padding: 4px 10px;
+	border: 1px solid #508df1;
+	border-radius: 3px;
+}
+
+div.tags span.tag.active {
+	background: #508df1;
+	color: #fff;
+}
+
+input.priority {
+	margin: 10px 0;
+	display: block;
+	width: 100%;
+}
+
+.options {
+	width: 100%;
+	height: 40px;
+	position: relative;
+}
+
+.options button {
+	height: 100%;
+	color: #000000;
+
+	transition: 0.1s background ease-in-out;
+	-webkit-transition: 0.1s background ease-in-out;
+}
+
+.accomplishment.edit .options button:nth-child(1) { width: 50% }
+.accomplishment.edit .options button:nth-child(2) { width: 50% }
+
+.options button.good:hover { background: #6fa1f4 }
+.options button.good {
+	background: #508df1;
+	color: #fff;
+}
+
+.options button.bad:hover { background: #ff8787 }
+.options button.bad {
+	background: #ff6565;
+	color: #fff;
+}
+
+.options button.neutral:hover { background: #fff }
+.options button.neutral {
+	background: #f5f5f1;
+	color: #000;
+}
+.tabs {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+.tabs button {
+  height: 100%;
+  width: 25%;
+  margin: 0px;
+  padding: 0px;
+}
+.tabs button.selected {
+
+}
+.tabs button.unselected {
+  background: #efefef;
+}

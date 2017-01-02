@@ -1,0 +1,44 @@
+corner-user .bar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    padding-right: 25px;
+}
+corner-user .bar .icon {
+    width: 30px;
+    height: 30px;
+    background: #7F7B7E;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+}
+corner-user .bar .arrow {
+    display: inline-block;
+}
+corner-user .bar.showing {
+    right: 150px;
+    transition: .2s;
+}
+corner-user .bar.hiding {
+    right: 0px;
+    transition: .2s;
+}
+corner-user .more-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 50px;
+    display: none;
+    line-height: 50px;
+}
+corner-user .more-info.showing {
+    display: block;
+}
+corner-user .more-info.hiding {
+    display: none;
+}

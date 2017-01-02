@@ -1,0 +1,19 @@
+.small-caps {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+}
+.small-caps-light {
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+}
+.section-label {
+  margin: 10px;
+  color: RGBA(55, 55, 55, 1.00);
+}
+.gray {
+  color: #7F7B7E;
+}
