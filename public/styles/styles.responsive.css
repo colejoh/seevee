@@ -1,0 +1,48 @@
+@media screen and (max-width: 340px) {
+	#new input {
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 700px) {
+	#header {
+		height: auto;
+	}
+	#logo {
+		display: none;
+	}
+	#login {
+		display: none;
+	}
+	#nav {
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		position: relative;
+		transform: none;
+		top: 0;
+		left: 0;
+    border-radius: 0px;
+    height: 50px;
+    line-height: 50px;
+    border-left: none !important;
+    border-top: none !important;
+    border-right: none !important;
+    font-size: 20px;
+	}
+  #nav .small {
+    width: 70px;
+    border-radius: 0px;
+  }
+  #nav .big {
+    width: calc(100% - 70px);
+  }
+	#nav li {
+		flex-shrink: 1;
+		flex-grow: 1;
+		text-align: center;
+		border-radius: 0 !important;
+		border: none !important;
+		padding: 10px 0;
+	}
+}

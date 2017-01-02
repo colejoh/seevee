@@ -3,47 +3,47 @@ var seevee = angular.module('seevee', ['ngRoute', 'ngSanitize', 'truncate', 'ngM
 seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
     $routeProvider
     .when("/", {
-        templateUrl: '../partials/partials.accomplishment.html',
+        templateUrl: '../routes/accomplishment/accomplishment.html',
         controller: 'accomplishmentController',
         resolve: {
             loggedin: checkLoggedin
         }
     })
     .when("/info", {
-        templateUrl: '../partials/partials.info.html',
+        templateUrl: '../routes/info/info.html',
         controller: 'infoController',
         resolve: {
             loggedin: checkLoggedin
         }
     })
     .when("/resumes", {
-        templateUrl: '../partials/partials.resume.html',
+        templateUrl: '../routes/resume/resume.html',
         controller: 'resumeController',
         resolve: {
             loggedin: checkLoggedin
         }
     })
     .when("/login", {
-        templateUrl: '../partials/partials.login.html',
+        templateUrl: '../routes/login/login.html',
         controller: 'loginController',
         controllerAs: 'model'
     })
     .when("/account", {
-        templateUrl: '../partials/partials.account.html',
+        templateUrl: '../routes/account/account.html',
         controller: 'accountController',
         resolve: {
             loggedin: checkLoggedin
         }
     })
     .when("/admin", {
-        templateUrl: '../partials/partials.admin.html',
+        templateUrl: '../routes/admin/admin.html',
         controller: 'adminController',
         resolve: {
             loggedin: checkLoggedin
         }
     })
     .when("/pages", {
-        templateUrl: '../partials/partials.pages.html',
+        templateUrl: '../routes/pages/pages.html',
         controller: 'pagesController',
         resolve: {
             loggedin: checkLoggedin
@@ -70,6 +70,7 @@ seevee.run(function($rootScope, $location) {
 });
 
 var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope) {
+    console.log("checkCurrentUser");
     var deferred = $q.defer();
 
     $http.get('/api/user/loggedin').success(function(user)
@@ -88,18 +89,16 @@ var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope) {
 var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
     var deferred = $q.defer();
 
-    $http.get('/api/user/loggedin').success(function(user)
-    {
+    $http.get('/api/user/loggedin').success(function(user) {
         $rootScope.errorMessage = null;
         // User is Authenticated
-        if (user !== '0')
-        {
+        if (user !== '0') {
             $rootScope.currentUser = user;
+            $rootScope.currentUserFirstLetter = user.firstName.substring(0,1);
             deferred.resolve();
         }
         // User is Not Authenticated
-        else
-        {
+        else {
             $rootScope.errorMessage = 'You need to log in.';
             deferred.reject();
             $location.url('/login');

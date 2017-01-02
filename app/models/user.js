@@ -41,7 +41,7 @@ var UserSchema = new Schema({
         showEd: {type: Boolean, default: true},
         showProject: {type: Boolean, default: true},
         showHonor: {type: Boolean, default: true},
-        color: {type: String, default: "black"}
+        color: {type: String, default: "red"}
     }
 }, {collection: 'user'});
 
