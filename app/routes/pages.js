@@ -6,15 +6,11 @@ router.get('/:pageName', function(req, res) {
     User.findOne( { pageName: req.params.pageName }, function(err, userByPageName) {
         if (err) res.send(err);
         if(userByPageName) {
-            Accomplishment.find({userId: userByPageName._id}, function(err, accomplishments) {
-                parseData(res, userByPageName, accomplishments);
-            });
+            parseFullData(userByPageName._id, res);
         } else {
             User.findOne({_id: req.params.pageName}, function(err, userById) {
                 if(userById) {
-                    Accomplishment.find({userId: userById._id}, function(err, accomplishments) {
-                        parseData(res, userById, accomplishments);
-                    });
+                    parseFullData(userById._id, res);
                 } else {
                     res.json({status: 404});
                 }
@@ -78,50 +74,97 @@ function parseData(res, user, accomplishments) {
     res.json(data);
 }
 
-router.post('/url', function(req, res){
-    User.find({pageName: req.body.slug}, function(err, user) {
-        if(user.length === 0) {
-            User.findOne({_id: req.session.passport.user._id}, function(err, u) {
-                u.pageName = req.body.slug;
-                u.save(function(err) {
-                    res.json(u);
-                });
-            });
-        } else {
-            res.json({error: 'Page already exists with that name'});
+function parseFullData(id, res) {
+    var data = {};
+    Accomplishment.find({userId: id}, function(err, a) {
+        if(err) return err;
+        var accomplishments = sortByKey(a, "importance");
+        var work = [];
+        var project = [];
+        var ed = [];
+        var honor = [];
+
+        for(var i = 0; i < accomplishments.length; i++) {
+            if(accomplishments[i].type === 'work') work.unshift(accomplishments[i]);
+            else if (accomplishments[i].type === 'project') project.unshift(accomplishments[i]);
+            else if (accomplishments[i].type === 'ed') ed.unshift(accomplishments[i]);
+            else if (accomplishments[i].type === 'honor') honor.unshift(accomplishments[i]);
         }
+
+        data.work = work;
+        data.project = project;
+        data.ed = ed;
+        data.honor = honor;
+
+        User.findOne({_id: id}, function(err, user) {
+            if(err) return err;
+
+            var color = '';
+            if(user.page.color === 'red') color = '#F44336';
+            else if (user.page.color === 'blue') color = '#2196F3';
+            else if (user.page.color === 'green') color = '#4CAF50';
+            else if (user.page.color === 'black') color = '#373737';
+            user.page.color = color;
+
+            data.user = user;
+
+            res.send(data);
+        });
     });
+}
+
+router.post('/url', function(req, res){
+    if(typeof req.session.passport == 'undefined') res.json({error: 'Not Authenticated'});
+    else {
+        User.find({pageName: req.body.slug}, function(err, user) {
+            if(user.length === 0) {
+                User.findOne({_id: req.session.passport.user._id}, function(err, u) {
+                    u.pageName = req.body.slug;
+                    u.save(function(err) {
+                        res.json(u);
+                    });
+                });
+            } else {
+                res.json({error: 'Page already exists with that name'});
+            }
+        });
+    }
 });
 
 router.post('/settings', function(req, res) {
-    User.findOne({_id: req.session.passport.user._id}, function(err, u) {
-        u.page.showWork    = req.body.work;
-        u.page.showProject = req.body.project;
-        u.page.showEd      = req.body.ed;
-        u.page.showHonor   = req.body.honor;
-
-        u.save(function(err) {
-            if(err) res.send(err);
-            res.json(u);
-        });
-    });
-});
-
-router.post('/theme', function(req, res) {
-    User.findOne({_id: req.session.passport.user._id}, function(err, u) {
-        var color = req.body.color;
-        if(color === 'red' || color === 'blue' || color === 'black' || color === 'green') {
-            u.page.color = color;
+    if(typeof req.session.passport == 'undefined') res.json({error: 'Not Authenticated'});
+    else {
+        User.findOne({_id: req.session.passport.user._id}, function(err, u) {
+            u.page.showWork    = req.body.work;
+            u.page.showProject = req.body.project;
+            u.page.showEd      = req.body.ed;
+            u.page.showHonor   = req.body.honor;
 
             u.save(function(err) {
                 if(err) res.send(err);
                 res.json(u);
             });
-        } else {
-            res.json({status: 500});
-        }
+        });
+    }
+});
 
-    });
+router.post('/theme', function(req, res) {
+    if(typeof req.session.passport == 'undefined') res.json({error: 'Not Authenticated'});
+    else {
+        User.findOne({_id: req.session.passport.user._id}, function(err, u) {
+            var color = req.body.color;
+            if(color === 'red' || color === 'blue' || color === 'black' || color === 'green') {
+                u.page.color = color;
+
+                u.save(function(err) {
+                    if(err) res.send(err);
+                    res.json(u);
+                });
+            } else {
+                res.json({status: 500});
+            }
+        });
+    }
 });
 
 function sortByKey(array, key) {
