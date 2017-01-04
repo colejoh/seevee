@@ -10,7 +10,9 @@ seevee.controller("pagesController", ['$scope', '$http', '$rootScope', '$sce',
 
         $scope.saveUrl = function() {
             $scope.slugMessage = SAVING;
-            $http.post('/api/pages/url', {slug: $scope.slug}).then(function(res) {
+            $http.post('/api/pages/url', {
+                slug: $scope.slug
+            }).then(function(res) {
                 $scope.liveLink = "http://pages.seevee.co/" + res.data.pageName;
                 $scope.slugMessage = SAVED;
             });
@@ -34,14 +36,16 @@ seevee.controller("pagesController", ['$scope', '$http', '$rootScope', '$sce',
 
         $scope.saveTheme = function(color) {
             setThemeClasses(color);
-            $http.post('/api/pages/theme', {color: color}). then(function(res) {
+            $http.post('/api/pages/theme', {
+                color: color
+            }).then(function(res) {
                 document.getElementById('page-preview').src = document.getElementById('page-preview').src;
             });
         };
 
         function setThemeClasses(color) {
-            if(color) {
-                if(color === 'red') {
+            if (color) {
+                if (color === 'red') {
                     $scope.redClass = 'selected';
                     $scope.blueClass = $scope.greenClass = $scope.blackClass = 'non-selected';
                 } else if (color === 'blue') {

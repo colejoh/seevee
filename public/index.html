@@ -1,96 +1,102 @@
 <html ng-app="seevee">
-    <head>
-        <title>Seevee - Better Resumes</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<head>
+    <title>Seevee - Better Resumes</title>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-        <link rel="stylesheet" href="css/html5.css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="styles/styles.buttons.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.elements.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.global.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.global-typography.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.layout.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.modal.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.nav.css" />
-        <link rel="stylesheet" type="text/css" href="styles/styles.responsive.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="css/html5.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/styles.buttons.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.elements.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.global.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.global-typography.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.layout.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.modal.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.nav.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.responsive.css" />
 
 
-        <!-- MAIN JS -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/plugins/truncate.js"></script>
+    <!-- MAIN JS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/plugins/truncate.js"></script>
 
-        <!-- ROUTES -->
-        <script type="text/javascript" src="routes/accomplishment/controllers.accomplishment.js"></script>
-        <link rel="stylesheet" type="text/css" href="routes/accomplishment/styles.accomplishment.css" />
+    <!-- ROUTES -->
+    <script type="text/javascript" src="routes/accomplishment/controllers.accomplishment.js"></script>
+    <link rel="stylesheet" type="text/css" href="routes/accomplishment/styles.accomplishment.css" />
 
-        <script type="text/javascript" src="routes/account/controllers.account.js"></script>
-        <link rel="stylesheet" type="text/css" href="routes/account/styles.account.css" />
+    <script type="text/javascript" src="routes/account/controllers.account.js"></script>
+    <link rel="stylesheet" type="text/css" href="routes/account/styles.account.css" />
 
-        <script type="text/javascript" src="routes/admin/controllers.admin.js"></script>
+    <script type="text/javascript" src="routes/admin/controllers.admin.js"></script>
 
-        <script type="text/javascript" src="routes/info/controllers.info.js"></script>
-        <link rel="stylesheet" type="text/css" href="routes/info/styles.info.css" />
+    <script type="text/javascript" src="routes/info/controllers.info.js"></script>
+    <link rel="stylesheet" type="text/css" href="routes/info/styles.info.css" />
 
-        <script type="text/javascript" src="routes/login/controllers.login.js"></script>
-        <link rel="stylesheet" type="text/css" href="routes/login/styles.login.css" />
+    <script type="text/javascript" src="routes/login/controllers.login.js"></script>
+    <link rel="stylesheet" type="text/css" href="routes/login/styles.login.css" />
 
-        <script type="text/javascript" src="routes/pages/controllers.pages.js"></script>
-        <link rel="stylesheet" type="text/css" href="routes/pages/styles.pages.css" />
+    <script type="text/javascript" src="routes/pages/controllers.pages.js"></script>
+    <link rel="stylesheet" type="text/css" href="routes/pages/styles.pages.css" />
 
-        <script type="text/javascript" src="routes/resume/controllers.resume.js"></script>
-        <link rel="stylesheet" type="text/css" href="routes/resume/styles.resume.css" />
+    <script type="text/javascript" src="routes/resume/controllers.resume.js"></script>
+    <link rel="stylesheet" type="text/css" href="routes/resume/styles.resume.css" />
 
-        <!-- CONTROLLERS -->
-        <script type="text/javascript" src="js/controllers/controllers.header.js"></script>
+    <!-- CONTROLLERS -->
+    <script type="text/javascript" src="js/controllers/controllers.header.js"></script>
 
-        <!-- DIRECTIVES -->
-        <script type="text/javascript" src="directives/corner-user/corner-user.js"></script>
-        <link rel="stylesheet" type="text/css" href="directives/corner-user/corner-user.css" />
+    <!-- DIRECTIVES -->
+    <script type="text/javascript" src="directives/corner-user/corner-user.js"></script>
+    <link rel="stylesheet" type="text/css" href="directives/corner-user/corner-user.css" />
 
-        <!-- FILTER -->
-        <script type="text/javascript" src="js/filters/html.js"></script>
+    <!-- FILTER -->
+    <script type="text/javascript" src="js/filters/html.js"></script>
 
-    </head>
-    <body>
-        <base href="/">
-        <script>
-          window.fbAsyncInit = function() {
+</head>
+
+<body>
+    <base href="/">
+    <script>
+        window.fbAsyncInit = function() {
             FB.init({
-              appId      : '1752159591713874',
-              xfbml      : true,
-              version    : 'v2.8'
+                appId: '1752159591713874',
+                xfbml: true,
+                version: 'v2.8'
             });
-          };
+        };
 
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
-        <div class="left">
-            <div ng-include="'partials/partials.nav.html'"></div>
-        </div>
-        <div class="right container">
-                <div ng-view></div>
-        </div>
-    </body>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="left">
+        <div ng-include="'partials/partials.nav.html'"></div>
+    </div>
+    <div class="right container">
+        <div ng-view></div>
+    </div>
+</body>
+
 </html>
