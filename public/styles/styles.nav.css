@@ -6,7 +6,7 @@
   position: fixed;
   margin: 0;
   padding: 0;
-  z-index: 999;
+  z-index: 10;
 }
 .right {
   width: calc(100% - 60px);
