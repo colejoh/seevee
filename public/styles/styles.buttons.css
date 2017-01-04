@@ -1,59 +1,59 @@
 .btn-primary {
-  background: #508DF1;
-  height: 30px;
-  width: 100px;
-  font-size: 11px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  font-weight: bold;
-  border: 2px solid #3769BD;
-  color: #fff;
+    background: #508DF1;
+    height: 30px;
+    width: 100px;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid #3769BD;
+    color: #fff;
 }
 .btn-primary:hover {
-  background: #69A0FA;
-  border: 2px solid #508DF1;
+    background: #69A0FA;
+    border: 2px solid #508DF1;
 }
 .btn-danger {
-  background: #DA4429;
-  height: 30px;
-  width: 100px;
-  font-size: 11px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  font-weight: bold;
-  border: 2px solid #BA3922;
-  color: #fff;
+    background: #DA4429;
+    height: 30px;
+    width: 100px;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid #BA3922;
+    color: #fff;
 }
 .btn-danger:hover {
-  background: #69A0FA;
-  border: 2px solid #508DF1;
+    background: #69A0FA;
+    border: 2px solid #508DF1;
 }
 .btn-success {
-  height: 30px;
-  width: 100px;
-  background: #92C55A;
-  line-height: 20px;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  border-radius: 4px;
-  font-weight: bold;
-  border: 2px solid #86B551;
-  margin: 10px 0px;
-  transition: .2s;
+    height: 30px;
+    width: 100px;
+    background: #92C55A;
+    line-height: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid #86B551;
+    margin: 10px 0px;
+    transition: .2s;
 }
 .btn-success i {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 .btn-success:hover {
-  background: #86B551;
-  border: 2px solid #75A143;
-  transition: .2s;
-  transform: scale(1.01);
+    background: #86B551;
+    border: 2px solid #75A143;
+    transition: .2s;
+    transform: scale(1.01);
 }
 .btn-success:active {
-  background: #92C55A;
-  border: 2px solid #86B551;
-  transition: .2s;
-  transform: scale(1.01);
+    background: #92C55A;
+    border: 2px solid #86B551;
+    transition: .2s;
+    transform: scale(1.01);
 }

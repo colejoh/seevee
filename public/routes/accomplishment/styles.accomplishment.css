@@ -1,79 +1,79 @@
 .col {
-	margin-right: 20px;
-	flex: 1;
+    margin-right: 20px;
+    flex: 1;
 }
 .col .col-header {
-  display: block;
+    display: block;
 }
 .col h1 {
-	text-align: left;
-	font-weight: 500;
-	font-size: 20px;
-	color: #8A95A6;
-	margin-bottom: 15px;
-  float: left;
+    text-align: left;
+    font-weight: 500;
+    font-size: 20px;
+    color: #8A95A6;
+    margin-bottom: 15px;
+    float: left;
 }
 .col .add {
-  float: right;
-  padding-top: 5px;
-  color: #8A95A6;
+    float: right;
+    padding-top: 5px;
+    color: #8A95A6;
 }
 .col .add:hover {
-  color: #4A525E;
-  cursor: pointer;
+    color: #4A525E;
+    cursor: pointer;
 }
 .col i {
-  text-align: right;
+    text-align: right;
 }
 .accomplishment {
-  width: 100%;
-  background: #fff;
-  margin-bottom: 20px;
-  padding: 18px 20px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.12);
 }
 .accomplishment .title {
-  font-weight: 500;
-  font-size: 24px;
-  color: #373737;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 24px;
+    color: #373737;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 8px;
 }
 .accomplishment .time {
-  padding: 4px 12px 3px 12px;
-  color: #8A95A6;
-  border: 1px solid #8A95A6;
-  border-radius: 3px;
-  margin: 10px 0px;
-  text-align: center;
-  display: inline-block;
+    padding: 4px 12px 3px 12px;
+    color: #8A95A6;
+    border: 1px solid #8A95A6;
+    border-radius: 3px;
+    margin: 10px 0px;
+    text-align: center;
+    display: inline-block;
 }
 .accomplishment .location {
-  font-size: 20px;
-  font-weight: 400;
-  color: #8A95A6;
+    font-size: 20px;
+    font-weight: 400;
+    color: #8A95A6;
 }
 .accomplishment.project h2,
 .accomplishment.honor h2 {
-  display: none;
+    display: none;
 }
 .accomplishment.project time,
 .accomplishment.honor time {
-  float: left;
+    float: left;
 }
 .accomplishment div.priority {
-	position: absolute;
-	height: 5px;
-	bottom: 0;
-	left: 0;
-	background: #4A90E2;
+    position: absolute;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background: #4A90E2;
 }
 .accomplishment .description {
-  line-height: 1.6em;
+    line-height: 1.6em;
 }
 .accomplishment-actions {
     position: absolute;
@@ -85,9 +85,9 @@
     color: #949494;
 }
 .accomplishment-actions i {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 .accomplishment-actions i:hover {
-  color: #333;
-  cursor: pointer;
+    color: #333;
+    cursor: pointer;
 }

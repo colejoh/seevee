@@ -1,16 +1,18 @@
 .navbar-fixed-left {
-  width: 80px;
-  position: fixed;
-  border-radius: 0;
-  height: 100%;
+    width: 80px;
+    position: fixed;
+    border-radius: 0;
+    height: 100%;
 }
 .navbar-fixed-left .navbar-nav > li {
-  float: none;  /* Cancel default li float: left */
-  width: 80px;
+    float: none;
+    /* Cancel default li float: left */
+
+    width: 80px;
 }
 body > .container {
-  padding: 0px;
+    padding: 0px;
 }
 .row {
-  margin: 0;
+    margin: 0;
 }
