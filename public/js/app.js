@@ -2,56 +2,56 @@ var seevee = angular.module('seevee', ['ngRoute', 'ngSanitize', 'truncate', 'ngM
 
 seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
     $routeProvider
-    .when("/", {
-        templateUrl: '../routes/accomplishment/accomplishment.html',
-        controller: 'accomplishmentController',
-        resolve: {
-            loggedin: checkLoggedin
-        }
-    })
-    .when("/info", {
-        templateUrl: '../routes/info/info.html',
-        controller: 'infoController',
-        resolve: {
-            loggedin: checkLoggedin
-        }
-    })
-    .when("/resumes", {
-        templateUrl: '../routes/resume/resume.html',
-        controller: 'resumeController',
-        resolve: {
-            loggedin: checkLoggedin
-        }
-    })
-    .when("/login", {
-        templateUrl: '../routes/login/login.html',
-        controller: 'loginController',
-        controllerAs: 'model'
-    })
-    .when("/account", {
-        templateUrl: '../routes/account/account.html',
-        controller: 'accountController',
-        resolve: {
-            loggedin: checkLoggedin
-        }
-    })
-    .when("/admin", {
-        templateUrl: '../routes/admin/admin.html',
-        controller: 'adminController',
-        resolve: {
-            loggedin: checkLoggedin
-        }
-    })
-    .when("/pages", {
-        templateUrl: '../routes/pages/pages.html',
-        controller: 'pagesController',
-        resolve: {
-            loggedin: checkLoggedin
-        }
-    })
-    .otherwise({
-        redirectTo: '/'
-    });
+        .when("/", {
+            templateUrl: '../routes/accomplishment/accomplishment.html',
+            controller: 'accomplishmentController',
+            resolve: {
+                loggedin: checkLoggedin
+            }
+        })
+        .when("/info", {
+            templateUrl: '../routes/info/info.html',
+            controller: 'infoController',
+            resolve: {
+                loggedin: checkLoggedin
+            }
+        })
+        .when("/resumes", {
+            templateUrl: '../routes/resume/resume.html',
+            controller: 'resumeController',
+            resolve: {
+                loggedin: checkLoggedin
+            }
+        })
+        .when("/login", {
+            templateUrl: '../routes/login/login.html',
+            controller: 'loginController',
+            controllerAs: 'model'
+        })
+        .when("/account", {
+            templateUrl: '../routes/account/account.html',
+            controller: 'accountController',
+            resolve: {
+                loggedin: checkLoggedin
+            }
+        })
+        .when("/admin", {
+            templateUrl: '../routes/admin/admin.html',
+            controller: 'adminController',
+            resolve: {
+                loggedin: checkLoggedin
+            }
+        })
+        .when("/pages", {
+            templateUrl: '../routes/pages/pages.html',
+            controller: 'pagesController',
+            resolve: {
+                loggedin: checkLoggedin
+            }
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 
     // use the HTML5 History API
     $locationProvider.html5Mode(true);
@@ -60,25 +60,23 @@ seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
 // I hate this
 seevee.run(function($rootScope, $location) {
     $rootScope.$watch(function() {
-      return $location.path();
-    },
-    function(a){
-      if(a === '/login') {
-          $(".left").hide();
-      }
-    });
+            return $location.path();
+        },
+        function(a) {
+            if (a === '/login') {
+                $(".left").hide();
+            }
+        });
 });
 
 var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope) {
-    console.log("checkCurrentUser");
     var deferred = $q.defer();
 
-    $http.get('/api/user/loggedin').success(function(user)
-    {
+    $http.get('/api/user/loggedin').success(function(user) {
         $rootScope.errorMessage = null;
         // User is Authenticated
         if (user !== '0') {
-                $rootScope.currentUser = user;
+            $rootScope.currentUser = user;
         }
         deferred.resolve();
     });
@@ -94,7 +92,7 @@ var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
         // User is Authenticated
         if (user !== '0') {
             $rootScope.currentUser = user;
-            $rootScope.currentUserFirstLetter = user.firstName.substring(0,1);
+            $rootScope.currentUserFirstLetter = user.firstName.substring(0, 1);
             deferred.resolve();
         }
         // User is Not Authenticated

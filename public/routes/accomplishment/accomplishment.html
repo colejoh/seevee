@@ -4,56 +4,56 @@
 <div ng-include="'../templates/templates.honor.html'"></div>
 <div ng-include="'../templates/templates.outer-template.html'"></div>
 <div class="page-toolbar">
-	<button ng-click="newAdd()" class="btn-success"><i class="fa fa-plus"></i>Add</button>
-	<corner-user></corner-user>
+    <button ng-click="newAdd()" class="btn-success"><i class="fa fa-plus"></i>Add</button>
+    <corner-user></corner-user>
 </div>
 <div class="row page-wrapper">
-  <div class="col-sm-3">
-    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
-      <div class="col-sm-6">
-        <span class="small-caps-light gray">Work</span>
-      </div>
+    <div class="col-sm-3">
+        <div class="row" style="margin-bottom: 5px; line-height: 20px;">
+            <div class="col-sm-6">
+                <span class="small-caps-light gray">Work</span>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='work'">
+                <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='work'">
-        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
-      </div>
+    <div class="col-sm-3">
+        <div class="row" style="margin-bottom: 5px; line-height: 20px;">
+            <div class="col-sm-6">
+                <span class="small-caps-light gray">Project</span>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='project'">
+                <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
-      <div class="col-sm-6">
-        <span class="small-caps-light gray">Project</span>
-      </div>
+    <div class="col-sm-3">
+        <div class="row" style="margin-bottom: 5px; line-height: 20px;">
+            <div class="col-sm-6">
+                <span class="small-caps-light gray">Education</span>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
+                <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='project'">
-        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
-      </div>
+    <div class="col-sm-3">
+        <div class="row" style="margin-bottom: 5px; line-height: 20px;">
+            <div class="col-sm-6">
+                <span class="small-caps-light gray">Honor</span>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='honor'">
+                <div ng-include="'partials/partials.accomplishment-card.html'"></div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
-      <div class="col-sm-6">
-        <span class="small-caps-light gray">Education</span>
-      </div>
-    </div>
-    <div class="row">
-      <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='ed'">
-        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="row" style="margin-bottom: 5px; line-height: 20px;">
-      <div class="col-sm-6">
-        <span class="small-caps-light gray">Honor</span>
-      </div>
-    </div>
-    <div class="row">
-      <div ng-repeat="accomplishment in accomplishments" ng-if="accomplishment.type=='honor'">
-        <div ng-include="'partials/partials.accomplishment-card.html'"></div>
-      </div>
-    </div>
-  </div>
 </div>

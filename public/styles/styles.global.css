@@ -1,145 +1,151 @@
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
-  box-shadow: none !important;
-  border: none !important;
-  outline: none;
-  background: #E9E7E6;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none;
+    background: #E9E7E6;
 }
 body > .container {
-  padding: 60px 15px 0;
+    padding: 60px 15px 0;
 }
 .container .text-muted {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 .footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 code {
-  font-size: 80%;
+    font-size: 80%;
 }
 a {
-	text-decoration: inherit;
-	color: inherit;
+    text-decoration: inherit;
+    color: inherit;
 }
-
 b {
-	font-weight: 500;
+    font-weight: 500;
 }
-
 input,
 textarea,
 button {
-	background: none;
-	border: none;
-	outline: none;
+    background: none;
+    border: none;
+    outline: none;
 }
-
 button {
-	margin: 0;
-	font-size: 16px;
+    margin: 0;
+    font-size: 16px;
 }
-
 textarea {
-	resize: vertical;
+    resize: vertical;
 }
-
-input:-ms-input-placeholder { color: #8A95A6; opacity: 0.5 }
-input::-webkit-input-placeholder { color: #8A95A6; opacity: 0.5 }
-input:-moz-placeholder { color: #8A95A6; opacity: 0.5 }
-input::-moz-placeholder { color: #8A95A6; opacity: 0.5 }
-
+input:-ms-input-placeholder {
+    color: #8A95A6;
+    opacity: 0.5
+}
+input::-webkit-input-placeholder {
+    color: #8A95A6;
+    opacity: 0.5
+}
+input:-moz-placeholder {
+    color: #8A95A6;
+    opacity: 0.5
+}
+input::-moz-placeholder {
+    color: #8A95A6;
+    opacity: 0.5
+}
 /* TODO: Consolidate this shit; */
 
 input[type=range] {
-  /*removes default webkit styles*/
-  -webkit-appearance: none;
+    /*removes default webkit styles*/
 
-  /*fix for FF unable to apply focus style bug */
-  border: 1px solid white;
+    -webkit-appearance: none;
+    /*fix for FF unable to apply focus style bug */
 
-  /*required for proper track sizing in FF*/
-  width: 300px;
+    border: 1px solid white;
+    /*required for proper track sizing in FF*/
+
+    width: 300px;
 }
 input[type=range]::-webkit-slider-runnable-track {
-  width: 300px;
-  height: 5px;
-  background: #c4cad2;
-  border: none;
+    width: 300px;
+    height: 5px;
+    background: #c4cad2;
+    border: none;
 }
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: none;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: #508DF1;
-  margin-top: -5px;
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #508DF1;
+    margin-top: -5px;
 }
 input[type=range]:focus {
-  outline: none;
+    outline: none;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #c4cad2;
+    background: #c4cad2;
 }
-
 input[type=range]::-moz-range-track {
-  width: 300px;
-  height: 5px;
-  background: #c4cad2;
-  border: none;
+    width: 300px;
+    height: 5px;
+    background: #c4cad2;
+    border: none;
 }
 input[type=range]::-moz-range-thumb {
-  border: none;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: #508DF1;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #508DF1;
 }
-
 /*hide the outline behind the border*/
-input[type=range]:-moz-focusring{
-  outline: 1px solid white;
-  outline-offset: -1px;
+
+input[type=range]:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
 }
 input[type=range]::-ms-track {
-  width: 300px;
-  height: 5px;
+    width: 300px;
+    height: 5px;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
 
-  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-  background: transparent;
+    background: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
 
-  /*leave room for the larger thumb to overflow with a transparent border */
-  border-color: transparent;
-  border-width: 6px 0;
+    border-color: transparent;
+    border-width: 6px 0;
+    /*remove default tick marks*/
 
-  /*remove default tick marks*/
-  color: transparent;
+    color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-  background: #777;
-  border-radius: 10px;
+    background: #777;
+    border-radius: 10px;
 }
 input[type=range]::-ms-fill-upper {
-  background: #ddd;
-  border-radius: 10px;
+    background: #ddd;
+    border-radius: 10px;
 }
 input[type=range]::-ms-thumb {
-  border: none;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: goldenrod;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #888;
+    background: #888;
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #ccc;
+    background: #ccc;
 }
 .page-wrapper {
     padding: 10px;

@@ -19,27 +19,33 @@
                 <div class="background-color-sample color-black" ng-click="saveTheme('black')" ng-class="blackClass"></div>
             </div>
         </div>
-
         <div class="panel" style="margin-top: 10px;">
             <div class="small-caps-light gray">
                 View Options
             </div>
             <div class="checkbox">
-                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.work" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Work</div></md-checkbox>
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.work" class="md-primary">
+                    <div class="small-caps-light gray" style="padding-top: 3px">Show Work</div>
+                </md-checkbox>
             </div>
             <div class="checkbox">
-                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.project" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Project</div></md-checkbox>
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.project" class="md-primary">
+                    <div class="small-caps-light gray" style="padding-top: 3px">Show Project</div>
+                </md-checkbox>
             </div>
             <div class="checkbox">
-                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.ed" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Education</div></md-checkbox>
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.ed" class="md-primary">
+                    <div class="small-caps-light gray" style="padding-top: 3px">Show Education</div>
+                </md-checkbox>
             </div>
             <div class="checkbox">
-                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.honor" class="md-primary"><div class="small-caps-light gray" style="padding-top: 3px">Show Honor</div></md-checkbox>
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="showSettings.honor" class="md-primary">
+                    <div class="small-caps-light gray" style="padding-top: 3px">Show Honor</div>
+                </md-checkbox>
             </div>
             <button class="btn-primary" ng-click="saveShowOptions()">Save</button>
             <span class="small-caps-light gray">{{showMessage}}</span>
         </div>
-
         <div class="panel" style="margin-top: 10px;">
             <div class="small-caps-light gray">
                 Custom URL
