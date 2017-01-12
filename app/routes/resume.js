@@ -7,7 +7,7 @@ var templates = require('../templates/templates.json');
 var path = require('path');
 var controller = require('../controllers/resumeItem');
 var sampleData = require('../templates/sample.json');
-
+var handlebars = require('handlebars');
 
 /*
  * GET: Sends all the templates
@@ -47,13 +47,11 @@ router.post('/render', function(req, res) {
     if(typeof req.session.passport == 'undefined') res.json({error: 'Not Authenticated'});
     else {
         var pathBase = "app/templates/";
-        var pugCode = fs.readFileSync(pathBase + templates[req.body.id].pugPath, "utf8");
-        var fn = pug.compile(pugCode, {
-            filename: path.join(__dirname, '../templates/pug/style.css'),
-            pretty:   true
-        });
+        var template = handlebars.compile(
+            fs.readFileSync(pathBase + templates[req.body.id].handlebarsPath, "utf8"));
 
-        controller.getData(req.session.passport.user._id, fn, res, true);
+
+        controller.getData(req.session.passport.user._id, template, res, true);
     }
 });
 
@@ -63,13 +61,11 @@ router.post('/render', function(req, res) {
 router.get('/template/:id', function(req, res) {
     var id = req.params.id;
     var pathBase = "app/templates/";
-    var pugCode = fs.readFileSync(pathBase + templates[id].pugPath, "utf8");
-    var fn = pug.compile(pugCode, {
-        filename: path.join(__dirname, '../templates/pug/style.css'),
-        pretty:   true
-    });
+    var handlebarsCode = fs.readFileSync(pathBase + templates[id].handlebarsPath, "utf8");
+    var template = handlebars.compile(handlebarsCode);
 
-    controller.getData("5836a74f6a46c46345e4b002", fn, res, false);
+
+    controller.getData("5836a74f6a46c46345e4b002", template, res, false);
 
 });
 

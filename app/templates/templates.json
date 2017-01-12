@@ -4,13 +4,13 @@
         "title": "Traditional",
         "description": "A traditional template acceptable in all industries.",
         "htmlPath": "html/default.html",
-        "pugPath": "pug/default.pug"
+        "handlebarsPath": "handlebars/default.hbs"
     },
     {
         "id": 1,
         "title": "Modern",
         "description": "A template for a forward facing industries.",
         "htmlPath": "html/modern.html",
-        "pugPath": "pug/modern.pug"
+        "handlebarsPath": "handlebars/modern.hbs"
     }
 ]
