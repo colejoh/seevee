@@ -1,0 +1,83 @@
+style.
+  .modern {
+  margin: 0;
+  padding: 0;
+  font-size: 9pt;
+  font-family: 'Helvetica', sans-serif;;
+  }
+  .modern header {
+  background: #EFEEEC;
+  padding: 50px;
+  height: 40px;
+  }
+  .modern .name {
+  margin: 0;
+  float: left;
+  font-size: 30px;
+  font-weight: bold;
+  }
+  .modern .contact {
+  margin: 0;
+  float: right;
+  text-align: right;
+  }
+  .modern .clearfix {
+  clear: both;
+  }
+  .modern .content {
+  padding: 20px .5in;
+  }
+  .modern .content .section-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 10px;
+  }
+  .modern .content .item {
+  margin-bottom: 10px;
+  font-size: 11px;
+  }
+  .modern .content .item .title {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  }
+  .modern .content .item p {
+  line-height: 1.5em;
+  }
+.modern
+  header
+    .name #{firstName} #{lastName}
+    .contact
+      .item #{email}
+      .item #{phoneNumber}
+  .content
+    if work.length > 0
+      .section-title Work
+      each w in work
+        .item
+          div.title #{w.title}, #{w.origin}
+          .data #{w.dateFromString} - #{w.dateToString}
+          p.description #{w.description}
+
+    if ed.length > 0
+      .section-title Education
+      each w in ed
+        .item
+          span.title #{w.title}, #{w.origin}
+          span.data  - #{w.dateString}
+
+    if project.length > 0
+      .section-title Projects
+      each w in project
+        .item
+          span.title #{w.title}, #{w.origin}
+          span.data #{w.dateFromString} - #{w.dateToString}
+          p.description #{w.description}
+
+    if honor.length > 0
+      .section-title Honor
+      each w in honor
+        .item
+          span.title #{w.title},
+          span #{w.origin}, Awarded .data #{w.dateString}

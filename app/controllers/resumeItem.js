@@ -64,7 +64,7 @@ exports.getData = function(id, fn, res, pdf) {
                         stream.pipe(res);
                     });
                 } else {
-                    res.send(fn(html));
+                    res.send(html);
                 }
             });
         });
