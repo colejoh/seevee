@@ -11,6 +11,7 @@
     "debug": "~2.2.0",
     "express": "~4.14.0",
     "express-session": "^1.14.2",
+    "handlebars": "^4.0.6",
     "html-pdf": "^2.1.0",
     "moment": "^2.16.0",
     "mongoose": "^4.6.6",

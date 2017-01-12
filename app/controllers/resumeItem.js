@@ -3,6 +3,7 @@ var User = require('../models/user');
 var Skill = require('../models/skill');
 var PDF = require('html-pdf');
 var pug = require('pug');
+var handlebars = require('handlebars');
 
 var MONTH_NAMES = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
