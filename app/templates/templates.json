@@ -12,5 +12,12 @@
         "description": "A template for a forward facing industries.",
         "htmlPath": "html/modern.html",
         "handlebarsPath": "handlebars/modern.hbs"
+    },
+    {
+        "id": 2,
+        "title": "Two Column",
+        "description": "A template for a forward facing industries.",
+        "htmlPath": "html/twocol.html",
+        "handlebarsPath": "handlebars/twocol.hbs"
     }
 ]

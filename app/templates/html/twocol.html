@@ -1,0 +1,119 @@
+<style>
+    .modern {
+        margin: 0;
+        font-size: 11px;
+        font-family: 'Helvetica', sans-serif;;
+    }
+    .modern header {
+        background: #EFEEEC;
+        height: 120px;
+        padding: .5in;
+    }
+    .modern .name {
+        margin: 0;
+        float: left;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: bold;
+    }
+    .modern .contact {
+        margin: 0;
+        float: right;
+        text-align: right;
+    }
+    .modern .clearfix {
+        clear: both;
+    }
+    .modern .content {
+        width: 100%;
+        padding: 20px .5in;
+    }
+    .modern .left-col {
+        width: calc(50% - 10px);
+        float: left;
+        padding-right: 10px;
+    }
+    .modern .right-col {
+        width: 50%;
+        float: right;
+    }
+    .modern .content .section-title {
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        margin-bottom: 10px;
+    }
+    .modern .content .item {
+        margin-bottom: 10px;
+        font-size: 11px;
+    }
+    .modern .content .item .title {
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .modern .content .item p {
+        line-height: 1.6em;
+    }
+</style>
+<div class="modern">
+    <header>
+        <div class="name">
+            {{firstName}} {{lastName}}
+        </div>
+        <div class="contact">
+            <div class="item">{{data.email}}</div>
+            <div class="item">{{data.phoneNumber}}</div>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <div class="content">
+        <div class="left-col">
+            <div ng-if="data.work.length > 0">
+                <div class="section-title">Work</div>
+                <div ng-repeat="item in data.work" class="item">
+                    <span class="title">{{item.title}}</span>,
+                    {{item.origin}}
+                    <div class="data">
+                        {{item.dateFrom | date : 'MMMM yyyy'}} - {{item.dateTo | date : 'MMMM yyyy'}}
+                    </div>
+                    <p>
+                        {{item.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div ng-if="data.ed.length > 0">
+                <div class="section-title">Education</div>
+                <div ng-repeat="item in data.ed" class="item">
+                    <span class="title">{{item.title}}</span>,
+                    {{item.origin}}, {{item.date | date : 'MMMM yyyy'}}
+                </div>
+            </div>
+
+            <div ng-if="data.project.length > 0">
+                <div class="section-title">Projects</div>
+                <div ng-repeat="item in data.project" class="item">
+                    <span class="title">{{item.title}}</span>,
+                    {{item.dateFrom | date : 'MMMM yyyy'}} - {{item.dateTo | date : 'MMMM yyyy'}}<br />
+                    {{item.description}}
+                </div>
+            </div>
+
+            <div ng-if="data.honor.length > 0">
+                <div class="section-title">Honors</div>
+                <div ng-repeat="item in data.honor" class="item">
+                    <span class="title">{{item.title}}</span>,
+                    {{item.origin}}, Awarded {{item.date | date : 'MMMM yyyy'}}
+                </div>
+            </div>
+
+            <div ng-if="data.skills.length > 0">
+                <div class="section-title">Skills</div>
+                <span ng-repeat="item in data.skills">
+                    {{item.title}}<span ng-if="$index != data.skills.length - 1">, </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
