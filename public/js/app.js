@@ -58,7 +58,7 @@ seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
 });
 
 // I hate this
-seevee.run(function($rootScope, $location) {
+seevee.run(function($rootScope, $location, $window) {
     if ($location.protocol() !== 'https') {
         $window.location.href = $location.absUrl().replace('http', 'https');
     }
