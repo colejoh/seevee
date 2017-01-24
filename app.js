@@ -34,13 +34,13 @@ var envMongoSessionUrl = process.env.MONGO_SESSION_URI || 'mongodb://localhost:2
 app.use(session({
     secret: config.secret,
     resave: true,
-    saveUninitialized: true
-    // cookie: {
-    //     secure: false
-    // },
-    // store: new MongoStore({
-    //     url: envMongoSessionUrl
-    // })
+    saveUninitialized: true,
+    cookie: {
+        secure: false
+    },
+    store: new MongoStore({
+        url: envMongoSessionUrl
+    })
 }));
 app.use(cookie());
 app.use(passport.initialize());
