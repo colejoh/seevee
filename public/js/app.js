@@ -58,7 +58,7 @@ seevee.config(function($routeProvider, $httpProvider, $locationProvider) {
 });
 
 // I hate this
-seevee.run(function($rootScope, $location, $window) {
+seevee.run(function($rootScope, $location) {
     // Remove this for dev
 
     $rootScope.$watch(function() {
