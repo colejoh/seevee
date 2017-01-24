@@ -32,12 +32,7 @@ mongoose.connect(envMongoUrl);
 var port = process.env.PORT || 8080;        // set our port
 var router = express.Router();              // get an instance of the express Router
 
-app.use(function requireHTTPS(req, res, next) {
-  if (!req.secure) {
-    return res.redirect('https://' + req.headers.host + req.url);
-  }
-  next();
-});
+
 
 // Prefixes API with /api. Also directs routes to the route package
 app.use('/api', require('./app/routes'));
