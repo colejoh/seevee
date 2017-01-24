@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var logger     = require('morgan');
 var session    = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var config     = require('./config');
 var multer     = require('multer');
 var cookie     = require('cookie-parser');
@@ -11,16 +12,31 @@ var app        = express();
 
 app.use(express.static(__dirname + '/public'));
 
+if(process.env.ENV === 'production') {
+    app.get('*',function(req,res,next){
+      if(req.headers['x-forwarded-proto']!='https')
+        res.redirect('https://app.seevee.co'+req.url);
+      else
+        next(); /* Continue to other routes if we're not redirecting */
+    });
+}
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 multer();
 app.use(logger('dev'));
+var envMongoSessionUrl = process.env.MONGO_SESSION_URI || 'mongodb://localhost:27017/seevee-sessions';
 app.use(session({
     secret: config.secret,
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: false
+    },
+    store: new MongoStore({
+        url: envMongoSessionUrl
+    })
 }));
 app.use(cookie());
 app.use(passport.initialize());
