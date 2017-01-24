@@ -8,18 +8,22 @@ var config     = require('./config');
 var multer     = require('multer');
 var cookie     = require('cookie-parser');
 var passport   = require('passport');
+var cors       = require('cors');
 var app        = express();
 
 app.use(express.static(__dirname + '/public'));
-
+var baseUrl = process.env.BASE_URL || 'localhost:8080';
 // if(process.env.ENV === 'production') {
-//     app.get('*',function(req,res,next){
-//       if(req.headers['x-forwarded-proto']!='https')
-//         res.redirect('https://app.seevee.co'+req.url);
-//       else
-//         next(); /* Continue to other routes if we're not redirecting */
-//     });
+    // app.get('*',function(req,res,next){
+    //   if(req.headers['x-forwarded-proto']!='https')
+    //     res.redirect(baseUrl+req.url);
+    //   else
+    //     next(); /* Continue to other routes if we're not redirecting */
+    // });
 // }
+
+// app.use(cors());
+
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,13 +34,13 @@ var envMongoSessionUrl = process.env.MONGO_SESSION_URI || 'mongodb://localhost:2
 app.use(session({
     secret: config.secret,
     resave: true,
-    saveUninitialized: true,
-    cookie: {
-        secure: false
-    },
-    store: new MongoStore({
-        url: envMongoSessionUrl
-    })
+    saveUninitialized: true
+    // cookie: {
+    //     secure: false
+    // },
+    // store: new MongoStore({
+    //     url: envMongoSessionUrl
+    // })
 }));
 app.use(cookie());
 app.use(passport.initialize());
