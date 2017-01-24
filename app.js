@@ -12,14 +12,14 @@ var app        = express();
 
 app.use(express.static(__dirname + '/public'));
 
-if(process.env.ENV === 'production') {
-    app.get('*',function(req,res,next){
-      if(req.headers['x-forwarded-proto']!='https')
-        res.redirect('https://app.seevee.co'+req.url);
-      else
-        next(); /* Continue to other routes if we're not redirecting */
-    });
-}
+// if(process.env.ENV === 'production') {
+//     app.get('*',function(req,res,next){
+//       if(req.headers['x-forwarded-proto']!='https')
+//         res.redirect('https://app.seevee.co'+req.url);
+//       else
+//         next(); /* Continue to other routes if we're not redirecting */
+//     });
+// }
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
